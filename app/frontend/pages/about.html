@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang Saya — Afdal Adha Firnansyah</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --bg-primary: #214B3F;
+            --bg-secondary: #1a3a30;
+            --accent-gold: #F2C94C;
+            --accent-gold-soft: rgba(242, 201, 76, 0.12);
+            --text-white: #FFFFFF;
+            --text-light: rgba(255, 255, 255, 0.6);
+            --text-muted: rgba(255, 255, 255, 0.35);
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --max-width: 800px;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scrollbar-width: none;
+        }
+        html::-webkit-scrollbar { display: none; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-white);
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.7;
+        }
+
+        /* Subtle background glow */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(242, 201, 76, 0.04) 0%, transparent 70%);
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -20%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+            filter: blur(100px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 80px 28px 100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        .header {
+            margin-bottom: 64px;
+            text-align: center;
+        }
+
+        .header__label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 24px;
+        }
+
+        .header__label-line {
+            width: 28px;
+            height: 2px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+        }
+
+        .header__name {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 6vw, 3.6rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .header__role {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-light);
+            letter-spacing: 0.02em;
+        }
+
+        .header__divider {
+            width: 48px;
+            height: 3px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+            margin: 28px auto 0;
+            opacity: 0.6;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 56px;
+        }
+
+        .section__title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section__title::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            opacity: 0.7;
+        }
+
+        .section__text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.9;
+        }
+
+        .section__text p + p {
+            margin-top: 16px;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 20px 22px;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(242, 201, 76, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .info-card__label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 6px;
+        }
+
+        .info-card__value {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-white);
+        }
+
+        /* Quote */
+        .quote {
+            background: linear-gradient(135deg, rgba(242, 201, 76, 0.06), rgba(242, 201, 76, 0.02));
+            border-left: 3px solid var(--accent-gold);
+            border-radius: 0 14px 14px 0;
+            padding: 28px 32px;
+            margin: 48px 0;
+        }
+
+        .quote__text {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 500;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+        }
+
+        .quote__author {
+            margin-top: 14px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Contact Minimal */
+        .contact {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .contact__text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .contact__links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .contact__link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            border-radius: 100px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact__link:hover {
+            background: var(--accent-gold-soft);
+            border-color: rgba(242, 201, 76, 0.25);
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 40px;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-in {
+            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        .delay-6 { animation-delay: 0.6s; }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 60px 20px 80px;
+            }
+            .header {
+                margin-bottom: 48px;
+            }
+            .section {
+                margin-bottom: 44px;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .quote {
+                padding: 22px 24px;
+            }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Back -->
+        <a href="../frontend/pages/home.html" class="back-link animate-in">
+            ← Kembali
+        </a>
+
+        <!-- Header -->
+        <header class="header animate-in delay-1">
+            <div class="header__label">
+                <span class="header__label-line"></span>
+                <span>Tentang Saya</span>
+            </div>
+            <h1 class="header__name">Afdal Adha Firnansyah</h1>
+            <p class="header__role">Meta Prompt Engineer</p>
+            <div class="header__divider"></div>
+        </header>
+
+        <!-- Bio -->
+        <section class="section animate-in delay-2">
+            <h2 class="section__title">Siapa Saya</h2>
+            <div class="section__text">
+                <p>
+                    Saya adalah seorang <strong>Meta Prompt Engineer</strong> yang berbasis di Indonesia, dengan pengalaman lebih dari 2 tahun dalam merancang, mengoptimalkan, dan mengembangkan sistem prompting untuk kecerdasan buatan.
+                </p>
+                <p>
+                    Fokus utama saya adalah pada <em>meta prompting</em> — teknik merancang prompt yang tidak hanya memberikan instruksi, tetapi juga membangun kerangka berpikir bagi AI untuk menghasilkan output yang lebih presisi, kreatif, dan relevan.
+                </p>
+                <p>
+                    Saya percaya bahwa masa depan teknologi tidak ditemukan, melainkan dibangun. Setiap baris prompt yang saya tulis adalah satu batu bata dalam fondasi itu.
+                </p>
+            </div>
+        </section>
+
+        <!-- Info Grid -->
+        <section class="section animate-in delay-3">
+            <h2 class="section__title">Informasi Pribadi</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-card__label">Nama Lengkap</div>
+                    <div class="info-card__value">Afdal Adha Firnansyah</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card__label">Lokasi</div>
+                    <div class="info-card__value">Indonesia</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card__label">Pengalaman</div>
+                    <div class="info-card__value">2+ Tahun</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card__label">Spesialisasi</div>
+                    <div class="info-card__value">Meta Prompting</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card__label">Status</div>
+                    <div class="info-card__value">Aktif</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card__label">Identitas</div>
+                    <div class="info-card__value">King of Sinners</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote -->
+        <div class="quote animate-in delay-4">
+            <p class="quote__text">
+                "Masa depan tidak menunggu untuk diciptakan. Ia dibangun."
+            </p>
+            <p class="quote__author">— Afdal Adha Firnansyah</p>
+        </div>
+
+        <!-- Contact -->
+        <section class="contact animate-in delay-5">
+            <p class="contact__text">Ingin terhubung? Saya terbuka untuk diskusi dan kolaborasi.</p>
+            <div class="contact__links">
+                <a href="mailto:firnansyahafdaladha@gmail.com" class="contact__link">Email</a>
+                <a href="https://github.com/Mufarz-boop" class="contact__link" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://wa.me/6283854722182" class="contact__link" target="_blank" rel="noopener">WhatsApp</a>
+                <a href="https://www.tiktok.com/@faruqi.family" class="contact__link" target="_blank" rel="noopener">TikTok</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Simple entrance animation trigger
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.animate-in');
+            elements.forEach((el, i) => {
+                el.style.animationDelay = `${i * 0.12}s`;
+            });
+        });
+    </script>
+
+</body>
+</html>
