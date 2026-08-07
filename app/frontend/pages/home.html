@@ -424,7 +424,6 @@
             opacity: 0.25;
             border-radius: 4px;
         }
-        /* Typewriter cursor */
         .hero__title .cursor {
             display: inline-block;
             width: 3px;
@@ -479,7 +478,6 @@
             margin-top: 4px;
         }
 
-        /* Hero Visual — Tanpa animasi, tanpa floating cards */
         .hero__visual {
             position: relative;
             display: flex;
@@ -793,53 +791,86 @@
         }
         .testimonials__header {
             text-align: center;
-            margin-bottom: 48px;
+            margin-bottom: 56px;
         }
         .testimonials__header .section-desc {
             margin: 0 auto;
         }
         .testimonials__slider {
             position: relative;
-            overflow: hidden;
-            max-width: 900px;
+            overflow: visible;
+            max-width: 800px;
             margin: 0 auto;
+            perspective: 1200px;
         }
         .testimonials__track {
             display: flex;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .testimonial-card {
-            flex: 0 0 100%;
+            flex: 0 0 calc(100% - 24px);
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: var(--radius-md);
-            padding: 32px 36px;
+            padding: 40px 44px;
             margin: 0 12px;
-            transition: all var(--transition);
+            opacity: 0.3;
+            transform: scale(0.88) translateY(30px);
+            filter: blur(1.5px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+        .testimonial-card.active {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            filter: blur(0);
+            pointer-events: auto;
         }
         .testimonial-card__stars {
             color: var(--accent-gold);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             letter-spacing: 2px;
-            margin-bottom: 14px;
+            margin-bottom: 18px;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+        }
+        .testimonial-card.active .testimonial-card__stars {
+            opacity: 1;
+            transform: translateY(0);
         }
         .testimonial-card__quote {
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             color: var(--text-light);
-            line-height: 1.8;
+            line-height: 1.85;
             font-style: italic;
-            margin-bottom: 20px;
+            margin-bottom: 28px;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+        }
+        .testimonial-card.active .testimonial-card__quote {
+            opacity: 1;
+            transform: translateY(0);
         }
         .testimonial-card__author {
             display: flex;
             align-items: center;
             gap: 14px;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+        }
+        .testimonial-card.active .testimonial-card__author {
+            opacity: 1;
+            transform: translateY(0);
         }
         .testimonial-card__avatar {
-            width: 44px;
-            height: 44px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
-            background: var(--bg-tertiary);
+            background: linear-gradient(135deg, var(--accent-gold-soft), rgba(242, 201, 76, 0.05));
+            border: 1.5px solid rgba(242, 201, 76, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -848,35 +879,60 @@
             font-size: 1rem;
             color: var(--accent-gold);
             flex-shrink: 0;
+            transition: all 0.4s ease;
+        }
+        .testimonial-card.active .testimonial-card__avatar {
+            transform: scale(1);
         }
         .testimonial-card__name {
             font-weight: 600;
             color: var(--text-white);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
         .testimonial-card__role {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
         }
 
         .testimonials__dots {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-top: 32px;
+            gap: 12px;
+            margin-top: 40px;
         }
         .testimonials__dot {
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.12);
             border: none;
             cursor: pointer;
-            transition: all var(--transition);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+        .testimonials__dot::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1.5px solid var(--accent-gold);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .testimonials__dot.active {
             background: var(--accent-gold);
-            transform: scale(1.2);
+            transform: scale(1.15);
+        }
+        .testimonials__dot.active::after {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0.4;
+        }
+        .testimonials__dot:hover {
+            background: rgba(242, 201, 76, 0.5);
         }
 
         /* ============================================
@@ -918,7 +974,7 @@
         }
 
         /* ============================================
-           FOOTER
+           FOOTER — 2 kolom: Brand + Map (Aceh Tamiang)
         ============================================ */
         .footer {
             background: var(--bg-dark);
@@ -927,9 +983,10 @@
         }
         .footer__grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1.2fr;
             gap: 48px;
             margin-bottom: 40px;
+            align-items: start;
         }
         .footer__brand .logo {
             font-family: var(--font-display);
@@ -970,27 +1027,75 @@
             color: var(--accent-gold);
             transform: translateY(-3px);
         }
-        .footer__heading {
+
+        /* Map container */
+        .footer__map {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            height: 220px;
+        }
+        .footer__map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        /* ============================================
+           LABEL PETA YANG LEBIH BAGUS
+        ============================================ */
+        .footer__map-label {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: rgba(20, 47, 38, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 8px 20px 8px 16px;
+            border-radius: 40px;
+            border: 1px solid rgba(242, 201, 76, 0.25);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-size: 0.75rem;
             font-weight: 600;
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            margin-bottom: 16px;
-        }
-        .footer__links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .footer__links a {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            transition: color var(--transition);
-        }
-        .footer__links a:hover {
             color: var(--text-white);
+            letter-spacing: 0.04em;
+            pointer-events: none;
+            z-index: 2;
+            transition: all 0.3s ease;
+            white-space: nowrap;
         }
+        .footer__map-label i {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            filter: drop-shadow(0 0 6px rgba(242, 201, 76, 0.3));
+        }
+        .footer__map-label .label-sub {
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.6rem;
+            letter-spacing: 0.08em;
+            margin-left: 4px;
+        }
+        .footer__map-label .label-divider {
+            width: 1px;
+            height: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 0 2px;
+        }
+        /* Efek hover pada label */
+        .footer__map:hover .footer__map-label {
+            background: rgba(20, 47, 38, 0.95);
+            border-color: rgba(242, 201, 76, 0.4);
+            box-shadow: 0 4px 28px rgba(0, 0, 0, 0.4), 0 0 20px rgba(242, 201, 76, 0.05);
+            transform: scale(1.02);
+        }
+
         .footer__divider {
             height: 1px;
             background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.06), transparent);
@@ -1088,6 +1193,18 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 32px;
             }
+            .footer__map {
+                height: 180px;
+            }
+            .footer__map-label {
+                font-size: 0.65rem;
+                padding: 6px 14px 6px 12px;
+                top: 12px;
+                left: 12px;
+            }
+            .footer__map-label i {
+                font-size: 0.75rem;
+            }
             .testimonials__slider {
                 max-width: 100%;
             }
@@ -1172,6 +1289,25 @@
             .footer__brand p {
                 max-width: 100%;
             }
+            .footer__map {
+                height: 200px;
+            }
+            .footer__map-label {
+                font-size: 0.6rem;
+                padding: 5px 12px 5px 10px;
+                top: 10px;
+                left: 10px;
+                gap: 8px;
+            }
+            .footer__map-label i {
+                font-size: 0.7rem;
+            }
+            .footer__map-label .label-sub {
+                font-size: 0.5rem;
+            }
+            .footer__map-label .label-divider {
+                height: 12px;
+            }
             .section-padding {
                 padding: 60px 0 48px;
             }
@@ -1219,8 +1355,29 @@
             .portfolio-item__image {
                 height: 150px;
             }
+            .footer__map {
+                height: 160px;
+            }
+            .footer__map-label {
+                font-size: 0.55rem;
+                padding: 4px 10px 4px 8px;
+                top: 8px;
+                left: 8px;
+                gap: 6px;
+                border-radius: 30px;
+            }
+            .footer__map-label i {
+                font-size: 0.6rem;
+            }
+            .footer__map-label .label-sub {
+                display: none;
+            }
+            .footer__map-label .label-divider {
+                display: none;
+            }
         }
     </style>
+<base target="_blank">
 </head>
 <body>
 
@@ -1258,7 +1415,6 @@
 
         <div class="container">
             <div class="hero__grid">
-                <!-- Left Content -->
                 <div class="hero__content">
                     <div class="hero__badge">
                         <span class="dot"></span>
@@ -1297,7 +1453,6 @@
                     </div>
                 </div>
 
-                <!-- Right Visual — Tanpa animasi -->
                 <div class="hero__visual">
                     <div class="hero__image-wrapper">
                         <img src="../image/_-removebg-preview.png" alt="Hero" id="heroImage" />
@@ -1480,7 +1635,7 @@
     </section>
 
     <!-- ============================================
-         TESTIMONIALS (Slider)
+         TESTIMONIALS
     ============================================ -->
     <section class="testimonials section-padding" id="testimonials">
         <div class="container">
@@ -1499,7 +1654,6 @@
 
             <div class="testimonials__slider">
                 <div class="testimonials__track" id="testimonialTrack">
-                    <!-- Slide 1 -->
                     <div class="testimonial-card">
                         <div class="testimonial-card__stars">
                             <i class="fas fa-star"></i>
@@ -1521,7 +1675,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Slide 2 -->
                     <div class="testimonial-card">
                         <div class="testimonial-card__stars">
                             <i class="fas fa-star"></i>
@@ -1543,7 +1696,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Slide 3 -->
                     <div class="testimonial-card">
                         <div class="testimonial-card__stars">
                             <i class="fas fa-star"></i>
@@ -1566,7 +1718,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Dots -->
                 <div class="testimonials__dots" id="testimonialDots"></div>
             </div>
         </div>
@@ -1600,11 +1751,12 @@
     </section>
 
     <!-- ============================================
-         FOOTER
+         FOOTER — Brand + Map (Aceh Tamiang)
     ============================================ -->
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
+                <!-- Kolom Kiri: Brand & Sosial Media -->
                 <div class="footer__brand">
                     <div class="logo">ADIN<span>AGARA</span></div>
                     <p>
@@ -1618,33 +1770,25 @@
                         <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div>
-                    <h4 class="footer__heading">Navigation</h4>
-                    <ul class="footer__links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Work</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="footer__heading">Contact</h4>
-                    <ul class="footer__links">
-                        <li><a href="mailto:firnansyahafdaladha@gmail.com">firnansyahafdaladha@gmail.com</a></li>
-                        <li><a href="https://wa.me/6283854722182">+62 838 5472 2182</a></li>
-                        <li><span>Indonesia</span></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="footer__heading">Working Hours</h4>
-                    <ul class="footer__links">
-                        <li><span>Senin – Jumat</span></li>
-                        <li><span>09:00 – 17:00 WIB</span></li>
-                        <li><span style="color:var(--accent-gold);">⚡ Available for projects</span></li>
-                    </ul>
+
+                <!-- Kolom Kanan: Peta Aceh Tamiang dengan Label yang Lebih Bagus -->
+                <div class="footer__map">
+                    <div class="footer__map-label">
+                        <i class="fas fa-location-dot"></i>
+                        <span>Aceh Tamiang</span>
+                        <span class="label-divider"></span>
+                        <span class="label-sub">Indonesia</span>
+                    </div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127576.06334872625!2d97.90025335723398!3d4.251582656881688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303fc19808bb0961%3A0x1b3c9fbcd5e1b6e4!2sAceh%20Tamiang%2C%20Aceh!5e0!3m2!1sid!2sid!4v1712345678901!5m2!1sid!2sid"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Peta Aceh Tamiang"
+                    ></iframe>
                 </div>
             </div>
+
             <div class="footer__divider"></div>
             <div class="footer__bottom">
                 &copy; 2026 Afdal Adha Firnansyah · ADINAGARA. All rights reserved.
@@ -1805,7 +1949,6 @@
                 ctx.clearRect(0, 0, width, height);
                 particles.forEach(p => { p.update();
                     p.draw(); });
-                // Draw connections
                 for (let i = 0; i < particles.length; i++) {
                     for (let j = i + 1; j < particles.length; j++) {
                         const dx = particles[i].x - particles[j].x;
@@ -1856,8 +1999,9 @@
             let currentSlide = 0;
             let totalSlides = slides.length;
             let autoPlayInterval;
+            let isAnimating = false;
 
-            // Create dots
+            // Init dots
             for (let i = 0; i < totalSlides; i++) {
                 const dot = document.createElement('button');
                 dot.classList.add('testimonials__dot');
@@ -1868,39 +2012,78 @@
             }
             const dots = dotsContainer.querySelectorAll('.testimonials__dot');
 
+            // Set active class on first slide
+            slides[0].classList.add('active');
+
             function goToSlide(index) {
+                if (isAnimating || index === currentSlide) return;
+                isAnimating = true;
+
                 if (index < 0) index = totalSlides - 1;
                 if (index >= totalSlides) index = 0;
+
+                // Remove active from current
+                slides[currentSlide].classList.remove('active');
+
                 currentSlide = index;
+
+                // Slide track
                 track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+                // Update dots
                 dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+
+                // Add active to new slide with slight delay for smooth transition
+                setTimeout(() => {
+                    slides[currentSlide].classList.add('active');
+                    isAnimating = false;
+                }, 150);
             }
 
             function nextSlide() { goToSlide(currentSlide + 1); }
+            function prevSlide() { goToSlide(currentSlide - 1); }
 
             function startAutoPlay() {
-                autoPlayInterval = setInterval(nextSlide, 5000);
+                stopAutoPlay();
+                autoPlayInterval = setInterval(nextSlide, 6000);
             }
 
             function stopAutoPlay() {
                 clearInterval(autoPlayInterval);
             }
 
-            // Touch / swipe support
-            let startX = 0;
+            // Touch swipe
+            let startX = 0, startY = 0;
             const slider = document.querySelector('.testimonials__slider');
-            slider.addEventListener('touchstart', (e) => { startX = e.changedTouches[0].screenX;
-                stopAutoPlay(); });
+            slider.addEventListener('touchstart', (e) => {
+                startX = e.changedTouches[0].screenX;
+                startY = e.changedTouches[0].screenY;
+                stopAutoPlay();
+            }, { passive: true });
             slider.addEventListener('touchend', (e) => {
                 const endX = e.changedTouches[0].screenX;
-                if (startX - endX > 50) goToSlide(currentSlide + 1);
-                else if (endX - startX > 50) goToSlide(currentSlide - 1);
+                const endY = e.changedTouches[0].screenY;
+                const diffX = startX - endX;
+                const diffY = startY - endY;
+                // Only trigger if horizontal swipe is greater than vertical
+                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+                    if (diffX > 0) nextSlide();
+                    else prevSlide();
+                }
                 startAutoPlay();
-            });
+            }, { passive: true });
+
+            // Mouse hover pause
             slider.addEventListener('mouseenter', stopAutoPlay);
             slider.addEventListener('mouseleave', startAutoPlay);
 
-            setTimeout(startAutoPlay, 2000);
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') { stopAutoPlay(); prevSlide(); startAutoPlay(); }
+                if (e.key === 'ArrowRight') { stopAutoPlay(); nextSlide(); startAutoPlay(); }
+            });
+
+            setTimeout(startAutoPlay, 2500);
 
             // ===== 10. SCROLL TO TOP =====
             const scrollBtn = document.getElementById('scrollTop');
@@ -1925,7 +2108,7 @@
             }
 
             console.log('%c🏠 ADINAGARA · Home', 'color: #F2C94C; font-size: 18px; font-weight: bold;');
-            console.log('%cHalaman home — bersih, elegan, tanpa animasi berlebihan.', 'color: #D8E3D3; font-size: 13px;');
+            console.log('%cLabel peta dipercantik dengan desain modern dan elegan.', 'color: #D8E3D3; font-size: 13px;');
         });
     </script>
 </body>
