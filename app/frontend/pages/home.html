@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADINAGARA · Home</title>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js">
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <style>
+        /* ============================================
+           CSS VARIABLES
+        ============================================ */
+        :root {
+            --bg-primary: #214B3F;
+            --bg-secondary: #315C49;
+            --bg-tertiary: #436A58;
+            --bg-quaternary: #577A64;
+            --bg-dark: #142f26;
+            --accent-gold: #F2C94C;
+            --accent-gold-dark: #E9B949;
+            --text-white: #FFFFFF;
+            --text-light: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.45);
+            --text-dark: #1a2f28;
+            --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.15);
+            --shadow-medium: 0 30px 80px rgba(0, 0, 0, 0.25);
+            --glass-bg: rgba(255, 255, 255, 0.06);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --max-width: 1280px;
+            --radius-sm: 10px;
+            --radius-md: 18px;
+            --radius-lg: 28px;
+            --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* ============================================
+           RESET & BASE
+        ============================================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        html::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 clamp(24px, 4vw, 64px);
+        }
+        .section-padding {
+            padding: 100px 0 80px;
+        }
+
+        /* ============================================
+           REUSABLE COMPONENTS
+        ============================================ */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 12px;
+        }
+        .section-label-line {
+            width: 28px;
+            height: 2px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 4.5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            color: var(--text-white);
+            margin-bottom: 16px;
+        }
+        .section-title span {
+            color: var(--accent-gold);
+        }
+        .section-desc {
+            font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+            color: var(--text-light);
+            line-height: 1.8;
+            max-width: 560px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 40px;
+            border-radius: 100px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn--primary {
+            background: var(--accent-gold);
+            color: var(--text-dark);
+            box-shadow: 0 8px 32px rgba(242, 201, 76, 0.35);
+        }
+        .btn--primary:hover {
+            background: var(--accent-gold-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 14px 48px rgba(242, 201, 76, 0.45);
+        }
+        .btn--outline {
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-white);
+            background: transparent;
+        }
+        .btn--outline:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(242, 201, 76, 0.1);
+        }
+        .btn__arrow {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            transition: transform 0.3s ease;
+        }
+        .btn--outline .btn__arrow {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .btn:hover .btn__arrow {
+            transform: translateX(4px);
+        }
+
+        /* ============================================
+           PROGRESS BAR
+        ============================================ */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent-gold), var(--accent-gold-dark));
+            z-index: 1001;
+            width: 0%;
+            transition: width 0.1s linear;
+            box-shadow: 0 0 12px rgba(242, 201, 76, 0.3);
+        }
+
+        /* ============================================
+           NAVIGATION
+        ============================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: all var(--transition);
+            background: transparent;
+        }
+        .navbar.scrolled {
+            background: rgba(33, 75, 63, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 10px 0;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+        }
+        .navbar__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 clamp(24px, 4vw, 64px);
+        }
+        .navbar__logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-white);
+            letter-spacing: -0.02em;
+        }
+        .navbar__logo span {
+            color: var(--accent-gold);
+        }
+        .navbar__links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .navbar__links a {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-light);
+            transition: color var(--transition);
+            position: relative;
+        }
+        .navbar__links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width var(--transition);
+        }
+        .navbar__links a:hover {
+            color: var(--text-white);
+        }
+        .navbar__links a:hover::after {
+            width: 100%;
+        }
+        .navbar__links a.active {
+            color: var(--accent-gold);
+        }
+        .navbar__links a.active::after {
+            width: 100%;
+        }
+        .navbar__hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 4px;
+            cursor: pointer;
+        }
+        .navbar__hamburger span {
+            width: 26px;
+            height: 2.5px;
+            background: var(--text-white);
+            border-radius: 2px;
+            transition: all var(--transition);
+        }
+        .navbar__hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .navbar__hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .navbar__hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        .navbar__overlay {
+            display: none;
+        }
+
+        /* ============================================
+           HERO
+        ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+            background: var(--bg-primary);
+        }
+        #particles-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .hero__bg-glow {
+            position: absolute;
+            pointer-events: none;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: 1;
+        }
+        .hero__bg-glow--1 {
+            top: -20%;
+            right: -10%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(242, 201, 76, 0.08), transparent 70%);
+        }
+        .hero__bg-glow--2 {
+            bottom: -30%;
+            left: -15%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.02), transparent 70%);
+        }
+
+        .hero__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+        .hero__content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px 6px 8px;
+            border-radius: 100px;
+            background: rgba(242, 201, 76, 0.1);
+            border: 1px solid rgba(242, 201, 76, 0.15);
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            width: fit-content;
+        }
+        .hero__badge .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.4;
+                transform: scale(0.7);
+            }
+        }
+
+        .hero__title {
+            font-family: var(--font-display);
+            font-size: clamp(3.2rem, 6vw, 5.6rem);
+            font-weight: 900;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            color: var(--text-white);
+        }
+        .hero__title .highlight {
+            color: var(--accent-gold);
+            position: relative;
+        }
+        .hero__title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--accent-gold);
+            opacity: 0.25;
+            border-radius: 4px;
+        }
+        /* Typewriter cursor */
+        .hero__title .cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1em;
+            background: var(--accent-gold);
+            margin-left: 4px;
+            animation: blink 0.8s step-end infinite;
+            vertical-align: text-bottom;
+        }
+        @keyframes blink {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .hero__desc {
+            font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+            color: var(--text-light);
+            line-height: 1.8;
+            max-width: 480px;
+        }
+        .hero__actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .hero__stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 12px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .hero__stat-number {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-white);
+            line-height: 1;
+        }
+        .hero__stat-number span {
+            color: var(--accent-gold);
+        }
+        .hero__stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Hero Visual — Tanpa animasi, tanpa floating cards */
+        .hero__visual {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero__image-wrapper {
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+        }
+        .hero__image-wrapper img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.4));
+            display: block;
+        }
+        .hero__image-shadow {
+            position: absolute;
+            bottom: -8%;
+            left: 50%;
+            transform: translateX(-50%) rotateX(75deg);
+            width: 70%;
+            height: 40px;
+            background: radial-gradient(ellipse, rgba(0, 0, 0, 0.25), transparent 70%);
+            filter: blur(14px);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* ============================================
+           ABOUT
+        ============================================ */
+        .about {
+            background: var(--bg-secondary);
+            position: relative;
+            overflow: hidden;
+        }
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.05), transparent);
+        }
+        .about__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about__content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .about__text {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        .about__text strong {
+            color: var(--text-white);
+        }
+        .about__features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .about__feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: all var(--transition);
+            cursor: default;
+        }
+        .about__feature:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(242, 201, 76, 0.15);
+            transform: translateY(-2px);
+        }
+        .about__feature-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(242, 201, 76, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        .about__feature-text {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-white);
+        }
+        .about__image {
+            position: relative;
+        }
+        .about__image img {
+            border-radius: var(--radius-lg);
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .about__image-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--bg-tertiary);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: 18px 24px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+        }
+        .about__image-badge .number {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+        .about__image-badge .label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        /* ============================================
+           SERVICES
+        ============================================ */
+        .services {
+            background: var(--bg-primary);
+            position: relative;
+        }
+        .services__header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .services__header .section-desc {
+            margin: 0 auto;
+        }
+        .services__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .service-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            padding: 36px 28px 32px;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent-gold), var(--accent-gold-dark));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition);
+        }
+        .service-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(242, 201, 76, 0.15);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-soft);
+        }
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        .service-card__icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: rgba(242, 201, 76, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--accent-gold);
+            margin-bottom: 18px;
+            transition: all var(--transition);
+        }
+        .service-card:hover .service-card__icon {
+            background: rgba(242, 201, 76, 0.15);
+            transform: scale(1.05);
+        }
+        .service-card__title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 10px;
+        }
+        .service-card__desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           PORTFOLIO
+        ============================================ */
+        .portfolio {
+            background: var(--bg-secondary);
+            position: relative;
+        }
+        .portfolio__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+        .portfolio__header .section-desc {
+            margin: 0;
+        }
+        .portfolio__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .portfolio-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all var(--transition);
+            cursor: pointer;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-6px);
+            border-color: rgba(242, 201, 76, 0.15);
+            box-shadow: var(--shadow-soft);
+        }
+        .portfolio-item__image {
+            width: 100%;
+            height: 200px;
+            background: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .portfolio-item__image .overlay-icon {
+            font-size: 2.5rem;
+            color: rgba(255, 255, 255, 0.05);
+            transition: all var(--transition);
+        }
+        .portfolio-item:hover .portfolio-item__image .overlay-icon {
+            transform: scale(1.2);
+            color: rgba(242, 201, 76, 0.2);
+        }
+        .portfolio-item__image .tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: rgba(242, 201, 76, 0.15);
+            border: 1px solid rgba(242, 201, 76, 0.15);
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            z-index: 2;
+        }
+        .portfolio-item__body {
+            padding: 20px 22px 24px;
+        }
+        .portfolio-item__title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 6px;
+        }
+        .portfolio-item__desc {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           TESTIMONIALS
+        ============================================ */
+        .testimonials {
+            background: var(--bg-primary);
+            position: relative;
+        }
+        .testimonials__header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .testimonials__header .section-desc {
+            margin: 0 auto;
+        }
+        .testimonials__slider {
+            position: relative;
+            overflow: hidden;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .testimonials__track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .testimonial-card {
+            flex: 0 0 100%;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            padding: 32px 36px;
+            margin: 0 12px;
+            transition: all var(--transition);
+        }
+        .testimonial-card__stars {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+        }
+        .testimonial-card__quote {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .testimonial-card__author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .testimonial-card__avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--accent-gold);
+            flex-shrink: 0;
+        }
+        .testimonial-card__name {
+            font-weight: 600;
+            color: var(--text-white);
+            font-size: 0.85rem;
+        }
+        .testimonial-card__role {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .testimonials__dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 32px;
+        }
+        .testimonials__dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+        .testimonials__dot.active {
+            background: var(--accent-gold);
+            transform: scale(1.2);
+        }
+
+        /* ============================================
+           CTA
+        ============================================ */
+        .cta-section {
+            background: var(--bg-secondary);
+            padding: 80px 0;
+            position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .cta-section__inner {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .cta-section__title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.5vw, 3.2rem);
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+        .cta-section__title span {
+            color: var(--accent-gold);
+        }
+        .cta-section__desc {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+        .cta-section__actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        .footer {
+            background: var(--bg-dark);
+            padding: 60px 0 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .footer__grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 40px;
+        }
+        .footer__brand .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+        .footer__brand .logo span {
+            color: var(--accent-gold);
+        }
+        .footer__brand p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 280px;
+        }
+        .footer__socials {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+        }
+        .footer__socials a {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.4);
+            transition: all var(--transition);
+        }
+        .footer__socials a:hover {
+            background: rgba(242, 201, 76, 0.1);
+            border-color: rgba(242, 201, 76, 0.2);
+            color: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+        .footer__heading {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 16px;
+        }
+        .footer__links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .footer__links a {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            transition: color var(--transition);
+        }
+        .footer__links a:hover {
+            color: var(--text-white);
+        }
+        .footer__divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.06), transparent);
+            margin-bottom: 20px;
+        }
+        .footer__bottom {
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* ============================================
+           SCROLL TO TOP
+        ============================================ */
+        .scroll-top {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(33, 75, 63, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all var(--transition);
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .scroll-top:hover {
+            background: rgba(242, 201, 76, 0.15);
+            border-color: rgba(242, 201, 76, 0.25);
+        }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
+        @media (max-width: 992px) {
+            .navbar__links {
+                gap: 20px;
+            }
+            .hero__grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero__content {
+                align-items: center;
+            }
+            .hero__desc {
+                max-width: 100%;
+            }
+            .hero__stats {
+                justify-content: center;
+            }
+            .hero__visual {
+                order: -1;
+            }
+            .hero__image-wrapper {
+                max-width: 380px;
+                margin: 0 auto;
+            }
+            .about__grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .about__image-badge {
+                right: 10px;
+                bottom: -10px;
+                padding: 14px 20px;
+            }
+            .about__image-badge .number {
+                font-size: 1.5rem;
+            }
+            .services__grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .portfolio__grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .footer__grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+            .testimonials__slider {
+                max-width: 100%;
+            }
+            .testimonial-card {
+                margin: 0 8px;
+                padding: 24px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar__links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 320px;
+                height: 100vh;
+                background: rgba(20, 47, 38, 0.96);
+                backdrop-filter: blur(24px);
+                flex-direction: column;
+                justify-content: center;
+                padding: 40px;
+                gap: 24px;
+                transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+                border-left: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            .navbar__links.open {
+                right: 0;
+            }
+            .navbar__links a {
+                font-size: 1.1rem;
+            }
+            .navbar__hamburger {
+                display: flex;
+                z-index: 1001;
+            }
+            .navbar__overlay {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.4);
+                backdrop-filter: blur(4px);
+                z-index: 999;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.4s ease;
+            }
+            .navbar__overlay.open {
+                opacity: 1;
+                visibility: visible;
+            }
+            .hero {
+                min-height: 100vh;
+                padding-top: 100px;
+            }
+            .hero__title {
+                font-size: clamp(2.6rem, 12vw, 3.8rem);
+            }
+            .hero__stats {
+                gap: 24px;
+                flex-wrap: wrap;
+            }
+            .about__features {
+                grid-template-columns: 1fr;
+            }
+            .about__image img {
+                height: 280px;
+            }
+            .services__grid {
+                grid-template-columns: 1fr;
+            }
+            .portfolio__grid {
+                grid-template-columns: 1fr;
+            }
+            .footer__grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .footer__brand p {
+                max-width: 100%;
+            }
+            .section-padding {
+                padding: 60px 0 48px;
+            }
+            .portfolio__header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .testimonials__slider {
+                max-width: 100%;
+            }
+            .testimonial-card {
+                padding: 20px 16px;
+                margin: 0 4px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero__title {
+                font-size: clamp(2.2rem, 10vw, 3rem);
+            }
+            .hero__actions {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            .hero__actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .hero__image-wrapper {
+                max-width: 280px;
+            }
+            .about__image img {
+                height: 200px;
+            }
+            .about__image-badge {
+                padding: 10px 16px;
+            }
+            .about__image-badge .number {
+                font-size: 1.2rem;
+            }
+            .service-card {
+                padding: 24px 20px;
+            }
+            .portfolio-item__image {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- ============================================
+         NAVIGATION
+    ============================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__inner">
+            <a href="#" class="navbar__logo">ADIN<span>AGARA</span></a>
+            <ul class="navbar__links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Work</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="navbar__hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="navbar__overlay" id="navOverlay"></div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO
+    ============================================ -->
+    <section class="hero" id="home">
+        <canvas id="particles-canvas"></canvas>
+        <div class="hero__bg-glow hero__bg-glow--1"></div>
+        <div class="hero__bg-glow hero__bg-glow--2"></div>
+
+        <div class="container">
+            <div class="hero__grid">
+                <!-- Left Content -->
+                <div class="hero__content">
+                    <div class="hero__badge">
+                        <span class="dot"></span>
+                        Available for Work
+                    </div>
+                    <h1 class="hero__title">
+                        <span id="typewriter"></span><span class="cursor"></span>
+                    </h1>
+                    <p class="hero__desc">
+                        Menggabungkan kecerdasan buatan, desain yang humanis, dan
+                        visi jangka panjang untuk menciptakan solusi yang
+                        <strong>berdampak</strong> dan <strong>berkelanjutan</strong>.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="#contact" class="btn btn--primary">
+                            Let's Collaborate
+                            <span class="btn__arrow">→</span>
+                        </a>
+                        <a href="#portfolio" class="btn btn--outline">
+                            View My Work
+                        </a>
+                    </div>
+                    <div class="hero__stats">
+                        <div>
+                            <div class="hero__stat-number" data-count="2">0<span>+</span></div>
+                            <div class="hero__stat-label">Years Experience</div>
+                        </div>
+                        <div>
+                            <div class="hero__stat-number" data-count="12">0<span>+</span></div>
+                            <div class="hero__stat-label">Projects Delivered</div>
+                        </div>
+                        <div>
+                            <div class="hero__stat-number" data-count="100">0<span>%</span></div>
+                            <div class="hero__stat-label">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual — Tanpa animasi -->
+                <div class="hero__visual">
+                    <div class="hero__image-wrapper">
+                        <img src="../image/_-removebg-preview.png" alt="Hero" id="heroImage" />
+                        <div class="hero__image-shadow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT
+    ============================================ -->
+    <section class="about section-padding" id="about">
+        <div class="container">
+            <div class="about__grid">
+                <div class="about__content">
+                    <div class="section-label">
+                        <span class="section-label-line"></span>
+                        About Me
+                    </div>
+                    <h2 class="section-title">
+                        Empowering Ideas with <span>Intelligent</span> Solutions
+                    </h2>
+                    <p class="about__text">
+                        Saya <strong>Afdal Adha Firnansyah</strong>, seorang
+                        <strong>Meta Prompt Engineer</strong> dan pengembang yang
+                        berdedikasi untuk menciptakan sistem AI yang tidak hanya
+                        cerdas, tetapi juga <strong>etis</strong>, <strong>adaptif</strong>,
+                        dan <strong>berorientasi pada manusia</strong>.
+                    </p>
+                    <p class="about__text">
+                        Dengan pengalaman dalam merancang arsitektur prompt yang
+                        kompleks dan membangun aplikasi AI end-to-end, saya membantu
+                        bisnis dan individu memanfaatkan kekuatan AI untuk
+                        mencapai tujuan mereka.
+                    </p>
+                    <div class="about__features">
+                        <div class="about__feature">
+                            <div class="about__feature-icon"><i class="fas fa-brain"></i></div>
+                            <span class="about__feature-text">AI &amp; Prompt Engineering</span>
+                        </div>
+                        <div class="about__feature">
+                            <div class="about__feature-icon"><i class="fas fa-laptop-code"></i></div>
+                            <span class="about__feature-text">Full Stack Development</span>
+                        </div>
+                        <div class="about__feature">
+                            <div class="about__feature-icon"><i class="fas fa-users"></i></div>
+                            <span class="about__feature-text">Human-Centered Design</span>
+                        </div>
+                        <div class="about__feature">
+                            <div class="about__feature-icon"><i class="fas fa-rocket"></i></div>
+                            <span class="about__feature-text">Innovation Strategy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about__image">
+                    <img src="../image/Top_5_Book_Recommendations_to_Start_2023_-_The_Pursuit_of_L-removebg-preview.png" alt="Afdal Adha Firnansyah" onerror="this.style.display='none'" />
+                    <div class="about__image-badge">
+                        <div class="number">2+</div>
+                        <div class="label">Years of Excellence</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICES
+    ============================================ -->
+    <section class="services section-padding" id="services">
+        <div class="container">
+            <div class="services__header">
+                <div class="section-label" style="justify-content:center;">
+                    <span class="section-label-line"></span>
+                    What I Do
+                </div>
+                <h2 class="section-title">
+                    Services &amp; <span>Expertise</span>
+                </h2>
+                <p class="section-desc">
+                    Solusi yang saya tawarkan dirancang untuk membantu Anda
+                    memanfaatkan teknologi secara maksimal.
+                </p>
+            </div>
+            <div class="services__grid">
+                <div class="service-card">
+                    <div class="service-card__icon"><i class="fas fa-robot"></i></div>
+                    <h3 class="service-card__title">Meta Prompt Engineering</h3>
+                    <p class="service-card__desc">
+                        Perancangan sistem prompt yang canggih untuk mengoptimalkan
+                        performa model AI, dengan pendekatan meta-learning dan
+                        adaptasi kontekstual.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon"><i class="fas fa-code"></i></div>
+                    <h3 class="service-card__title">AI Application Development</h3>
+                    <p class="service-card__desc">
+                        Membangun aplikasi AI end-to-end yang terintegrasi dengan
+                        workflow Anda, dari konsep hingga deployment dan monitoring.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon"><i class="fas fa-pen-fancy"></i></div>
+                    <h3 class="service-card__title">Content &amp; Prompt Strategy</h3>
+                    <p class="service-card__desc">
+                        Konsultasi dan pengembangan strategi konten berbasis AI,
+                        termasuk optimalisasi prompt untuk berbagai use case bisnis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PORTFOLIO
+    ============================================ -->
+    <section class="portfolio section-padding" id="portfolio">
+        <div class="container">
+            <div class="portfolio__header">
+                <div>
+                    <div class="section-label">
+                        <span class="section-label-line"></span>
+                        Portfolio
+                    </div>
+                    <h2 class="section-title">
+                        Featured <span>Projects</span>
+                    </h2>
+                    <p class="section-desc">
+                        Beberapa karya yang telah saya kerjakan dengan dedikasi tinggi.
+                    </p>
+                </div>
+                <a href="#" class="btn btn--outline" style="padding:12px 28px; font-size:0.85rem;">
+                    View All <span class="btn__arrow">→</span>
+                </a>
+            </div>
+            <div class="portfolio__grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-item__image" style="background:var(--bg-tertiary);">
+                        <span class="tag">AI</span>
+                        <i class="fas fa-robot overlay-icon"></i>
+                    </div>
+                    <div class="portfolio-item__body">
+                        <h4 class="portfolio-item__title">Prompt Optimizer Engine</h4>
+                        <p class="portfolio-item__desc">
+                            Sistem otomatis untuk mengoptimalkan prompt dengan teknik
+                            meta-learning dan evaluasi performa real-time.
+                        </p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-item__image" style="background:var(--bg-quaternary);">
+                        <span class="tag">Web</span>
+                        <i class="fas fa-globe overlay-icon"></i>
+                    </div>
+                    <div class="portfolio-item__body">
+                        <h4 class="portfolio-item__title">AI Content Studio</h4>
+                        <p class="portfolio-item__desc">
+                            Platform kolaboratif untuk tim konten yang memanfaatkan
+                            AI untuk ideasi, penulisan, dan penyuntingan.
+                        </p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-item__image" style="background:var(--bg-secondary);">
+                        <span class="tag">Research</span>
+                        <i class="fas fa-flask overlay-icon"></i>
+                    </div>
+                    <div class="portfolio-item__body">
+                        <h4 class="portfolio-item__title">Meta-Prompt Framework</h4>
+                        <p class="portfolio-item__desc">
+                            Kerangka kerja untuk merancang prompt adaptif yang dapat
+                            menyesuaikan diri dengan berbagai konteks dan domain.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TESTIMONIALS (Slider)
+    ============================================ -->
+    <section class="testimonials section-padding" id="testimonials">
+        <div class="container">
+            <div class="testimonials__header">
+                <div class="section-label" style="justify-content:center;">
+                    <span class="section-label-line"></span>
+                    Testimonials
+                </div>
+                <h2 class="section-title">
+                    What People <span>Say</span>
+                </h2>
+                <p class="section-desc">
+                    Umpan balik dari klien dan kolega yang telah bekerja sama dengan saya.
+                </p>
+            </div>
+
+            <div class="testimonials__slider">
+                <div class="testimonials__track" id="testimonialTrack">
+                    <!-- Slide 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-card__quote">
+                            "Afdal memiliki pemahaman yang luar biasa tentang AI dan
+                            prompt engineering. Ia berhasil mengubah ide abstrak menjadi
+                            solusi konkret yang berdampak besar bagi tim kami."
+                        </p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar">MR</div>
+                            <div>
+                                <div class="testimonial-card__name">M. Rizki</div>
+                                <div class="testimonial-card__role">CTO, TechVibe</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-card__quote">
+                            "Kolaborasi dengan Afdal sangat menyenangkan. Ia tidak hanya
+                            ahli dalam teknologinya, tetapi juga mampu berkomunikasi
+                            dengan jelas dan selalu tepat waktu."
+                        </p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar">SA</div>
+                            <div>
+                                <div class="testimonial-card__name">Siti Aisyah</div>
+                                <div class="testimonial-card__role">Product Manager</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-card__quote">
+                            "Salah satu prompt engineer terbaik yang pernah saya temui.
+                            Pendekatan meta-prompting yang ia gunakan membawa hasil
+                            yang jauh di atas ekspektasi kami."
+                        </p>
+                        <div class="testimonial-card__author">
+                            <div class="testimonial-card__avatar">DP</div>
+                            <div>
+                                <div class="testimonial-card__name">Dwi Prasetyo</div>
+                                <div class="testimonial-card__role">Lead AI Researcher</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dots -->
+                <div class="testimonials__dots" id="testimonialDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CTA
+    ============================================ -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-section__inner">
+                <h2 class="cta-section__title">
+                    Ready to Build the <span>Future</span>?
+                </h2>
+                <p class="cta-section__desc">
+                    Mari kita ciptakan solusi cerdas yang membawa perubahan nyata.
+                    Saya siap berkolaborasi dengan Anda untuk mewujudkan ide-ide
+                    besar menjadi kenyataan.
+                </p>
+                <div class="cta-section__actions">
+                    <a href="mailto:firnansyahafdaladha@gmail.com" class="btn btn--primary">
+                        <i class="fas fa-envelope"></i> Get in Touch
+                        <span class="btn__arrow">→</span>
+                    </a>
+                    <a href="https://wa.me/6283854722182" class="btn btn--outline">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <div class="logo">ADIN<span>AGARA</span></div>
+                    <p>
+                        "Masa depan tidak menunggu untuk diciptakan. Ia dibangun
+                        dengan kecerdasan, etika, dan visi."
+                    </p>
+                    <div class="footer__socials">
+                        <a href="https://www.tiktok.com/@faruqi.family" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://github.com/Mufarz-boop" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://wa.me/6283854722182" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer__heading">Navigation</h4>
+                    <ul class="footer__links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Work</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__heading">Contact</h4>
+                    <ul class="footer__links">
+                        <li><a href="mailto:firnansyahafdaladha@gmail.com">firnansyahafdaladha@gmail.com</a></li>
+                        <li><a href="https://wa.me/6283854722182">+62 838 5472 2182</a></li>
+                        <li><span>Indonesia</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__heading">Working Hours</h4>
+                    <ul class="footer__links">
+                        <li><span>Senin – Jumat</span></li>
+                        <li><span>09:00 – 17:00 WIB</span></li>
+                        <li><span style="color:var(--accent-gold);">⚡ Available for projects</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__divider"></div>
+            <div class="footer__bottom">
+                &copy; 2026 Afdal Adha Firnansyah · ADINAGARA. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" title="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================
+         JAVASCRIPT
+    ============================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // ===== 1. PROGRESS BAR =====
+            const progressBar = document.getElementById('progressBar');
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = (scrollTop / docHeight) * 100;
+                progressBar.style.width = progress + '%';
+            });
+
+            // ===== 2. NAVBAR SCROLL =====
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                navbar.classList.toggle('scrolled', window.scrollY > 60);
+            });
+
+            // ===== 3. MOBILE NAV =====
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            const navOverlay = document.getElementById('navOverlay');
+
+            function toggleNav() {
+                hamburger.classList.toggle('open');
+                navLinks.classList.toggle('open');
+                navOverlay.classList.toggle('open');
+                document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+            }
+            hamburger.addEventListener('click', toggleNav);
+            navOverlay.addEventListener('click', toggleNav);
+            document.querySelectorAll('.navbar__links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('open')) toggleNav();
+                });
+            });
+
+            // ===== 4. SMOOTH SCROLL =====
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        const offset = 80;
+                        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                        window.scrollTo({ top, behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // ===== 5. ACTIVE LINK =====
+            const sections = document.querySelectorAll('section[id]');
+            const navAnchors = document.querySelectorAll('.navbar__links a');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const top = section.offsetTop - 120;
+                    if (window.scrollY >= top) current = section.getAttribute('id');
+                });
+                navAnchors.forEach(a => {
+                    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+                });
+            });
+
+            // ===== 6. TYPEWRITER =====
+            const typewriterEl = document.getElementById('typewriter');
+            const words = ['Build the', 'Future with', 'Intelligence'];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let speed = 100;
+
+            function typeEffect() {
+                const currentWord = words[wordIndex];
+                if (isDeleting) {
+                    typewriterEl.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                    speed = 50;
+                } else {
+                    typewriterEl.textContent = currentWord.substring(0, charIndex + 1);
+                    charIndex++;
+                    speed = 100;
+                }
+
+                if (!isDeleting && charIndex === currentWord.length) {
+                    speed = 1500;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    speed = 400;
+                }
+                setTimeout(typeEffect, speed);
+            }
+            typeEffect();
+
+            // ===== 7. PARTICLE CANVAS =====
+            const canvas = document.getElementById('particles-canvas');
+            const ctx = canvas.getContext('2d');
+            let width, height, particles = [];
+
+            function resizeCanvas() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            class Particle {
+                constructor() {
+                    this.reset();
+                }
+                reset() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.size = Math.random() * 2 + 0.5;
+                    this.speedX = (Math.random() - 0.5) * 0.4;
+                    this.speedY = (Math.random() - 0.5) * 0.4;
+                    this.opacity = Math.random() * 0.5 + 0.1;
+                    this.color = Math.random() > 0.5 ? '242, 201, 76' : '255, 255, 255';
+                }
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) this.reset();
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
+                    ctx.fill();
+                }
+            }
+
+            function initParticles() {
+                particles = [];
+                const count = Math.min(60, Math.floor((width * height) / 15000));
+                for (let i = 0; i < count; i++) particles.push(new Particle());
+            }
+            initParticles();
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, width, height);
+                particles.forEach(p => { p.update();
+                    p.draw(); });
+                // Draw connections
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 120) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(242, 201, 76, ${0.06 * (1 - dist / 120)})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animateParticles);
+            }
+            animateParticles();
+
+            // ===== 8. COUNTER ANIMATION =====
+            const statNumbers = document.querySelectorAll('.hero__stat-number');
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.dataset.count);
+                        const suffix = el.querySelector('span') ? el.querySelector('span').textContent : '';
+                        let current = 0;
+                        const increment = target / 60;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            el.textContent = Math.floor(current) + suffix;
+                        }, 20);
+                        counterObserver.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+            statNumbers.forEach(el => counterObserver.observe(el));
+
+            // ===== 9. TESTIMONIAL SLIDER =====
+            const track = document.getElementById('testimonialTrack');
+            const dotsContainer = document.getElementById('testimonialDots');
+            const slides = track.querySelectorAll('.testimonial-card');
+            let currentSlide = 0;
+            let totalSlides = slides.length;
+            let autoPlayInterval;
+
+            // Create dots
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.classList.add('testimonials__dot');
+                if (i === 0) dot.classList.add('active');
+                dot.dataset.index = i;
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+            const dots = dotsContainer.querySelectorAll('.testimonials__dot');
+
+            function goToSlide(index) {
+                if (index < 0) index = totalSlides - 1;
+                if (index >= totalSlides) index = 0;
+                currentSlide = index;
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+                dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+            }
+
+            function nextSlide() { goToSlide(currentSlide + 1); }
+
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(nextSlide, 5000);
+            }
+
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
+
+            // Touch / swipe support
+            let startX = 0;
+            const slider = document.querySelector('.testimonials__slider');
+            slider.addEventListener('touchstart', (e) => { startX = e.changedTouches[0].screenX;
+                stopAutoPlay(); });
+            slider.addEventListener('touchend', (e) => {
+                const endX = e.changedTouches[0].screenX;
+                if (startX - endX > 50) goToSlide(currentSlide + 1);
+                else if (endX - startX > 50) goToSlide(currentSlide - 1);
+                startAutoPlay();
+            });
+            slider.addEventListener('mouseenter', stopAutoPlay);
+            slider.addEventListener('mouseleave', startAutoPlay);
+
+            setTimeout(startAutoPlay, 2000);
+
+            // ===== 10. SCROLL TO TOP =====
+            const scrollBtn = document.getElementById('scrollTop');
+            window.addEventListener('scroll', () => {
+                scrollBtn.classList.toggle('visible', window.scrollY > 400);
+            });
+            scrollBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // ===== 11. FALLBACK IMAGES =====
+            const heroImg = document.getElementById('heroImage');
+            if (heroImg) {
+                heroImg.addEventListener('error', function() {
+                    this.src =
+                        'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"%3E%3Crect width="400" height="400" fill="%23315C49"/%3E%3Ctext x="200" y="200" font-family="Playfair Display" font-size="28" fill="%23F2C94C" text-anchor="middle" dy=".3em"%3EADINAGARA%3C/text%3E%3C/svg%3E';
+                });
+            }
+            const aboutImg = document.querySelector('.about__image img');
+            if (aboutImg) {
+                aboutImg.addEventListener('error', function() { this.style.display = 'none'; });
+            }
+
+            console.log('%c🏠 ADINAGARA · Home', 'color: #F2C94C; font-size: 18px; font-weight: bold;');
+            console.log('%cHalaman home — bersih, elegan, tanpa animasi berlebihan.', 'color: #D8E3D3; font-size: 13px;');
+        });
+    </script>
+</body>
+</html>
