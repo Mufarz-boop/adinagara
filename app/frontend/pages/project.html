@@ -202,15 +202,17 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
+            background: var(--bg-tertiary);
         }
-        .project-card__image .overlay-icon {
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.04);
-            transition: all var(--transition);
+        .project-card__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
         }
-        .project-card:hover .project-card__image .overlay-icon {
-            transform: scale(1.2);
-            color: rgba(242, 201, 76, 0.12);
+        .project-card:hover .project-card__image img {
+            transform: scale(1.05);
         }
         .project-card__image .tag {
             position: absolute;
@@ -218,15 +220,15 @@
             right: 14px;
             padding: 4px 14px;
             border-radius: 20px;
-            background: rgba(242, 201, 76, 0.08);
-            border: 1px solid rgba(242, 201, 76, 0.08);
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(242, 201, 76, 0.15);
             font-size: 0.6rem;
             font-weight: 600;
             color: var(--accent-gold);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             z-index: 2;
-            backdrop-filter: blur(4px);
         }
         .project-card__image .shine {
             position: absolute;
@@ -234,10 +236,11 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.02), transparent 60%);
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.04), transparent 60%);
             pointer-events: none;
             opacity: 0;
             transition: opacity 0.6s ease;
+            z-index: 1;
         }
         .project-card:hover .project-card__image .shine {
             opacity: 1;
@@ -393,10 +396,10 @@
 
                 <!-- Project 1 -->
                 <div class="project-card">
-                    <div class="project-card__image" style="background:var(--bg-tertiary);">
+                    <div class="project-card__image">
                         <span class="tag">AI</span>
                         <div class="shine"></div>
-                        <i class="fas fa-robot overlay-icon"></i>
+                        <img src="https://picsum.photos/seed/prompt/600/400" alt="Prompt Optimizer Engine" loading="lazy" />
                     </div>
                     <div class="project-card__body">
                         <h4 class="project-card__title">Prompt Optimizer Engine</h4>
@@ -415,10 +418,10 @@
 
                 <!-- Project 2 -->
                 <div class="project-card">
-                    <div class="project-card__image" style="background:var(--bg-quaternary);">
+                    <div class="project-card__image">
                         <span class="tag">Web</span>
                         <div class="shine"></div>
-                        <i class="fas fa-globe overlay-icon"></i>
+                        <img src="https://picsum.photos/seed/content/600/400" alt="AI Content Studio" loading="lazy" />
                     </div>
                     <div class="project-card__body">
                         <h4 class="project-card__title">AI Content Studio</h4>
@@ -437,10 +440,10 @@
 
                 <!-- Project 3 -->
                 <div class="project-card">
-                    <div class="project-card__image" style="background:var(--bg-secondary);">
+                    <div class="project-card__image">
                         <span class="tag">Research</span>
                         <div class="shine"></div>
-                        <i class="fas fa-flask overlay-icon"></i>
+                        <img src="https://picsum.photos/seed/framework/600/400" alt="Meta-Prompt Framework" loading="lazy" />
                     </div>
                     <div class="project-card__body">
                         <h4 class="project-card__title">Meta-Prompt Framework</h4>
@@ -459,10 +462,10 @@
 
                 <!-- Project 4 (tambahan) -->
                 <div class="project-card">
-                    <div class="project-card__image" style="background:#1d3b2a;">
+                    <div class="project-card__image">
                         <span class="tag">Mobile</span>
                         <div class="shine"></div>
-                        <i class="fas fa-mobile-alt overlay-icon"></i>
+                        <img src="https://picsum.photos/seed/chat/600/400" alt="AI Chat Assistant" loading="lazy" />
                     </div>
                     <div class="project-card__body">
                         <h4 class="project-card__title">AI Chat Assistant</h4>
@@ -481,10 +484,10 @@
 
                 <!-- Project 5 (tambahan) -->
                 <div class="project-card">
-                    <div class="project-card__image" style="background:#1f3a2e;">
+                    <div class="project-card__image">
                         <span class="tag">Data</span>
                         <div class="shine"></div>
-                        <i class="fas fa-chart-line overlay-icon"></i>
+                        <img src="https://picsum.photos/seed/sentiment/600/400" alt="Sentiment Analytics Dashboard" loading="lazy" />
                     </div>
                     <div class="project-card__body">
                         <h4 class="project-card__title">Sentiment Analytics Dashboard</h4>
@@ -503,10 +506,10 @@
 
                 <!-- Project 6 (tambahan) -->
                 <div class="project-card">
-                    <div class="project-card__image" style="background:#1e3528;">
+                    <div class="project-card__image">
                         <span class="tag">Automation</span>
                         <div class="shine"></div>
-                        <i class="fas fa-cogs overlay-icon"></i>
+                        <img src="https://picsum.photos/seed/workflow/600/400" alt="Smart Workflow Orchestrator" loading="lazy" />
                     </div>
                     <div class="project-card__body">
                         <h4 class="project-card__title">Smart Workflow Orchestrator</h4>
@@ -525,10 +528,10 @@
 
                 <!-- Project 7 (tambahan) -->
                 <div class="project-card">
-                    <div class="project-card__image" style="background:var(--bg-tertiary);">
+                    <div class="project-card__image">
                         <span class="tag">Chatbot</span>
                         <div class="shine"></div>
-                        <i class="fas fa-comment-dots overlay-icon"></i>
+                        <img src="https://picsum.photos/seed/knowledge/600/400" alt="Enterprise Knowledge Bot" loading="lazy" />
                     </div>
                     <div class="project-card__body">
                         <h4 class="project-card__title">Enterprise Knowledge Bot</h4>
@@ -547,10 +550,10 @@
 
                 <!-- Project 8 (tambahan) -->
                 <div class="project-card">
-                    <div class="project-card__image" style="background:var(--bg-quaternary);">
+                    <div class="project-card__image">
                         <span class="tag">Design</span>
                         <div class="shine"></div>
-                        <i class="fas fa-palette overlay-icon"></i>
+                        <img src="https://picsum.photos/seed/brand/600/400" alt="AI-Powered Brand Identity" loading="lazy" />
                     </div>
                     <div class="project-card__body">
                         <h4 class="project-card__title">AI-Powered Brand Identity</h4>
