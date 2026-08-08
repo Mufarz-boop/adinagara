@@ -39,12 +39,12 @@
             height: 297mm;
             background: #e8e8e8;
             position: relative;
-            overflow: hidden;
+            overflow: hidden; /* kelebihan gambar terpotong di sini */
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             border-radius: 18px;
             flex-shrink: 0;
             transition: background 0.3s ease;
-            background-size: cover;
+            background-size: cover; /* full body */
             background-repeat: no-repeat;
             background-position: center;
         }
@@ -715,32 +715,6 @@
             flex-direction: column;
             align-items: center;
             width: 19mm;
-            position: relative;
-        }
-
-        .software-item .delete-btn {
-            position: absolute;
-            top: -2mm;
-            right: -2mm;
-            background: #e74c3c;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 5mm;
-            height: 5mm;
-            font-size: 3pt;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.2s;
-            line-height: 1;
-            padding: 0;
-            z-index: 20;
-        }
-        .software-item:hover .delete-btn {
-            opacity: 1;
         }
 
         .software-icon {
@@ -983,119 +957,6 @@
         }
 
         /* ============================================
-           MODAL UNTUK TAMBAH SOFTWARE
-           ============================================ */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(2px);
-            z-index: 999;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-overlay.active {
-            display: flex;
-        }
-        .modal-box {
-            background: white;
-            padding: 25px 30px;
-            border-radius: 20px;
-            max-width: 400px;
-            width: 90%;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            font-family: 'Open Sans', sans-serif;
-        }
-        .modal-box h3 {
-            font-family: 'Montserrat', sans-serif;
-            margin-bottom: 15px;
-            color: #1a1a5e;
-        }
-        .modal-box label {
-            display: block;
-            margin: 8px 0 4px;
-            font-weight: 600;
-            font-size: 10pt;
-        }
-        .modal-box input, .modal-box select {
-            width: 100%;
-            padding: 6px 10px;
-            border: 1.5px solid #ccc;
-            border-radius: 8px;
-            font-size: 10pt;
-            margin-bottom: 6px;
-        }
-        .modal-box .modal-actions {
-            display: flex;
-            justify-content: flex-end;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        .modal-box .modal-actions button {
-            padding: 8px 18px;
-            border: none;
-            border-radius: 30px;
-            font-weight: 700;
-            cursor: pointer;
-            font-size: 9pt;
-        }
-        .modal-box .modal-actions .btn-cancel {
-            background: #e0e0e0;
-            color: #333;
-        }
-        .modal-box .modal-actions .btn-add {
-            background: #1a1a5e;
-            color: white;
-        }
-        .modal-box .modal-actions .btn-add:hover {
-            background: #2a2a7e;
-        }
-        .color-picker-row {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-            margin: 4px 0 8px;
-        }
-        .color-picker-row .cp-btn {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            border: 2px solid transparent;
-            cursor: pointer;
-            transition: 0.1s;
-        }
-        .color-picker-row .cp-btn:hover,
-        .color-picker-row .cp-btn.active {
-            border-color: #1a1a5e;
-            transform: scale(1.1);
-        }
-
-        /* Tombol tambah software di bawah grid */
-        .add-software-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: #1a1a5e;
-            color: white;
-            border: none;
-            padding: 4px 14px;
-            border-radius: 30px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 8pt;
-            cursor: pointer;
-            margin-top: 3mm;
-            transition: background 0.2s;
-        }
-        .add-software-btn:hover {
-            background: #2a2a7e;
-        }
-
-        /* ============================================
            PRINT
            ============================================ */
         @media print {
@@ -1115,9 +976,7 @@
                 border-radius: 0;
             }
             .profile-photo .upload-hint,
-            .qr-box .qr-upload-hint,
-            .software-item .delete-btn,
-            .add-software-btn {
+            .qr-box .qr-upload-hint {
                 display: none !important;
             }
         }
@@ -1149,9 +1008,6 @@
             }
             .bg-controls {
                 justify-content: center;
-            }
-            .modal-box {
-                padding: 20px;
             }
         }
     </style>
@@ -1287,10 +1143,72 @@
         <!-- ===== SOFTWARE ===== -->
         <div class="software-section">
             <div class="section-heading">Software</div>
-            <div class="software-grid" id="softwareGrid">
-                <!-- item software akan di-generate oleh JS -->
+            <div class="software-grid">
+                <div class="software-item">
+                    <div class="software-icon icon-js"><i class="fab fa-js"></i></div>
+                    <div class="software-label"><span>JavaScript</span><span>Vanilla JS</span></div>
+                </div>
+                <div class="software-item">
+                    <div class="software-icon icon-css"><i class="fab fa-css3-alt"></i></div>
+                    <div class="software-label"><span>Cascading</span><span>Style Sheets</span></div>
+                </div>
+                <div class="software-item">
+                    <div class="software-icon icon-html"><i class="fab fa-html5"></i></div>
+                    <div class="software-label"><span>HyperText</span><span>Markup Language</span></div>
+                </div>
+                <div class="software-item">
+                    <div class="software-icon icon-python"><i class="fab fa-python"></i></div>
+                    <div class="software-label"><span>Python</span><span>Programming</span></div>
+                </div>
+                <div class="software-item">
+                    <div class="software-icon icon-laragon">L</div>
+                    <div class="software-label"><span>Laragon</span><span>Local Server</span></div>
+                </div>
+                <div class="software-item">
+                    <div class="software-icon icon-phpmyadmin">blender</div>
+                    <div class="software-label"><span>Blender</span><span>Desain 3D</span></div>
+                </div>
+                <div class="software-item">
+                    <div class="software-icon icon-bcrypt">VS</div>
+                    <div class="software-label"><span>VScode</span><span>Text Editor Pemprograman</span></div>
+                </div>
+                <div class="software-item">
+                    <div class="software-icon icon-figma"><i class="fab fa-figma"></i></div>
+                    <div class="software-label"><span>Figma</span><span>UI/UX Design</span></div>
+                </div>
+                <div class="software-item">
+                    <div class="software-icon icon-canva">C</div>
+                    <div class="software-label"><span>Canva</span><span>Design</span></div>
+                </div>
+                <div class="software-item">
+                    <div class="software-icon icon-chatgpt">GPT</div>
+                    <div class="software-label"><span>ChatGPT</span><span>AI Assistant</span></div>
+                </div>
+                <div class="software-item">
+                    <div class="software-icon icon-perplexity">P</div>
+                    <div class="software-label"><span>Perplexity</span><span>AI Search</span></div>
+                </div>
+                <div class="software-item">
+                    <div class="software-icon icon-grok">G</div>
+                    <div class="software-label"><span>Grok</span><span>AI Assistant</span></div>
+                </div>
+                <div class="software-item">
+                    <div class="software-icon icon-kimi">K</div>
+                    <div class="software-label"><span>Kimi AI</span><span>AI Assistant</span></div>
+                </div>
+                <div class="software-item">
+                    <div class="software-icon icon-deepseek">DS</div>
+                    <div class="software-label"><span>DeepSeek</span><span>AI Assistant</span></div>
+                </div>
+                <div class="software-item">
+                    <div class="software-icon icon-github"><i class="fab fa-github"></i></div>
+                    <div class="software-label"><span>GitHub</span><span>Version Control</span></div>
+                </div>
+                <div class="software-item">
+                    <div class="software-icon icon-pinterest"><i class="fab fa-pinterest"></i></div>
+                    <div class="software-label"><span>Pinterest</span><span>Visual Research</span></div>
+                </div>
             </div>
-            <button class="add-software-btn" id="addSoftwareBtn"><i class="fas fa-plus"></i> Tambah Software</button>
         </div>
 
         <div class="separator sep-3"></div>
@@ -1322,57 +1240,12 @@
 
         <!-- hidden file input untuk QR -->
         <input type="file" id="qrUpload" class="hidden-upload" accept="image/*" />
-        <!-- hidden input untuk upload icon software (digunakan untuk ganti ikon) -->
+        <!-- hidden input untuk upload icon software -->
         <input type="file" id="iconUpload" class="hidden-upload" accept="image/*" />
         <!-- hidden input untuk upload background -->
         <input type="file" id="bgUpload" class="hidden-upload" accept="image/*" />
 
     </main>
-
-    <!-- ===== MODAL TAMBAH SOFTWARE ===== -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-box">
-            <h3><i class="fas fa-plus-circle"></i> Tambah Software</h3>
-            <label>Nama Software</label>
-            <input type="text" id="modalName" placeholder="Contoh: React" />
-
-            <label>Sub Label / Deskripsi</label>
-            <input type="text" id="modalSub" placeholder="Contoh: Library UI" />
-
-            <label>Warna Background Ikon</label>
-            <div class="color-picker-row" id="colorPickerRow">
-                <!-- diisi JS -->
-            </div>
-
-            <label>Ikon</label>
-            <div style="display:flex; gap:6px; align-items:center;">
-                <select id="modalIconSelect" style="flex:1;">
-                    <option value="fab fa-js">JavaScript</option>
-                    <option value="fab fa-css3-alt">CSS3</option>
-                    <option value="fab fa-html5">HTML5</option>
-                    <option value="fab fa-python">Python</option>
-                    <option value="fab fa-figma">Figma</option>
-                    <option value="fab fa-github">GitHub</option>
-                    <option value="fab fa-pinterest">Pinterest</option>
-                    <option value="fas fa-code">Code</option>
-                    <option value="fas fa-database">Database</option>
-                    <option value="fas fa-cloud">Cloud</option>
-                    <option value="fas fa-cogs">Cogs</option>
-                    <option value="fas fa-mobile-alt">Mobile</option>
-                    <option value="fas fa-laptop">Laptop</option>
-                    <option value="custom">Custom (upload gambar)</option>
-                </select>
-                <button id="modalIconUploadBtn" style="background:#1a1a5e; color:white; border:none; padding:4px 12px; border-radius:20px; cursor:pointer; font-size:8pt;">Upload</button>
-                <input type="file" id="modalIconUpload" class="hidden-upload" accept="image/*" />
-            </div>
-            <div style="margin-top: 6px; font-size: 8pt; color:#888;" id="modalIconPreview">Ikon akan ditampilkan di sini</div>
-
-            <div class="modal-actions">
-                <button class="btn-cancel" id="modalCancel">Batal</button>
-                <button class="btn-add" id="modalAdd">Tambah</button>
-            </div>
-        </div>
-    </div>
 
     <!-- ================================================================
     SCRIPT
@@ -1607,19 +1480,18 @@
             });
 
             // ============================================================
-            // FITUR UPLOAD ICON SOFTWARE (ganti ikon via klik)
+            // FITUR UPLOAD ICON SOFTWARE + BACKGROUND TRANSPARAN
             // ============================================================
             const iconUpload = document.getElementById('iconUpload');
             let currentIconTarget = null;
 
-            // Fungsi ini akan dipanggil setiap kali kita membuat item software baru
-            function attachIconClickHandler(iconElement) {
-                iconElement.addEventListener('click', function(e) {
+            document.querySelectorAll('.software-icon').forEach(icon => {
+                icon.addEventListener('click', function(e) {
                     e.stopPropagation();
                     currentIconTarget = this;
                     iconUpload.click();
                 });
-            }
+            });
 
             iconUpload.addEventListener('change', function(e) {
                 const file = e.target.files[0];
@@ -1650,7 +1522,7 @@
             });
 
             // ============================================================
-            // FITUR BACKGROUND CV (cover)
+            // FITUR BACKGROUND CV (cover - full body, tidak terpotong border)
             // ============================================================
             const bgUpload = document.getElementById('bgUpload');
             const bgUploadBtn = document.getElementById('bgUploadBtn');
@@ -1660,6 +1532,7 @@
             const defaultBg = '#e8e8e8';
 
             function setBackground(value) {
+                // Reset semua properti background
                 cvPage.style.background = '';
                 cvPage.style.backgroundImage = '';
                 cvPage.style.backgroundSize = '';
@@ -1671,12 +1544,14 @@
                 } else if (value.startsWith('linear-gradient') || value.startsWith('radial-gradient')) {
                     cvPage.style.background = value;
                 } else {
+                    // data URL gambar → cover full body, tidak ada bagian kosong
                     cvPage.style.backgroundImage = 'url(' + value + ')';
                     cvPage.style.backgroundSize = 'cover';
                     cvPage.style.backgroundRepeat = 'no-repeat';
                     cvPage.style.backgroundPosition = 'center';
                 }
 
+                // update active preset
                 presetBtns.forEach(btn => btn.classList.remove('active'));
                 presetBtns.forEach(btn => {
                     if (btn.getAttribute('data-bg') === value) {
@@ -1685,12 +1560,14 @@
                 });
             }
 
+            // Preset
             presetBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
                     setBackground(this.getAttribute('data-bg'));
                 });
             });
 
+            // Upload
             bgUploadBtn.addEventListener('click', function(e) {
                 e.stopPropagation();
                 bgUpload.click();
@@ -1716,6 +1593,7 @@
                 bgUpload.value = '';
             });
 
+            // Reset
             bgResetBtn.addEventListener('click', function() {
                 setBackground(defaultBg);
                 presetBtns.forEach(btn => {
@@ -1723,234 +1601,13 @@
                 });
             });
 
+            // default active
             presetBtns.forEach(btn => {
                 if (btn.getAttribute('data-bg') === defaultBg) btn.classList.add('active');
             });
 
-            // ============================================================
-            // DATA SOFTWARE (default) + MANAJEMEN CRUD
-            // ============================================================
-            // Data awal
-            let softwareData = [
-                
-            ];
-
-            let nextId = softwareData.length + 1;
-
-            const grid = document.getElementById('softwareGrid');
-
-            function renderSoftware() {
-                grid.innerHTML = '';
-                softwareData.forEach(item => {
-                    const wrapper = document.createElement('div');
-                    wrapper.className = 'software-item';
-                    wrapper.dataset.id = item.id;
-
-                    // Tombol hapus
-                    const delBtn = document.createElement('button');
-                    delBtn.className = 'delete-btn';
-                    delBtn.innerHTML = '×';
-                    delBtn.title = 'Hapus software ini';
-                    delBtn.addEventListener('click', function(e) {
-                        e.stopPropagation();
-                        if (confirm('Hapus software "' + item.label + '"?')) {
-                            softwareData = softwareData.filter(s => s.id !== item.id);
-                            renderSoftware();
-                        }
-                    });
-                    wrapper.appendChild(delBtn);
-
-                    // Icon
-                    const iconDiv = document.createElement('div');
-                    iconDiv.className = 'software-icon';
-                    iconDiv.style.background = item.bgColor || '#1a1a5e';
-                    iconDiv.style.color = item.textColor || '#ffffff';
-                    // Jika icon berupa data URL (gambar custom) atau class Font Awesome
-                    if (item.icon.startsWith('data:image')) {
-                        const img = document.createElement('img');
-                        img.src = item.icon;
-                        img.alt = item.label;
-                        iconDiv.appendChild(img);
-                    } else {
-                        const i = document.createElement('i');
-                        i.className = item.icon;
-                        iconDiv.appendChild(i);
-                    }
-                    // Simpan data icon untuk referensi
-                    iconDiv.dataset.icon = item.icon;
-                    iconDiv.dataset.bg = item.bgColor;
-                    iconDiv.dataset.textColor = item.textColor;
-
-                    // Klik untuk ganti ikon (upload)
-                    attachIconClickHandler(iconDiv);
-
-                    wrapper.appendChild(iconDiv);
-
-                    // Label
-                    const labelDiv = document.createElement('div');
-                    labelDiv.className = 'software-label';
-                    const span1 = document.createElement('span');
-                    span1.textContent = item.label;
-                    const span2 = document.createElement('span');
-                    span2.textContent = item.sub || '';
-                    labelDiv.appendChild(span1);
-                    if (item.sub) labelDiv.appendChild(span2);
-                    wrapper.appendChild(labelDiv);
-
-                    grid.appendChild(wrapper);
-                });
-            }
-
-            renderSoftware();
-
-            // ============================================================
-            // MODAL TAMBAH SOFTWARE
-            // ============================================================
-            const modalOverlay = document.getElementById('modalOverlay');
-            const modalName = document.getElementById('modalName');
-            const modalSub = document.getElementById('modalSub');
-            const modalIconSelect = document.getElementById('modalIconSelect');
-            const modalIconUploadBtn = document.getElementById('modalIconUploadBtn');
-            const modalIconUpload = document.getElementById('modalIconUpload');
-            const modalIconPreview = document.getElementById('modalIconPreview');
-            const modalAdd = document.getElementById('modalAdd');
-            const modalCancel = document.getElementById('modalCancel');
-            const colorPickerRow = document.getElementById('colorPickerRow');
-
-            // Warna preset
-            const colorPresets = ['#F7DF1E', '#264de4', '#e34c26', '#306998', '#E74C3C', '#F89C0E', '#2d5a27', '#2C2C2C', '#00C4CC', '#10a37f', '#1FB8A6', '#000000', '#1a1a5e', '#1E80FF', '#181717', '#E60023', '#d4af37', '#f4c430', '#e8e8e8'];
-            let selectedColor = colorPresets[0];
-            let modalCustomIconData = null; // untuk menyimpan data URL gambar custom
-
-            // Buat tombol warna
-            colorPresets.forEach(col => {
-                const btn = document.createElement('div');
-                btn.className = 'cp-btn';
-                btn.style.background = col;
-                btn.dataset.color = col;
-                if (col === selectedColor) btn.classList.add('active');
-                btn.addEventListener('click', function() {
-                    colorPickerRow.querySelectorAll('.cp-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    selectedColor = this.dataset.color;
-                });
-                colorPickerRow.appendChild(btn);
-            });
-
-            // Upload icon custom di modal
-            modalIconUploadBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                modalIconUpload.click();
-            });
-
-            modalIconUpload.addEventListener('change', function(e) {
-                const file = e.target.files[0];
-                if (!file) return;
-                if (!file.type.startsWith('image/')) {
-                    alert('Harap pilih file gambar.');
-                    modalIconUpload.value = '';
-                    return;
-                }
-                const reader = new FileReader();
-                reader.onload = function(ev) {
-                    modalCustomIconData = ev.target.result;
-                    modalIconPreview.innerHTML = 'Ikon custom terupload <i class="fas fa-check-circle" style="color:green;"></i>';
-                    // Set select ke custom
-                    modalIconSelect.value = 'custom';
-                };
-                reader.onerror = function() {
-                    alert('Gagal membaca file.');
-                };
-                reader.readAsDataURL(file);
-                modalIconUpload.value = '';
-            });
-
-            // Reset preview saat select berubah
-            modalIconSelect.addEventListener('change', function() {
-                if (this.value !== 'custom') {
-                    modalIconPreview.innerHTML = 'Ikon akan ditampilkan di sini';
-                    modalCustomIconData = null;
-                } else {
-                    if (modalCustomIconData) {
-                        modalIconPreview.innerHTML = 'Ikon custom terupload <i class="fas fa-check-circle" style="color:green;"></i>';
-                    } else {
-                        modalIconPreview.innerHTML = 'Silakan upload gambar ikon';
-                    }
-                }
-            });
-
-            // Buka modal
-            document.getElementById('addSoftwareBtn').addEventListener('click', function() {
-                modalOverlay.classList.add('active');
-                modalName.value = '';
-                modalSub.value = '';
-                modalIconSelect.value = 'fab fa-js';
-                modalCustomIconData = null;
-                modalIconPreview.innerHTML = 'Ikon akan ditampilkan di sini';
-                // Reset pilihan warna ke default
-                selectedColor = colorPresets[0];
-                colorPickerRow.querySelectorAll('.cp-btn').forEach(b => b.classList.remove('active'));
-                colorPickerRow.querySelector('.cp-btn').classList.add('active');
-            });
-
-            // Tutup modal
-            function closeModal() {
-                modalOverlay.classList.remove('active');
-            }
-            modalCancel.addEventListener('click', closeModal);
-            modalOverlay.addEventListener('click', function(e) {
-                if (e.target === this) closeModal();
-            });
-
-            // Tambah software
-            modalAdd.addEventListener('click', function() {
-                const name = modalName.value.trim();
-                const sub = modalSub.value.trim();
-                let iconValue = modalIconSelect.value;
-                let bgColor = selectedColor;
-                let textColor = '#ffffff';
-
-                // Tentukan warna teks otomatis (jika background terang, teks gelap)
-                const brightness = (bgColor) => {
-                    const hex = bgColor.replace('#', '');
-                    const r = parseInt(hex.substring(0,2), 16);
-                    const g = parseInt(hex.substring(2,4), 16);
-                    const b = parseInt(hex.substring(4,6), 16);
-                    return (r*299 + g*587 + b*114) / 1000;
-                };
-                textColor = brightness(bgColor) > 150 ? '#222222' : '#ffffff';
-
-                if (!name) {
-                    alert('Nama software harus diisi.');
-                    return;
-                }
-
-                // Jika custom, gunakan data URL
-                if (iconValue === 'custom') {
-                    if (!modalCustomIconData) {
-                        alert('Silakan upload gambar ikon terlebih dahulu.');
-                        return;
-                    }
-                    iconValue = modalCustomIconData;
-                }
-
-                const newItem = {
-                    id: nextId++,
-                    icon: iconValue,
-                    label: name,
-                    sub: sub,
-                    bgColor: bgColor,
-                    textColor: textColor
-                };
-
-                softwareData.push(newItem);
-                renderSoftware();
-                closeModal();
-            });
-
-            console.log('✅ Fitur tambah & hapus software aktif.');
-            console.log('✅ Background cover aktif.');
-            console.log('✅ Upload ikon & QR aktif.');
+            console.log('✅ Background CV full body dengan cover, tidak melewati batas.');
+            console.log('✅ Fitur upload icon & QR aktif.');
 
         })();
     </script>
