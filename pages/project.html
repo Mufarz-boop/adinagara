@@ -282,6 +282,27 @@
             color: var(--text-light);
         }
 
+.project-card-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+        .project-card-link:hover .project-card {
+            transform: translateY(-8px) scale(1.01);
+            border-color: rgba(242, 201, 76, 0.12);
+            box-shadow: var(--shadow-soft), var(--shadow-glow);
+        }
+        .project-card-link:hover .project-card__image img {
+            transform: scale(1.05);
+        }
+        .project-card-link:hover .project-card__tech span {
+            border-color: rgba(242, 201, 76, 0.08);
+            color: var(--text-light);
+        }
+        .project-card-link:hover .shine {
+            opacity: 1;
+        }
         /* ============================================
                FOOTER
             ============================================ */
@@ -372,6 +393,7 @@
             }
         }
     </style>
+<base target="_blank">
 </head>
 <body>
 
@@ -396,6 +418,7 @@
             <div class="projects__grid">
 
                 <!-- Project 1 -->
+                <a href="https://github.com/Mufarz-boop/" target="_blank" rel="noopener noreferrer" class="project-card-link">
                 <div class="project-card">
                     <div class="project-card__image">
                         <span class="tag">AI</span>
@@ -416,8 +439,10 @@
                         </div>
                     </div>
                 </div>
+                </a>
 
                 <!-- Project 2 -->
+                <a href="https://github.com/Mufarz-boop/ai-content-studio" target="_blank" rel="noopener noreferrer" class="project-card-link">
                 <div class="project-card">
                     <div class="project-card__image">
                         <span class="tag">Web</span>
@@ -438,8 +463,10 @@
                         </div>
                     </div>
                 </div>
+                </a>
 
                 <!-- Project 3 -->
+                <a href="https://github.com/Mufarz-boop/meta-prompt-framework" target="_blank" rel="noopener noreferrer" class="project-card-link">
                 <div class="project-card">
                     <div class="project-card__image">
                         <span class="tag">Research</span>
@@ -460,6 +487,7 @@
                         </div>
                     </div>
                 </div>
+                </a>
 
             </div>
         </div>
