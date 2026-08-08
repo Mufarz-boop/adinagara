@@ -3,1488 +3,1957 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CV — Afdal Adha Firnansyah</title>
-    <!-- Font Profesional: Space Grotesk (heading) + Inter (body) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <title>CV - Afdal Adha Firnansyah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">
     </script>
     <style>
-        /* ============================================================
-           CV MODERN PROFESIONAL — Latar Geometris Elegan
-           ============================================================ */
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
 
-        *,
-        *::before,
-        *::after {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --bg: #E9E9E9;
-            --navy: #17177A;
-            --navy-light: #24248A;
-            --yellow: #F6C400;
-            --black: #111111;
-            --text-secondary: #333333;
-            --muted: #555555;
-            --white: #FFFFFF;
-            --red: #E53935;
-            --font-heading: 'Space Grotesk', sans-serif;
-            --font-body: 'Inter', sans-serif;
-        }
-
-        html {
-            font-size: 16px;
-        }
-
         body {
-            font-family: var(--font-body);
-            background: #d4d4d4;
-            color: var(--black);
-            line-height: 1.55;
-            -webkit-font-smoothing: antialiased;
+            background: #cccccc;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 30px 20px;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 40px 20px;
+            font-family: 'Open Sans', sans-serif;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }
 
-        .cv {
-            width: 100%;
-            max-width: 780px;
-            background: var(--bg);
-            padding: 55px;
+        .cv-page {
+            width: 210mm;
+            height: 297mm;
+            background: #e8e8e8;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
-            isolation: isolate;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            border-radius: 18px;
+            flex-shrink: 0;
+            transition: background 0.3s ease;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
-        /* ===== DEKORASI GEOMETRIS ===== */
-        .geo-bg {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .geo-shape {
-            position: absolute;
-            opacity: 0.15;
-            border-radius: 50%;
-            background: var(--navy);
-        }
-
-        .geo-shape--circle-1 {
-            width: 320px;
-            height: 320px;
-            top: -80px;
-            right: -80px;
-            background: radial-gradient(circle, var(--navy-light), transparent 70%);
-            opacity: 0.10;
-        }
-
-        .geo-shape--circle-2 {
-            width: 200px;
-            height: 200px;
-            bottom: -40px;
-            left: -60px;
-            background: radial-gradient(circle, var(--yellow), transparent 70%);
-            opacity: 0.08;
-        }
-
-        .geo-shape--triangle {
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            opacity: 0.06;
-        }
-
-        .geo-shape--triangle-1 {
-            border-width: 0 120px 200px 0;
-            border-color: transparent var(--navy) transparent transparent;
-            top: 20%;
-            right: -20px;
-            transform: rotate(10deg);
-        }
-
-        .geo-shape--triangle-2 {
-            border-width: 0 0 180px 140px;
-            border-color: transparent transparent var(--yellow) transparent;
-            bottom: 10%;
-            left: -30px;
-            transform: rotate(-5deg);
-        }
-
-        .geo-shape--line {
-            position: absolute;
-            background: var(--navy);
-            opacity: 0.04;
-            transform-origin: center;
-        }
-
-        .geo-shape--line-1 {
-            width: 300px;
-            height: 2px;
-            top: 25%;
-            left: -80px;
-            transform: rotate(25deg);
-            background: linear-gradient(90deg, transparent, var(--navy), transparent);
-        }
-
-        .geo-shape--line-2 {
-            width: 400px;
-            height: 1.5px;
-            bottom: 30%;
-            right: -120px;
-            transform: rotate(-15deg);
-            background: linear-gradient(90deg, transparent, var(--yellow), transparent);
-            opacity: 0.06;
-        }
-
-        .geo-grid {
-            position: absolute;
-            inset: 0;
-            background-image:
-                radial-gradient(circle at 20% 80%, rgba(23, 23, 122, 0.02) 1px, transparent 1px),
-                radial-gradient(circle at 80% 20%, rgba(246, 196, 0, 0.02) 1px, transparent 1px);
-            background-size: 60px 60px, 80px 80px;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* Konten utama di atas lapisan geometris */
-        .cv>*:not(.geo-bg):not(.geo-grid) {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ---------- HEADER ---------- */
-        .cv-header {
+        /* ============================================
+           DOWNLOAD & CONTROLS
+           ============================================ */
+        .controls-wrapper {
             display: flex;
-            align-items: center;
-            gap: 45px;
-            margin-bottom: 35px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .header-left {
-            flex: 0 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .profile-wrapper {
-            position: relative;
-            width: 240px;
-        }
-
-        /* ===== JENDELA SISTEM MENGAMBANG ===== */
-        .profile-img-box {
-            position: relative;
-            width: 100%;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15),
-                0 0 0 1px rgba(255, 255, 255, 0.05) inset,
-                0 0 40px rgba(23, 23, 122, 0.06);
-            overflow: visible;
-            cursor: pointer;
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-                box-shadow 0.4s ease;
-            padding: 12px 12px 16px 12px;
-            transform: translateY(-6px);
-        }
-
-        .profile-img-box:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.20),
-                0 0 0 1px rgba(255, 255, 255, 0.10) inset,
-                0 0 60px rgba(23, 23, 122, 0.10);
-        }
-
-        .window-bar {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 4px 0 10px 0;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: rgba(0, 0, 0, 0.3);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            user-select: none;
-        }
-        .window-bar .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            display: inline-block;
-        }
-        .window-bar .dot-red {
-            background: #ff5f57;
-        }
-        .window-bar .dot-yellow {
-            background: #ffbd2e;
-        }
-        .window-bar .dot-green {
-            background: #28c840;
-        }
-        .window-bar .window-title {
-            margin-left: 6px;
-            font-weight: 500;
-            opacity: 0.5;
-        }
-
-        .profile-img-box img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: contain;
-            background: transparent;
-            border-radius: 8px;
-            transition: transform 0.5s ease, filter 0.5s ease;
-            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.06));
-        }
-
-        .profile-img-box:hover img {
-            transform: scale(1.02);
-            filter: drop-shadow(0 8px 20px rgba(23, 23, 122, 0.12));
-        }
-
-        .upload-hint {
-            position: absolute;
-            inset: 12px 12px 16px 12px;
-            display: flex;
-            align-items: center;
+            flex-wrap: wrap;
             justify-content: center;
-            background: rgba(23, 23, 122, 0.25);
-            color: var(--white);
-            font-size: 0.85rem;
-            font-weight: 700;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-            text-align: center;
-            padding: 10px;
-            line-height: 1.4;
-            z-index: 4;
+            align-items: center;
+            gap: 20px 30px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 14px 28px;
+            border-radius: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(4px);
-            border-radius: 8px;
-        }
-        .profile-img-box:hover .upload-hint {
-            opacity: 1;
+            z-index: 100;
         }
 
-        .profile-fallback {
-            width: 100%;
-            aspect-ratio: 1/1;
+        .controls-wrapper .slider-group {
             display: flex;
             align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-            color: var(--white);
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            border-radius: 8px;
+            gap: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 10pt;
+            color: #1a1a5e;
         }
 
-        .header-right {
-            flex: 1;
-            padding-top: 10px;
+        .controls-wrapper .slider-group label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        .main-title {
-            margin-bottom: 10px;
+        .controls-wrapper .slider-group input[type="range"] {
+            width: 100px;
+            height: 4px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #1a1a5e;
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
         }
 
-        /* ===== NAMA SERAGAM Space Grotesk ===== */
-        .title-line {
-            display: block;
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 2.6rem;
-            line-height: 1.05;
-            letter-spacing: -0.5px;
+        .controls-wrapper .slider-group input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #f4c430;
+            border: 2px solid #1a1a5e;
+            cursor: pointer;
+            transition: 0.1s;
         }
 
-        .title-navy {
-            color: var(--navy);
-        }
-        .title-yellow {
-            color: var(--yellow);
-            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.08);
+        .controls-wrapper .slider-group input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
         }
 
-        .sub-title {
-            margin-bottom: 14px;
-        }
-        .sub-title .title-line {
-            font-size: 2.1rem;
-            font-weight: 800;
-        }
-
-        .role-badge {
-            display: inline-block;
-            font-family: var(--font-heading);
-            font-size: 1.05rem;
+        .controls-wrapper .slider-group .value-badge {
+            min-width: 32px;
+            text-align: center;
+            font-size: 9pt;
+            background: #1a1a5e;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 12px;
             font-weight: 700;
-            color: var(--navy);
-            background: rgba(246, 196, 0, 0.18);
-            padding: 6px 18px;
-            border-radius: 6px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
         }
 
-        /* ---------- SECTION HEADINGS ---------- */
-        .section-title-wrapper {
-            margin-bottom: 18px;
-            position: relative;
-            display: inline-block;
-        }
-        .section-title-wrapper.small {
-            margin-bottom: 14px;
-        }
-
-        .section-title {
-            font-family: var(--font-heading);
-            font-size: 1.55rem;
-            font-weight: 800;
-            color: var(--black);
-            position: relative;
-            display: inline-block;
-            line-height: 1.3;
+        #resetQR {
+            background: transparent;
+            border: 1.5px solid #1a1a5e;
+            color: #1a1a5e;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 9pt;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        .marker-bg {
-            position: relative;
-            z-index: 1;
-            padding: 2px 16px;
+        #resetQR:hover {
+            background: #1a1a5e;
+            color: #fff;
         }
 
-        .marker-bg::before {
-            content: '';
+        #downloadCV {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 11pt;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #1a1a5e 0%, #2a2a7e 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(26, 26, 94, 0.35);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 0.5px;
+            outline: none;
+        }
+
+        #downloadCV:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(26, 26, 94, 0.45);
+            background: linear-gradient(135deg, #2a2a7e 0%, #1a1a5e 100%);
+        }
+
+        #downloadCV:active:not(:disabled) {
+            transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(26, 26, 94, 0.35);
+        }
+
+        #downloadCV:disabled {
+            opacity: 0.75;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ---- Background Controls ---- */
+        .bg-controls {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 9pt;
+            color: #1a1a5e;
+        }
+
+        .bg-preset-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 2px solid #1a1a5e;
+            cursor: pointer;
+            transition: transform 0.15s, border-color 0.15s;
+            flex-shrink: 0;
+        }
+        .bg-preset-btn:hover {
+            transform: scale(1.15);
+            border-color: #f4c430;
+        }
+        .bg-preset-btn.active {
+            border-color: #f4c430;
+            box-shadow: 0 0 0 2px #1a1a5e;
+        }
+        .bg-upload-btn {
+            background: #1a1a5e;
+            color: #fff;
+            border: none;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 8pt;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .bg-upload-btn:hover {
+            background: #2a2a7e;
+        }
+        .bg-reset-btn {
+            background: transparent;
+            border: 1.5px solid #1a1a5e;
+            color: #1a1a5e;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 8pt;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .bg-reset-btn:hover {
+            background: #1a1a5e;
+            color: #fff;
+        }
+
+        /* ============================================
+           DECORATIVE ELEMENTS
+           ============================================ */
+        .deco-circle {
             position: absolute;
-            inset: -2px -8px;
-            background: var(--yellow);
-            border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%;
-            z-index: -1;
-            transform: rotate(-1.5deg) skewX(-2deg);
-            opacity: 0.95;
+            border-radius: 50%;
         }
 
-        /* ---------- ABOUT ---------- */
-        .about-section {
-            margin-bottom: 38px;
+        .deco-yellow {
+            background: #f4c430;
+        }
+        .deco-navy {
+            background: #1a1a5e;
         }
 
-        .about-text {
-            font-size: 0.92rem;
-            font-weight: 400;
-            color: var(--text-secondary);
-            line-height: 1.75;
-            text-align: justify;
+        .deco-circle-large {
+            width: 78mm;
+            height: 78mm;
+            left: 11mm;
+            top: 21mm;
+            background: #f4c430;
         }
 
-        /* ---------- DIVIDERS ---------- */
-        .divider {
-            height: 1.5px;
-            background: var(--black);
-            margin: 38px 0;
+        .dot-tl-1 {
+            width: 4mm;
+            height: 4mm;
+            left: 8mm;
+            top: 8mm;
+            background: #f4c430;
+        }
+        .dot-tl-2 {
+            width: 3mm;
+            height: 3mm;
+            left: 18mm;
+            top: 5mm;
+            background: #1a1a5e;
+        }
+        .dot-tl-3 {
+            width: 2.5mm;
+            height: 2.5mm;
+            left: 5mm;
+            top: 18mm;
+            background: #1a1a5e;
+        }
+        .dot-tl-4 {
+            width: 3.5mm;
+            height: 3.5mm;
+            left: 28mm;
+            top: 12mm;
+            background: #f4c430;
+        }
+        .dot-tl-5 {
+            width: 2mm;
+            height: 2mm;
+            left: 35mm;
+            top: 6mm;
+            background: #1a1a5e;
+        }
+        .dot-tl-6 {
+            width: 3mm;
+            height: 3mm;
+            left: 42mm;
+            top: 15mm;
+            background: #f4c430;
+        }
+        .dot-tl-7 {
+            width: 2.5mm;
+            height: 2.5mm;
+            left: 22mm;
+            top: 22mm;
+            background: #1a1a5e;
+        }
+        .dot-tl-8 {
+            width: 2mm;
+            height: 2mm;
+            left: 6mm;
+            top: 32mm;
+            background: #f4c430;
+        }
+        .dot-tl-9 {
+            width: 3mm;
+            height: 3mm;
+            left: 48mm;
+            top: 8mm;
+            background: #1a1a5e;
+        }
+        .dot-tl-10 {
+            width: 2mm;
+            height: 2mm;
+            left: 55mm;
+            top: 18mm;
+            background: #f4c430;
+        }
+
+        .dot-tr-1 {
+            width: 3.5mm;
+            height: 3.5mm;
+            right: 12mm;
+            top: 6mm;
+            background: #f4c430;
+        }
+        .dot-tr-2 {
+            width: 2.5mm;
+            height: 2.5mm;
+            right: 22mm;
+            top: 10mm;
+            background: #1a1a5e;
+        }
+        .dot-tr-3 {
+            width: 3mm;
+            height: 3mm;
+            right: 6mm;
+            top: 18mm;
+            background: #1a1a5e;
+        }
+        .dot-tr-4 {
+            width: 2mm;
+            height: 2mm;
+            right: 30mm;
+            top: 5mm;
+            background: #f4c430;
+        }
+        .dot-tr-5 {
+            width: 3.5mm;
+            height: 3.5mm;
+            right: 38mm;
+            top: 14mm;
+            background: #1a1a5e;
+        }
+        .dot-tr-6 {
+            width: 2.5mm;
+            height: 2.5mm;
+            right: 15mm;
+            top: 28mm;
+            background: #f4c430;
+        }
+        .dot-tr-7 {
+            width: 2mm;
+            height: 2mm;
+            right: 45mm;
+            top: 22mm;
+            background: #f4c430;
+        }
+        .dot-tr-8 {
+            width: 3mm;
+            height: 3mm;
+            right: 8mm;
+            top: 38mm;
+            background: #1a1a5e;
+        }
+        .dot-tr-9 {
+            width: 2.5mm;
+            height: 2.5mm;
+            right: 52mm;
+            top: 8mm;
+            background: #f4c430;
+        }
+        .dot-tr-10 {
+            width: 2mm;
+            height: 2mm;
+            right: 28mm;
+            top: 32mm;
+            background: #1a1a5e;
+        }
+
+        .dot-c-1 {
+            width: 2.5mm;
+            height: 2.5mm;
+            left: 8mm;
+            top: 55mm;
+            background: #1a1a5e;
+        }
+        .dot-c-2 {
+            width: 2mm;
+            height: 2mm;
+            left: 92mm;
+            top: 45mm;
+            background: #1a1a5e;
+        }
+        .dot-c-3 {
+            width: 3mm;
+            height: 3mm;
+            left: 88mm;
+            top: 65mm;
+            background: #1a1a5e;
+        }
+        .dot-c-4 {
+            width: 2mm;
+            height: 2mm;
+            left: 95mm;
+            top: 30mm;
+            background: #1a1a5e;
+        }
+        .dot-c-5 {
+            width: 2.5mm;
+            height: 2.5mm;
+            left: 5mm;
+            top: 70mm;
+            background: #1a1a5e;
+        }
+        .dot-c-6 {
+            width: 2mm;
+            height: 2mm;
+            left: 85mm;
+            top: 80mm;
+            background: #1a1a5e;
+        }
+        .dot-c-7 {
+            width: 3mm;
+            height: 3mm;
+            left: 15mm;
+            top: 95mm;
+            background: #1a1a5e;
+        }
+
+        /* ============================================
+           PROFILE PHOTO — click to upload
+           ============================================ */
+        .profile-photo {
+            position: absolute;
+            left: 18mm;
+            top: 20mm;
+            width: 60mm;
+            height: 82mm;
+            z-index: 10;
+            overflow: visible;
+            background: transparent;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: opacity 0.2s;
+        }
+
+        .profile-photo:hover {
             opacity: 0.85;
         }
 
-        /* ---------- EDUCATION & CONTACT ---------- */
-        .edu-contact {
-            display: flex;
-            gap: 50px;
-            margin-bottom: 0;
-        }
-        .edu-col {
-            flex: 1.2;
-        }
-        .edu-content {
-            padding-left: 4px;
-        }
-        .edu-year {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--black);
-            margin-bottom: 6px;
-        }
-        .edu-school {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-        .edu-detail {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-        .edu-status {
-            display: inline-block;
-            margin-top: 6px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--navy);
-            background: rgba(23, 23, 122, 0.08);
-            padding: 4px 14px;
-            border-radius: 4px;
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            filter: drop-shadow(0 0 3px #ffffff)
+                drop-shadow(0 0 3px #ffffff)
+                drop-shadow(0 0 3px #ffffff)
+                drop-shadow(0 0 3px #ffffff)
+                drop-shadow(0 0 3px #ffffff)
+                drop-shadow(0 0 3px #ffffff);
+            border-radius: 12px;
+            pointer-events: none;
+            user-select: none;
         }
 
-        .contact-col {
-            flex: 1;
-            padding-top: 52px;
-        }
-        .contact-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-        .contact-icon {
-            flex-shrink: 0;
-            width: 22px;
-            height: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-        }
-        .contact-icon svg {
-            display: block;
-        }
-        .icon-pin {
-            color: var(--red);
-            font-size: 1.1rem;
-        }
-        .email-row {
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-        .email-row:hover {
-            color: var(--navy);
-        }
-        .copy-hint {
-            font-size: 0.65rem;
+        .profile-photo .upload-hint {
+            position: absolute;
+            bottom: 6mm;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(26, 26, 94, 0.8);
+            color: #fff;
+            font-size: 6.5pt;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 600;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-left: auto;
+            padding: 1.5mm 3mm;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+            white-space: nowrap;
+            pointer-events: none;
+            user-select: none;
+            letter-spacing: 0.3px;
             opacity: 0;
-            transition: opacity 0.2s;
+            transition: opacity 0.3s;
         }
-        .email-row:hover .copy-hint {
+
+        .profile-photo:hover .upload-hint {
             opacity: 1;
         }
 
-        /* ---------- TECH STACK ---------- */
-        .skills-section {
-            margin-bottom: 0;
-        }
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            gap: 28px 32px;
-            padding-top: 6px;
-        }
-        .skill-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            width: 72px;
-            transition: transform 0.25s ease;
-        }
-        .skill-item:hover {
-            transform: translateY(-5px) scale(1.05);
-        }
-        .skill-item i {
-            font-size: 2.6rem;
-            line-height: 1;
-        }
-        .skill-item span {
-            font-size: 0.72rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            text-align: center;
-            line-height: 1.3;
+        /* ============================================
+           HEADER / TITLE
+           ============================================ */
+        .header-title {
+            position: absolute;
+            left: 108mm;
+            top: 20mm;
+            z-index: 10;
         }
 
-        /* ---------- EXPERIENCE ---------- */
-        .experience-section {
-            margin-bottom: 0;
-        }
-        .experience-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-        .exp-card {
-            padding: 0;
-        }
-        .exp-date {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 6px;
-        }
-        .exp-role {
-            font-size: 1.05rem;
-            font-weight: 800;
-            color: var(--black);
-            margin-bottom: 4px;
-        }
-        .exp-org {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 14px;
-            font-style: italic;
-        }
-        .exp-label {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--black);
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            margin-bottom: 3px;
-            margin-top: 10px;
-        }
-        .exp-desc {
-            font-size: 0.88rem;
-            color: var(--muted);
-            line-height: 1.6;
+        .header-title .graphic {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 28pt;
+            color: #1a1a5e;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            display: block;
         }
 
-        /* ---------- SPECIALIZATION ---------- */
-        .specialization-section {
-            margin-bottom: 0;
-        }
-        .spec-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px 12px;
-            padding-top: 4px;
-        }
-        .spec-tag {
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--navy);
-            background: rgba(23, 23, 122, 0.07);
-            padding: 6px 16px;
-            border-radius: 5px;
-            border: 1.5px solid rgba(23, 23, 122, 0.12);
-            transition: all 0.2s ease;
-        }
-        .spec-tag:hover {
-            background: var(--yellow);
-            border-color: var(--yellow);
-            color: var(--black);
-            transform: translateY(-2px);
+        .header-title .designer {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 28pt;
+            color: #f4c430;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            display: block;
+            margin-top: 1mm;
         }
 
-        /* ---------- PROJECTS ---------- */
-        .projects-section {
-            margin-bottom: 10px;
-        }
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            padding-top: 4px;
-            align-items: start;
-        }
-        .project-card {
-            padding: 18px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        }
-        .project-name {
-            font-family: var(--font-heading);
-            font-size: 1rem;
-            font-weight: 800;
-            color: var(--navy);
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .project-desc {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 8px;
-        }
-        .project-tech {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--muted);
-            margin-bottom: 10px;
-        }
-        .project-link {
-            font-size: 0.82rem;
-            font-weight: 700;
-            color: var(--navy);
-            text-decoration: none;
-            border-bottom: 2px solid var(--yellow);
-            padding-bottom: 1px;
-            transition: all 0.2s;
-            display: inline-block;
-        }
-        .project-link:hover {
-            color: var(--black);
-            border-bottom-color: var(--navy);
-        }
-
-        /* ===== QR CODE FRAME ===== */
-        .qr-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 0 16px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            text-align: center;
-        }
-
-        .qr-frame {
+        /* ============================================
+           SECTION HEADING STYLE
+           ============================================ */
+        .section-heading {
             position: relative;
-            width: 100%;
-            max-width: 180px;
-            aspect-ratio: 1/1;
-            border: 4px solid var(--navy);
-            border-radius: 12px;
-            background: var(--white);
-            box-shadow: 0 8px 30px rgba(23, 23, 122, 0.10),
-                0 0 0 1px rgba(23, 23, 122, 0.06) inset;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 16pt;
+            color: #1a1a5e;
+            z-index: 2;
+            margin-bottom: 3mm;
+        }
+
+        .section-heading::before {
+            content: '';
+            position: absolute;
+            left: -2mm;
+            right: -3mm;
+            top: 15%;
+            height: 75%;
+            background: #f4c430;
+            border-radius: 4px;
+            z-index: -1;
+            transform: skewX(-2deg);
+        }
+
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        .about-section {
+            position: absolute;
+            left: 108mm;
+            top: 60mm;
+            width: 88mm;
+            z-index: 10;
+        }
+
+        .about-text {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 9pt;
+            line-height: 1.5;
+            color: #222222;
+            text-align: justify;
+            text-align-last: left;
+        }
+
+        /* ============================================
+           SEPARATOR LINES
+           ============================================ */
+        .separator {
+            position: absolute;
+            left: 14mm;
+            width: 182mm;
+            height: 1.5px;
+            background: #1a1a5e;
+            border-radius: 2px;
+        }
+
+        .sep-1 {
+            top: 119mm;
+        }
+        .sep-2 {
+            top: 170mm;
+        }
+        .sep-3 {
+            top: 248mm;
+        }
+
+        /* ============================================
+           EDUCATION SECTION
+           ============================================ */
+        .education-section {
+            position: absolute;
+            left: 14mm;
+            top: 126mm;
+            width: 75mm;
+            z-index: 10;
+        }
+
+        .edu-item {
+            margin-bottom: 4mm;
+        }
+
+        .edu-year {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 10pt;
+            color: #1a1a5e;
+            margin-bottom: 1mm;
+        }
+
+        .edu-school {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 9.5pt;
+            color: #222222;
+            line-height: 1.4;
+        }
+
+        /* ============================================
+           CONTACT SECTION
+           ============================================ */
+        .contact-section {
+            position: absolute;
+            left: 108mm;
+            top: 126mm;
+            width: 88mm;
+            z-index: 10;
+        }
+
+        .contact-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
-            margin-bottom: 10px;
+            margin-bottom: 2.5mm;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 9pt;
+            color: #222222;
         }
 
-        .qr-frame:hover {
-            transform: scale(1.03);
-            box-shadow: 0 12px 40px rgba(23, 23, 122, 0.18),
-                0 0 0 2px var(--yellow) inset;
+        .contact-item i {
+            width: 5mm;
+            text-align: center;
+            margin-right: 3mm;
+            font-size: 10pt;
         }
 
-        .qr-frame .qr-placeholder {
-            width: 80%;
-            height: 80%;
+        .contact-item .fa-location-dot {
+            color: #e74c3c;
+        }
+        .contact-item .fa-linkedin {
+            color: #0077b5;
+        }
+        .contact-item .fa-instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .contact-item .fa-envelope {
+            color: #ea4335;
+        }
+
+        /* ============================================
+           SOFTWARE SECTION
+           ============================================ */
+        .software-section {
+            position: absolute;
+            left: 14mm;
+            top: 178mm;
+            width: 182mm;
+            z-index: 10;
+        }
+
+        .software-grid {
+            display: flex;
+            justify-content: flex-start;
+            gap: 3mm;
+            margin-top: 3mm;
+            flex-wrap: wrap;
+        }
+
+        .software-item {
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 19mm;
+            position: relative;
+        }
+
+        .software-item .delete-btn {
+            position: absolute;
+            top: -2mm;
+            right: -2mm;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 5mm;
+            height: 5mm;
+            font-size: 3pt;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            background: rgba(23, 23, 122, 0.04);
-            border-radius: 8px;
-            border: 2px dashed rgba(23, 23, 122, 0.20);
-            color: var(--navy);
+            opacity: 0;
+            transition: opacity 0.2s;
+            line-height: 1;
+            padding: 0;
+            z-index: 20;
+        }
+        .software-item:hover .delete-btn {
+            opacity: 1;
+        }
+
+        .software-icon {
+            width: 13mm;
+            height: 13mm;
+            border-radius: 2.5mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2mm;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 0.8rem;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            gap: 6px;
-            transition: background 0.3s ease;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
 
-        .qr-frame .qr-placeholder svg {
-            width: 48px;
-            height: 48px;
-            opacity: 0.6;
+        .software-icon:hover {
+            transform: scale(1.12);
         }
 
-        .qr-frame .qr-placeholder span {
-            opacity: 0.7;
+        .software-icon i {
+            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.2));
         }
 
-        .qr-frame:hover .qr-placeholder {
-            background: rgba(246, 196, 0, 0.10);
-            border-color: var(--yellow);
-        }
-
-        /* QR code image inside frame (hidden by default, shown when user adds img) */
-        .qr-frame img {
+        .software-icon img {
             width: 100%;
             height: 100%;
             object-fit: contain;
             display: block;
-            border-radius: 8px;
-            padding: 8px;
-            background: var(--white);
+            border-radius: inherit;
+            background: transparent;
+        }
+
+        /* Brand Colors & Logos (default) */
+        .icon-js { background: #F7DF1E; color: #323330; font-size: 11pt; }
+        .icon-css { background: #264de4; color: white; font-size: 13pt; }
+        .icon-html { background: #e34c26; color: white; font-size: 13pt; }
+        .icon-python { background: #306998; color: #FFD43B; font-size: 13pt; }
+        .icon-laragon { background: #E74C3C; color: white; font-size: 10pt; }
+        .icon-phpmyadmin { background: #F89C0E; color: white; font-size: 7.5pt; font-family: 'Open Sans', sans-serif; font-weight: 700; }
+        .icon-bcrypt { background: #2d5a27; color: white; font-size: 7.5pt; }
+        .icon-figma { background: #2C2C2C; color: white; font-size: 12pt; }
+        .icon-canva { background: #00C4CC; color: white; border-radius: 50%; font-size: 10pt; }
+        .icon-chatgpt { background: #10a37f; color: white; border-radius: 50%; font-size: 6.5pt; }
+        .icon-perplexity { background: #1FB8A6; color: white; border-radius: 50%; font-size: 10pt; }
+        .icon-grok { background: #000000; color: white; border-radius: 50%; font-size: 10pt; }
+        .icon-kimi { background: #1a1a5e; color: white; border-radius: 50%; font-size: 10pt; }
+        .icon-deepseek { background: #1E80FF; color: white; font-size: 7pt; }
+        .icon-github { background: #181717; color: white; font-size: 14pt; }
+        .icon-pinterest { background: #E60023; color: white; border-radius: 50%; font-size: 10pt; }
+
+        .software-label {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 6.5pt;
+            color: #222222;
+            text-align: center;
+            line-height: 1.15;
+        }
+        .software-label span {
+            display: block;
+        }
+
+        /* ============================================
+           EXPERIENCE SECTION + QR CODE
+           ============================================ */
+        .experience-section {
+            position: absolute;
+            left: 14mm;
+            top: 256mm;
+            width: 182mm;
+            z-index: 10;
+        }
+
+        .experience-grid {
+            display: flex;
+            gap: 8mm;
+            margin-top: 3mm;
+            align-items: flex-start;
+        }
+
+        .experience-col {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .exp-date {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 9pt;
+            color: #1a1a5e;
+            margin-bottom: 0.5mm;
+        }
+
+        .exp-org {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            font-size: 9pt;
+            color: #222222;
+            margin-bottom: 0.5mm;
+        }
+
+        .exp-role {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            font-size: 9pt;
+            color: #222222;
+            margin-bottom: 1mm;
+        }
+
+        .exp-desc {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 8.5pt;
+            color: #333333;
+            line-height: 1.4;
+            text-align: justify;
+            text-align-last: left;
+        }
+
+        /* ---- QR CODE COLUMN ---- */
+        .qr-col {
+            flex: 0 0 32mm;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 0;
+            position: relative;
+            left: -20px;
+            top: -30px;
+            transition: left 0.05s, top 0.05s;
         }
 
         .qr-label {
-            font-size: 0.75rem;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            color: var(--muted);
-            letter-spacing: 1px;
+            font-size: 7pt;
+            color: #1a1a5e;
+            letter-spacing: 0.5px;
+            margin-bottom: 1mm;
             text-transform: uppercase;
-            margin-top: 4px;
         }
 
-        .qr-upload-hint {
-            font-size: 0.65rem;
-            font-weight: 500;
-            color: var(--muted);
-            opacity: 0.6;
+        .qr-box {
+            width: 28mm;
+            height: 28mm;
+            border: 1.5px dashed #1a1a5e;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            transition: opacity 0.2s;
-            text-decoration: underline dotted;
-        }
-        .qr-upload-hint:hover {
-            opacity: 1;
-            color: var(--navy);
-        }
-
-        /* ---------- FOOTER ---------- */
-        .cv-footer {
-            text-align: center;
-            padding-top: 30px;
-            margin-top: 10px;
-        }
-        .cv-footer p {
-            font-size: 0.78rem;
-            color: var(--muted);
-            font-weight: 500;
+            transition: background 0.2s, border-color 0.2s;
+            background: rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
         }
 
-        /* ---------- FAB ---------- */
-        .fab-container {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
-            z-index: 1000;
+        .qr-box:hover {
+            background: rgba(244, 196, 48, 0.15);
+            border-color: #f4c430;
+        }
+
+        .qr-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .qr-box .qr-placeholder {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-        }
-        .fab {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            border: none;
-            background: var(--navy);
-            color: var(--white);
-            cursor: pointer;
-            display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 20px rgba(23, 23, 122, 0.35);
-            transition: all 0.3s ease;
-        }
-        .fab:hover {
-            background: var(--yellow);
-            color: var(--black);
-            transform: scale(1.1) rotate(-4deg);
-            box-shadow: 0 8px 25px rgba(246, 196, 0, 0.4);
-        }
-        .fab svg {
-            width: 22px;
-            height: 22px;
-        }
-
-        /* ---------- TOAST ---------- */
-        .toast {
-            position: fixed;
-            bottom: 160px;
-            right: 28px;
-            background: var(--navy);
-            color: var(--white);
-            padding: 12px 22px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.35s ease;
-            pointer-events: none;
-            z-index: 1001;
-        }
-        .toast.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ---------- DOWNLOAD OVERLAY ---------- */
-        .download-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-        .download-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-        .download-spinner {
-            width: 56px;
-            height: 56px;
-            border: 4px solid var(--yellow);
-            border-top-color: transparent;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            margin: 0 auto;
-        }
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        .download-overlay p {
-            color: var(--white);
-            margin-top: 16px;
-            font-size: 1rem;
-            font-weight: 600;
+            color: #1a1a5e;
             text-align: center;
+            pointer-events: none;
+            user-select: none;
+            padding: 2mm;
         }
 
-        /* ---------- RESPONSIVE ---------- */
-        @media (max-width: 860px) {
+        .qr-box .qr-placeholder i {
+            font-size: 12pt;
+            margin-bottom: 1mm;
+            opacity: 0.5;
+        }
+
+        .qr-box .qr-placeholder span {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 5.5pt;
+            opacity: 0.6;
+            line-height: 1.3;
+        }
+
+        .qr-box .qr-upload-hint {
+            position: absolute;
+            bottom: 1.5mm;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(26, 26, 94, 0.75);
+            color: #fff;
+            font-size: 5pt;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 0.8mm 2mm;
+            border-radius: 12px;
+            backdrop-filter: blur(4px);
+            white-space: nowrap;
+            pointer-events: none;
+            user-select: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .qr-box:hover .qr-upload-hint {
+            opacity: 1;
+        }
+
+        /* ---- hidden file inputs ---- */
+        .hidden-upload {
+            display: none !important;
+        }
+
+        /* ---- small status text ---- */
+        .qr-status {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 6pt;
+            color: #1a1a5e;
+            margin-top: 1mm;
+            opacity: 0.6;
+            text-align: center;
+            min-height: 3mm;
+        }
+
+        /* ============================================
+           MODAL UNTUK TAMBAH SOFTWARE
+           ============================================ */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(2px);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-box {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 20px;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            font-family: 'Open Sans', sans-serif;
+        }
+        .modal-box h3 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 15px;
+            color: #1a1a5e;
+        }
+        .modal-box label {
+            display: block;
+            margin: 8px 0 4px;
+            font-weight: 600;
+            font-size: 10pt;
+        }
+        .modal-box input, .modal-box select {
+            width: 100%;
+            padding: 6px 10px;
+            border: 1.5px solid #ccc;
+            border-radius: 8px;
+            font-size: 10pt;
+            margin-bottom: 6px;
+        }
+        .modal-box .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .modal-box .modal-actions button {
+            padding: 8px 18px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 9pt;
+        }
+        .modal-box .modal-actions .btn-cancel {
+            background: #e0e0e0;
+            color: #333;
+        }
+        .modal-box .modal-actions .btn-add {
+            background: #1a1a5e;
+            color: white;
+        }
+        .modal-box .modal-actions .btn-add:hover {
+            background: #2a2a7e;
+        }
+        .color-picker-row {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin: 4px 0 8px;
+        }
+        .color-picker-row .cp-btn {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+        .color-picker-row .cp-btn:hover,
+        .color-picker-row .cp-btn.active {
+            border-color: #1a1a5e;
+            transform: scale(1.1);
+        }
+
+        /* Tombol tambah software di bawah grid */
+        .add-software-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #1a1a5e;
+            color: white;
+            border: none;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 8pt;
+            cursor: pointer;
+            margin-top: 3mm;
+            transition: background 0.2s;
+        }
+        .add-software-btn:hover {
+            background: #2a2a7e;
+        }
+
+        /* ============================================
+           PRINT
+           ============================================ */
+        @media print {
             body {
-                padding: 20px 15px;
+                background: white;
+                margin: 0;
+                padding: 0;
             }
-            .cv {
-                padding: 35px;
+            .controls-wrapper {
+                display: none !important;
             }
-            .cv-header {
+            .cv-page {
+                box-shadow: none;
+                width: 210mm;
+                height: 297mm;
+                page-break-after: always;
+                border-radius: 0;
+            }
+            .profile-photo .upload-hint,
+            .qr-box .qr-upload-hint,
+            .software-item .delete-btn,
+            .add-software-btn {
+                display: none !important;
+            }
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 700px) {
+            .controls-wrapper {
                 flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 28px;
+                align-items: stretch;
+                padding: 16px;
+                border-radius: 24px;
+                width: 100%;
+                max-width: 400px;
             }
-            .header-left {
-                width: 200px;
+            .controls-wrapper .slider-group {
+                justify-content: space-between;
             }
-            .header-right {
-                padding-top: 0;
+            .controls-wrapper .slider-group input[type="range"] {
+                flex: 1;
+                width: auto;
             }
-            .title-line {
-                font-size: 2rem;
+            .controls-wrapper .slider-group .value-badge {
+                min-width: 28px;
             }
-            .sub-title .title-line {
-                font-size: 1.6rem;
-            }
-            .edu-contact {
-                flex-direction: column;
-                gap: 30px;
-            }
-            .contact-col {
-                padding-top: 0;
-            }
-            .experience-grid,
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .skills-grid {
-                gap: 20px 24px;
+            #downloadCV {
                 justify-content: center;
             }
-            .skill-item {
-                width: 64px;
+            .bg-controls {
+                justify-content: center;
             }
-            .skill-item i {
-                font-size: 2.2rem;
-            }
-            .profile-img-box {
-                padding: 10px 10px 14px 10px;
-            }
-            .geo-shape--circle-1 {
-                width: 200px;
-                height: 200px;
-                top: -40px;
-                right: -40px;
-            }
-            .geo-shape--circle-2 {
-                width: 150px;
-                height: 150px;
-            }
-            .geo-shape--triangle-1 {
-                border-width: 0 80px 140px 0;
-            }
-            .geo-shape--triangle-2 {
-                border-width: 0 0 120px 100px;
-            }
-            .qr-frame {
-                max-width: 160px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .cv {
-                padding: 22px;
-            }
-            .title-line {
-                font-size: 1.55rem;
-            }
-            .sub-title .title-line {
-                font-size: 1.3rem;
-            }
-            .role-badge {
-                font-size: 0.9rem;
-                padding: 5px 14px;
-            }
-            .section-title {
-                font-size: 1.3rem;
-            }
-            .about-text {
-                font-size: 0.88rem;
-            }
-            .header-left {
-                width: 160px;
-            }
-            .skills-grid {
-                gap: 16px 18px;
-            }
-            .skill-item {
-                width: 56px;
-            }
-            .skill-item i {
-                font-size: 1.9rem;
-            }
-            .skill-item span {
-                font-size: 0.65rem;
-            }
-            .fab-container {
-                bottom: 18px;
-                right: 18px;
-            }
-            .fab {
-                width: 46px;
-                height: 46px;
-            }
-            .toast {
-                bottom: 140px;
-                right: 18px;
-            }
-            .profile-img-box {
-                padding: 8px 8px 12px 8px;
-            }
-            .window-bar {
-                font-size: 0.6rem;
-                padding-bottom: 6px;
-            }
-            .window-bar .dot {
-                width: 8px;
-                height: 8px;
-            }
-            .geo-shape--circle-1 {
-                width: 140px;
-                height: 140px;
-                top: -20px;
-                right: -20px;
-            }
-            .geo-shape--circle-2 {
-                width: 100px;
-                height: 100px;
-                bottom: -20px;
-                left: -30px;
-            }
-            .geo-shape--triangle-1 {
-                border-width: 0 50px 90px 0;
-                top: 30%;
-                right: -10px;
-            }
-            .geo-shape--triangle-2 {
-                border-width: 0 0 80px 70px;
-                bottom: 15%;
-                left: -20px;
-            }
-            .geo-shape--line-1,
-            .geo-shape--line-2 {
-                display: none;
-            }
-            .qr-frame {
-                max-width: 140px;
-            }
-            .qr-frame .qr-placeholder svg {
-                width: 36px;
-                height: 36px;
+            .modal-box {
+                padding: 20px;
             }
         }
     </style>
-    <base target="_blank" />
 </head>
 <body>
 
-    <div class="download-overlay no-print" id="downloadOverlay">
-        <div style="text-align:center;">
-            <div class="download-spinner"></div>
-            <p>Generating image...</p>
+    <!-- ===== KONTROL SLIDER, BACKGROUND, & TOMBOL ===== -->
+    <div class="controls-wrapper">
+        <div class="slider-group">
+            <label><i class="fas fa-arrows-alt-h"></i> X</label>
+            <input type="range" id="sliderX" min="-80" max="80" value="-20" step="1" />
+            <span class="value-badge" id="valX">-20</span>
         </div>
-    </div>
+        <div class="slider-group">
+            <label><i class="fas fa-arrows-alt-v"></i> Y</label>
+            <input type="range" id="sliderY" min="-80" max="80" value="-30" step="1" />
+            <span class="value-badge" id="valY">-30</span>
+        </div>
+        <button id="resetQR"><i class="fas fa-undo-alt"></i> Reset</button>
 
-    <div class="fab-container no-print">
-        <button class="fab" id="downloadBtn" title="Download as Image">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        <!-- ===== CONTROLS BACKGROUND ===== -->
+        <div class="bg-controls">
+            <span><i class="fas fa-palette"></i> BG</span>
+            <div class="bg-preset-btn" style="background: #e8e8e8;" data-bg="#e8e8e8" title="Default"></div>
+            <div class="bg-preset-btn" style="background: #f4c430;" data-bg="#f4c430" title="Kuning"></div>
+            <div class="bg-preset-btn" style="background: #1a1a5e;" data-bg="#1a1a5e" title="Navy"></div>
+            <div class="bg-preset-btn" style="background: linear-gradient(135deg, #f4c430, #1a1a5e);" data-bg="linear-gradient(135deg, #f4c430, #1a1a5e)" title="Gradien"></div>
+            <div class="bg-preset-btn" style="background: #2d5a27;" data-bg="#2d5a27" title="Hijau"></div>
+            <div class="bg-preset-btn" style="background: #d4af37;" data-bg="#d4af37" title="Emas"></div>
+            <button class="bg-upload-btn" id="bgUploadBtn"><i class="fas fa-image"></i> Upload</button>
+            <button class="bg-reset-btn" id="bgResetBtn"><i class="fas fa-undo-alt"></i> Reset</button>
+        </div>
+
+        <button id="downloadCV">
+            <i class="fas fa-download"></i> Download CV
         </button>
     </div>
 
-    <main class="cv" id="cvCanvas">
+    <!-- ===== CV PAGE ===== -->
+    <main class="cv-page" id="cvPage">
 
-        <!-- Dekorasi geometris -->
-        <div class="geo-bg">
-            <div class="geo-shape geo-shape--circle-1"></div>
-            <div class="geo-shape geo-shape--circle-2"></div>
-            <div class="geo-shape geo-shape--triangle-1"></div>
-            <div class="geo-shape geo-shape--triangle-2"></div>
-            <div class="geo-shape geo-shape--line-1"></div>
-            <div class="geo-shape geo-shape--line-2"></div>
+        <!-- DECORATIVE -->
+        <div class="deco-circle deco-circle-large"></div>
+
+        <div class="deco-circle deco-yellow dot-tl-1"></div>
+        <div class="deco-circle deco-navy dot-tl-2"></div>
+        <div class="deco-circle deco-navy dot-tl-3"></div>
+        <div class="deco-circle deco-yellow dot-tl-4"></div>
+        <div class="deco-circle deco-navy dot-tl-5"></div>
+        <div class="deco-circle deco-yellow dot-tl-6"></div>
+        <div class="deco-circle deco-navy dot-tl-7"></div>
+        <div class="deco-circle deco-yellow dot-tl-8"></div>
+        <div class="deco-circle deco-navy dot-tl-9"></div>
+        <div class="deco-circle deco-yellow dot-tl-10"></div>
+
+        <div class="deco-circle deco-yellow dot-tr-1"></div>
+        <div class="deco-circle deco-navy dot-tr-2"></div>
+        <div class="deco-circle deco-navy dot-tr-3"></div>
+        <div class="deco-circle deco-yellow dot-tr-4"></div>
+        <div class="deco-circle deco-navy dot-tr-5"></div>
+        <div class="deco-circle deco-yellow dot-tr-6"></div>
+        <div class="deco-circle deco-navy dot-tr-8"></div>
+        <div class="deco-circle deco-yellow dot-tr-9"></div>
+        <div class="deco-circle deco-navy dot-tr-10"></div>
+
+        <div class="deco-circle deco-navy dot-c-1"></div>
+        <div class="deco-circle deco-navy dot-c-2"></div>
+        <div class="deco-circle deco-navy dot-c-3"></div>
+        <div class="deco-circle deco-navy dot-c-4"></div>
+        <div class="deco-circle deco-navy dot-c-5"></div>
+        <div class="deco-circle deco-navy dot-c-6"></div>
+        <div class="deco-circle deco-navy dot-c-7"></div>
+
+        <!-- ===== PROFILE PHOTO (click to upload) ===== -->
+        <div class="profile-photo" id="profilePhotoArea" title="Klik untuk ganti foto profil">
+            <img id="profileImg" src="images/profile.jpg" alt="Profile Photo" />
+            <div class="upload-hint"><i class="fas fa-camera"></i> Ganti Foto</div>
         </div>
-        <div class="geo-grid"></div>
+        <input type="file" id="profileUpload" class="hidden-upload" accept="image/*" />
 
-        <header class="cv-header">
-            <div class="header-left">
-                <div class="profile-wrapper">
-                    <div class="profile-img-box" id="profileImgBox" title="Klik untuk ganti foto">
-                        <!-- Window Bar ala sistem -->
-                        <div class="window-bar">
-                            <span class="dot dot-red"></span>
-                            <span class="dot dot-yellow"></span>
-                            <span class="dot dot-green"></span>
-                            <span class="window-title">Profile</span>
-                        </div>
+        <!-- ===== HEADER ===== -->
+        <div class="header-title">
+            <span class="graphic">SOFTWARE</span>
+            <span class="designer">ENGINEER</span>
+        </div>
 
-                        <img src="assets/profile.png" alt="Afdal Adha Firnansyah" id="profileImg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                        <div class="profile-fallback" style="display:none;"><span>AF</span></div>
-                        <div class="upload-hint no-print">Klik untuk<br />upload foto</div>
-                    </div>
-                </div>
-                <!-- Input file tersembunyi -->
-                <input type="file" id="imgUpload" accept="image/png,image/jpeg,image/jpg,image/webp" style="display:none;" />
-            </div>
-
-            <div class="header-right">
-                <h1 class="main-title">
-                    <span class="title-line title-navy">AFDAL ADHA</span>
-                    <span class="title-line title-navy">FIRNANSYAH</span>
-                </h1>
-                <h2 class="sub-title">
-                    <span class="title-line title-navy">SOFTWARE</span>
-                    <span class="title-line title-yellow">DEVELOPER</span>
-                </h2>
-                <p class="role-badge">RPL STUDENT</p>
-            </div>
-        </header>
-
-        <section class="about-section">
-            <div class="section-title-wrapper">
-                <h2 class="section-title"><span class="marker-bg">About Me!!</span></h2>
-            </div>
+        <!-- ===== ABOUT ===== -->
+        <div class="about-section">
+            <div class="section-heading">About Me!!</div>
             <p class="about-text">
-                Saya adalah siswa kelas XII SMKN 1 Karang Baru dari Program Studi Pengembangan Perangkat Lunak dan Gim dengan Konsentrasi Keahlian Rekayasa Perangkat Lunak. Saya memiliki ketertarikan pada pengembangan perangkat lunak, pengembangan web, teknologi digital, kecerdasan buatan, dan pengembangan berbagai proyek berbasis teknologi.
+                Saya adalah Afdal Adha Firnansyah, seorang siswa dari Sekolah Menengah Kejuruan (SMK) Negeri 1 Karang baru dan juga merupakan seorang Prompt Engineer.
+                Saya memiliki ketertarikan besar pada dunia kecerdasan buatan (AI). Bagi saya, teknologi bukan hanya tentang bagaimana sesuatu bekerja, tetapi juga tentang bagaimana sebuah ide dapat dikembangkan secara maksimal.
+                Dan saya disini untuk membangun dunia dan masa depan dengan kecerdasan dan kretivitas saya.
             </p>
-        </section>
+        </div>
 
-        <div class="divider"></div>
+        <div class="separator sep-1"></div>
 
-        <section class="edu-contact">
-            <div class="edu-col">
-                <div class="section-title-wrapper small">
-                    <h2 class="section-title"><span class="marker-bg">Education</span></h2>
-                </div>
-                <div class="edu-content">
-                    <p class="edu-year">2024 — 2026</p>
-                    <p class="edu-school">SMKN 1 Karang Baru</p>
-                    <p class="edu-detail">Program Studi:<br />Pengembangan Perangkat Lunak dan Gim</p>
-                    <p class="edu-detail">Konsentrasi:<br />Rekayasa Perangkat Lunak</p>
-                    <p class="edu-status">Kelas XII</p>
+        <!-- ===== EDUCATION ===== -->
+        <div class="education-section">
+            <div class="section-heading">Education</div>
+            <div class="edu-item">
+                <div class="edu-year">2024-Now</div>
+                <div class="edu-school">
+                    SMK NEGERI 1 KARANG BARU<br />
+                    Jurusan Rekayasa Perangkat Lunak (RPL)
                 </div>
             </div>
+        </div>
 
-            <div class="contact-col">
-                <ul class="contact-list">
-                    <li class="contact-item">
-                        <span class="contact-icon icon-pin">📍</span>
-                        <span class="contact-text">Indonesia</span>
-                    </li>
-                    <li class="contact-item">
-                        <span class="contact-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        </span>
-                        <span class="contact-text">[Tambahkan LinkedIn]</span>
-                    </li>
-                    <li class="contact-item">
-                        <span class="contact-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E4405F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                        </span>
-                        <span class="contact-text">[Tambahkan Instagram]</span>
-                    </li>
-                    <li class="contact-item email-row" onclick="copyEmail()">
-                        <span class="contact-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EA4335" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        </span>
-                        <span class="contact-text email-text" data-email="[Tambahkan Email]">[Tambahkan Email]</span>
-                        <span class="copy-hint no-print">Copy</span>
-                    </li>
-                    <li class="contact-item">
-                        <span class="contact-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#181717"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        </span>
-                        <span class="contact-text">[Tambahkan GitHub]</span>
-                    </li>
-                </ul>
+        <!-- ===== CONTACT ===== -->
+        <div class="contact-section">
+            <div class="contact-item">
+                <i class="fas fa-location-dot"></i>
+                <span>Indonesia, Provinsi Aceh, Kabupaten Aceh Tamiang</span>
             </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <section class="skills-section">
-            <div class="section-title-wrapper small">
-                <h2 class="section-title"><span class="marker-bg">Tech Stack</span></h2>
+            <div class="contact-item">
+                <i class="fab fa-tiktok"></i>
+                <span>@faruqi.family</span>
             </div>
-            <div class="skills-grid">
-                <div class="skill-item"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
-                <div class="skill-item"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
-                <div class="skill-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
-                <div class="skill-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
-                <div class="skill-item"><i class="devicon-github-original colored"></i><span>GitHub</span></div>
-                <div class="skill-item"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
-                <div class="skill-item"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
-                <div class="skill-item"><i class="devicon-blender-original colored"></i><span>Blender</span></div>
+            <div class="contact-item">
+                <i class="fab fa-instagram"></i>
+                <span>@cilpacastraa</span>
             </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <section class="experience-section">
-            <div class="section-title-wrapper small">
-                <h2 class="section-title"><span class="marker-bg">Experience</span></h2>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>firnansyahafdaladha@gmail.com</span>
             </div>
+        </div>
+
+        <div class="separator sep-2"></div>
+
+        <!-- ===== SOFTWARE ===== -->
+        <div class="software-section">
+            <div class="section-heading">Software</div>
+            <div class="software-grid" id="softwareGrid">
+                <!-- item software akan di-generate oleh JS -->
+            </div>
+            <button class="add-software-btn" id="addSoftwareBtn"><i class="fas fa-plus"></i> Tambah Software</button>
+        </div>
+
+        <div class="separator sep-3"></div>
+
+        <!-- ===== EXPERIENCE + QR CODE ===== -->
+        <div class="experience-section">
+            <div class="section-heading">Experience</div>
             <div class="experience-grid">
-                <div class="exp-card">
-                    <p class="exp-date">03 Agustus 2026 — 21 November 2026</p>
-                    <p class="exp-role">Siswa PKL</p>
-                    <p class="exp-org">Nama Instansi / Perusahaan</p>
-                    <p class="exp-label">Tugas:</p>
-                    <p class="exp-desc">[Tambahkan tugas PKL]</p>
-                    <p class="exp-label">Teknologi:</p>
-                    <p class="exp-desc">[Tambahkan teknologi yang digunakan]</p>
-                    <p class="exp-label">Tanggung Jawab:</p>
-                    <p class="exp-desc">[Tambahkan tanggung jawab]</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <section class="specialization-section">
-            <div class="section-title-wrapper small">
-                <h2 class="section-title"><span class="marker-bg">Specialization</span></h2>
-            </div>
-            <div class="spec-grid">
-                <span class="spec-tag">Software Development</span>
-                <span class="spec-tag">Web Development</span>
-                <span class="spec-tag">Artificial Intelligence</span>
-                <span class="spec-tag">Prompt Engineering</span>
-                <span class="spec-tag">Multimodal Prompting</span>
-                <span class="spec-tag">UI/UX</span>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <section class="projects-section">
-            <div class="section-title-wrapper small">
-                <h2 class="section-title"><span class="marker-bg">Projects</span></h2>
-            </div>
-            <div class="projects-grid">
-
-                <!-- Project Card kiri -->
-                <div class="project-card">
-                    <h3 class="project-name">[Nama Proyek]</h3>
-                    <p class="project-desc">[Tambahkan deskripsi proyek]</p>
-                    <p class="project-tech">[Teknologi] • [Teknologi]</p>
-                    <a href="#" class="project-link no-print">[Tambahkan Link]</a>
-                </div>
-
-                <!-- QR Code Frame kanan -->
-                <div class="project-card qr-card">
-                    <div class="qr-frame" id="qrFrame" title="Klik untuk upload QR Code">
-                        <!-- Placeholder SVG + teks -->
-                        <div class="qr-placeholder" id="qrPlaceholder">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="2" width="7" height="7" rx="1" />
-                                <rect x="15" y="2" width="7" height="7" rx="1" />
-                                <rect x="2" y="15" width="7" height="7" rx="1" />
-                                <rect x="15" y="15" width="7" height="7" rx="1" />
-                                <line x1="9" y1="5.5" x2="15" y2="5.5" />
-                                <line x1="5.5" y1="9" x2="5.5" y2="15" />
-                                <line x1="18.5" y1="9" x2="18.5" y2="15" />
-                                <line x1="9" y1="18.5" x2="15" y2="18.5" />
-                            </svg>
-                            <span>QR Code</span>
-                        </div>
-                        <!-- QR image akan ditampilkan di sini (hidden by default) -->
-                        <img id="qrImage" src="" alt="QR Code" style="display:none;" />
+                <div class="experience-col">
+                    <div class="exp-date">03 Agustus 2026 - 21 November 2026</div>
+                    <div class="exp-org">Kantor Walikota Kota Langsa</div>
+                    <div class="exp-role">Siswa Praktek Kerja Lapangan</div>
+                    <div class="exp-desc">
+                        Bertanggung jawab dalam membuat dokumentasi dan laporan kegiatan.
                     </div>
-                    <p class="qr-label">Scan Me</p>
-                    <!-- Input file tersembunyi untuk QR -->
-                    <input type="file" id="qrUpload" accept="image/png,image/jpeg,image/jpg,image/webp" style="display:none;" />
                 </div>
-
+                <div class="qr-col" id="qrCol">
+                    <div class="qr-box" id="qrBox" title="Klik untuk upload QR Code">
+                        <img id="qrImg" src="" alt="QR Code" style="display:none;" />
+                        <div class="qr-placeholder" id="qrPlaceholder">
+                            <i class="fas fa-qrcode"></i>
+                            <span>Klik untuk upload<br />QR Code</span>
+                        </div>
+                        <div class="qr-upload-hint"><i class="fas fa-upload"></i> Upload</div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
 
-        <footer class="cv-footer">
-            <p>© 2026 Afdal Adha Firnansyah — RPL Student</p>
-        </footer>
+        <!-- hidden file input untuk QR -->
+        <input type="file" id="qrUpload" class="hidden-upload" accept="image/*" />
+        <!-- hidden input untuk upload icon software (digunakan untuk ganti ikon) -->
+        <input type="file" id="iconUpload" class="hidden-upload" accept="image/*" />
+        <!-- hidden input untuk upload background -->
+        <input type="file" id="bgUpload" class="hidden-upload" accept="image/*" />
 
     </main>
 
-    <div class="toast no-print" id="toast">Email copied!</div>
+    <!-- ===== MODAL TAMBAH SOFTWARE ===== -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box">
+            <h3><i class="fas fa-plus-circle"></i> Tambah Software</h3>
+            <label>Nama Software</label>
+            <input type="text" id="modalName" placeholder="Contoh: React" />
 
+            <label>Sub Label / Deskripsi</label>
+            <input type="text" id="modalSub" placeholder="Contoh: Library UI" />
+
+            <label>Warna Background Ikon</label>
+            <div class="color-picker-row" id="colorPickerRow">
+                <!-- diisi JS -->
+            </div>
+
+            <label>Ikon</label>
+            <div style="display:flex; gap:6px; align-items:center;">
+                <select id="modalIconSelect" style="flex:1;">
+                    <option value="fab fa-js">JavaScript</option>
+                    <option value="fab fa-css3-alt">CSS3</option>
+                    <option value="fab fa-html5">HTML5</option>
+                    <option value="fab fa-python">Python</option>
+                    <option value="fab fa-figma">Figma</option>
+                    <option value="fab fa-github">GitHub</option>
+                    <option value="fab fa-pinterest">Pinterest</option>
+                    <option value="fas fa-code">Code</option>
+                    <option value="fas fa-database">Database</option>
+                    <option value="fas fa-cloud">Cloud</option>
+                    <option value="fas fa-cogs">Cogs</option>
+                    <option value="fas fa-mobile-alt">Mobile</option>
+                    <option value="fas fa-laptop">Laptop</option>
+                    <option value="custom">Custom (upload gambar)</option>
+                </select>
+                <button id="modalIconUploadBtn" style="background:#1a1a5e; color:white; border:none; padding:4px 12px; border-radius:20px; cursor:pointer; font-size:8pt;">Upload</button>
+                <input type="file" id="modalIconUpload" class="hidden-upload" accept="image/*" />
+            </div>
+            <div style="margin-top: 6px; font-size: 8pt; color:#888;" id="modalIconPreview">Ikon akan ditampilkan di sini</div>
+
+            <div class="modal-actions">
+                <button class="btn-cancel" id="modalCancel">Batal</button>
+                <button class="btn-add" id="modalAdd">Tambah</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================
+    SCRIPT
+    ================================================================ -->
     <script>
-        /* ============================================================
-           CV INTERACTIONS — Window-style + Nama Seragam + Geometris + QR
-           ============================================================ */
         (function() {
             'use strict';
 
-            var overlay = document.getElementById('downloadOverlay');
-            var toastEl = document.getElementById('toast');
+            // ---- refs ----
+            const cvPage = document.getElementById('cvPage');
+            const downloadBtn = document.getElementById('downloadCV');
 
-            function showToast(msg) {
-                if (!toastEl) return;
-                toastEl.textContent = msg;
-                toastEl.classList.add('show');
-                setTimeout(function() { toastEl.classList.remove('show'); }, 2500);
+            // profile
+            const profileArea = document.getElementById('profilePhotoArea');
+            const profileImg = document.getElementById('profileImg');
+            const profileUpload = document.getElementById('profileUpload');
+
+            // qr
+            const qrCol = document.getElementById('qrCol');
+            const qrBox = document.getElementById('qrBox');
+            const qrImg = document.getElementById('qrImg');
+            const qrPlaceholder = document.getElementById('qrPlaceholder');
+            const qrStatus = document.getElementById('qrStatus');
+            const qrUpload = document.getElementById('qrUpload');
+
+            // slider
+            const sliderX = document.getElementById('sliderX');
+            const sliderY = document.getElementById('sliderY');
+            const valX = document.getElementById('valX');
+            const valY = document.getElementById('valY');
+            const resetBtn = document.getElementById('resetQR');
+
+            // ---- set posisi awal dari slider ----
+            function updateQRPosition() {
+                const x = parseInt(sliderX.value, 10);
+                const y = parseInt(sliderY.value, 10);
+                qrCol.style.left = x + 'px';
+                qrCol.style.top = y + 'px';
+                valX.textContent = x;
+                valY.textContent = y;
             }
 
-            function setOverlay(show) {
-                if (!overlay) return;
-                if (show) overlay.classList.add('active');
-                else overlay.classList.remove('active');
+            sliderX.addEventListener('input', updateQRPosition);
+            sliderY.addEventListener('input', updateQRPosition);
+
+            resetBtn.addEventListener('click', function() {
+                sliderX.value = -20;
+                sliderY.value = -30;
+                updateQRPosition();
+            });
+
+            // inisialisasi posisi
+            updateQRPosition();
+
+            // ---- helper: load image from file ----
+            function loadImageFromFile(file, imgElement, onSuccess) {
+                if (!file || !file.type.startsWith('image/')) {
+                    alert('Harap pilih file gambar yang valid.');
+                    return false;
+                }
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imgElement.src = e.target.result;
+                    imgElement.style.display = 'block';
+                    if (onSuccess) onSuccess();
+                };
+                reader.onerror = function() {
+                    alert('Gagal membaca file. Silakan coba lagi.');
+                };
+                reader.readAsDataURL(file);
+                return true;
             }
 
-            // ---------- IMAGE UPLOAD (Profile) ----------
-            var imgBox = document.getElementById('profileImgBox');
-            var imgInput = document.getElementById('imgUpload');
-            var profileImg = document.getElementById('profileImg');
-            var fallbackDiv = imgBox ? imgBox.querySelector('.profile-fallback') : null;
+            // ---- PROFILE UPLOAD ----
+            profileArea.addEventListener('click', function(e) {
+                e.stopPropagation();
+                profileUpload.click();
+            });
 
-            if (imgBox && imgInput) {
-                imgBox.addEventListener('click', function() {
-                    imgInput.click();
+            profileUpload.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+                loadImageFromFile(file, profileImg, function() {
+                    profileImg.style.display = 'block';
                 });
+                profileUpload.value = '';
+            });
 
-                imgInput.addEventListener('change', function(e) {
-                    var file = e.target.files[0];
-                    if (!file) return;
+            // ---- QR UPLOAD ----
+            qrBox.addEventListener('click', function(e) {
+                e.stopPropagation();
+                qrUpload.click();
+            });
 
-                    if (!file.type.match('image.*')) {
-                        showToast('Pilih file gambar (PNG/JPG/WebP)');
-                        return;
+            qrUpload.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+                loadImageFromFile(file, qrImg, function() {
+                    qrPlaceholder.style.display = 'none';
+                    qrImg.style.display = 'block';
+                    qrStatus.textContent = '✓ QR Code terupload';
+                    qrStatus.style.opacity = '1';
+                    qrStatus.style.color = '#1a1a5e';
+                });
+                qrUpload.value = '';
+            });
+
+            // ---- DRAG & DROP dukungan untuk QR ----
+            qrBox.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                qrBox.style.borderColor = '#f4c430';
+                qrBox.style.background = 'rgba(244,196,48,0.2)';
+            });
+            qrBox.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                qrBox.style.borderColor = '#1a1a5e';
+                qrBox.style.background = 'rgba(255,255,255,0.3)';
+            });
+            qrBox.addEventListener('drop', function(e) {
+                e.preventDefault();
+                qrBox.style.borderColor = '#1a1a5e';
+                qrBox.style.background = 'rgba(255,255,255,0.3)';
+                const files = e.dataTransfer.files;
+                if (files && files.length > 0) {
+                    const file = files[0];
+                    if (file.type.startsWith('image/')) {
+                        loadImageFromFile(file, qrImg, function() {
+                            qrPlaceholder.style.display = 'none';
+                            qrImg.style.display = 'block';
+                            qrStatus.textContent = '✓ QR Code terupload';
+                            qrStatus.style.opacity = '1';
+                            qrStatus.style.color = '#1a1a5e';
+                        });
+                    } else {
+                        alert('Harap drop file gambar (PNG, JPG, dll).');
+                    }
+                }
+            });
+
+            // ---- DOWNLOAD CV (html2canvas) ----
+            if (typeof html2canvas !== 'function') {
+                console.error('html2canvas tidak ditemukan.');
+                downloadBtn.disabled = true;
+                downloadBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Library Error';
+                return;
+            }
+
+            let isExporting = false;
+            const originalBtnHTML = downloadBtn.innerHTML;
+
+            async function waitForImages(container) {
+                const images = Array.from(container.querySelectorAll('img'));
+                await Promise.all(
+                    images.map(img => {
+                        if (img.complete && img.naturalWidth > 0) {
+                            return Promise.resolve();
+                        }
+                        return new Promise(resolve => {
+                            const onLoad = () => { cleanup();
+                                resolve(); };
+                            const onError = () => { cleanup();
+                                resolve(); };
+                            const cleanup = () => {
+                                img.removeEventListener('load', onLoad);
+                                img.removeEventListener('error', onError);
+                            };
+                            img.addEventListener('load', onLoad, { once: true });
+                            img.addEventListener('error', onError, { once: true });
+                            setTimeout(() => { cleanup();
+                                resolve(); }, 5000);
+                        });
+                    })
+                );
+            }
+
+            downloadBtn.addEventListener('click', async function() {
+                if (isExporting) return;
+                isExporting = true;
+
+                try {
+                    downloadBtn.disabled = true;
+                    downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing CV...';
+
+                    if (document.fonts && document.fonts.ready) {
+                        await document.fonts.ready;
                     }
 
-                    var reader = new FileReader();
-                    reader.onload = function(evt) {
-                        if (profileImg) {
-                            profileImg.src = evt.target.result;
-                            profileImg.style.display = 'block';
-                            if (fallbackDiv) fallbackDiv.style.display = 'none';
-                        }
-                        showToast('Foto berhasil diupload!');
-                    };
-                    reader.onerror = function() {
-                        showToast('Gagal membaca file');
-                    };
-                    reader.readAsDataURL(file);
-                });
-            }
+                    await waitForImages(cvPage);
+                    await new Promise(r => setTimeout(r, 300));
 
-            // ---------- QR CODE UPLOAD ----------
-            var qrFrame = document.getElementById('qrFrame');
-            var qrUpload = document.getElementById('qrUpload');
-            var qrImage = document.getElementById('qrImage');
-            var qrPlaceholder = document.getElementById('qrPlaceholder');
-
-            if (qrFrame && qrUpload) {
-                // Klik frame → trigger upload
-                qrFrame.addEventListener('click', function(e) {
-                    // Jangan trigger jika klik pada gambar (biarkan user bisa klik gambar juga)
-                    qrUpload.click();
-                });
-
-                // Klik hint juga trigger
-                var hint = document.getElementById('qrUploadHint');
-                if (hint) {
-                    hint.addEventListener('click', function(e) {
-                        e.stopPropagation();
-                        qrUpload.click();
-                    });
-                }
-
-                qrUpload.addEventListener('change', function(e) {
-                    var file = e.target.files[0];
-                    if (!file) return;
-
-                    if (!file.type.match('image.*')) {
-                        showToast('Pilih file gambar (PNG/JPG/WebP)');
-                        return;
-                    }
-
-                    var reader = new FileReader();
-                    reader.onload = function(evt) {
-                        if (qrImage) {
-                            qrImage.src = evt.target.result;
-                            qrImage.style.display = 'block';
-                            if (qrPlaceholder) qrPlaceholder.style.display = 'none';
-                            showToast('QR Code berhasil diupload!');
-                        }
-                    };
-                    reader.onerror = function() {
-                        showToast('Gagal membaca file QR');
-                    };
-                    reader.readAsDataURL(file);
-                });
-            }
-
-            // ---------- Wait for fonts & images ----------
-            function waitForResources() {
-                var promises = [];
-
-                if (document.fonts && document.fonts.ready) {
-                    promises.push(document.fonts.ready);
-                }
-
-                var imgs = document.querySelectorAll('img');
-                for (var i = 0; i < imgs.length; i++) {
-                    (function(img) {
-                        if (img.complete) return;
-                        promises.push(new Promise(function(resolve) {
-                            img.onload = resolve;
-                            img.onerror = resolve;
-                            setTimeout(resolve, 3000);
-                        }));
-                    })(imgs[i]);
-                }
-
-                return Promise.all(promises);
-            }
-
-            // ---------- Download CV as Image ----------
-            function downloadCVImage() {
-                var cv = document.getElementById('cvCanvas');
-                if (!cv) {
-                    showToast('CV element not found');
-                    return;
-                }
-
-                if (typeof html2canvas !== 'function') {
-                    showToast('Library not loaded. Check internet connection.');
-                    return;
-                }
-
-                setOverlay(true);
-
-                waitForResources().then(function() {
-                    return new Promise(function(r) { setTimeout(r, 600); });
-                }).then(function() {
-                    return html2canvas(cv, {
-                        scale: 2,
+                    const canvas = await html2canvas(cvPage, {
+                        scale: 3,
                         useCORS: true,
-                        allowTaint: true,
-                        backgroundColor: '#E9E9E9',
+                        allowTaint: false,
+                        backgroundColor: null,
                         logging: false,
-                        removeContainer: true,
-                        imageTimeout: 15000
+                        width: cvPage.offsetWidth,
+                        height: cvPage.offsetHeight,
+                        windowWidth: cvPage.offsetWidth,
+                        windowHeight: cvPage.offsetHeight
                     });
-                }).then(function(canvas) {
-                    var link = document.createElement('a');
-                    link.download = 'CV_Afdal_Adha_Firnansyah.png';
-                    link.href = canvas.toDataURL('image/png');
+
+                    if (!canvas || canvas.width <= 0 || canvas.height <= 0) {
+                        throw new Error('Canvas tidak valid.');
+                    }
+
+                    const imageData = canvas.toDataURL('image/png');
+                    if (!imageData || !imageData.startsWith('data:image/png')) {
+                        throw new Error('Gagal generate PNG.');
+                    }
+
+                    const link = document.createElement('a');
+                    link.href = imageData;
+                    link.download = 'CV-Adinagara.png';
                     document.body.appendChild(link);
                     link.click();
-                    document.body.removeChild(link);
-                    setOverlay(false);
-                    showToast('CV downloaded!');
-                }).catch(function(err) {
-                    console.error(err);
-                    setOverlay(false);
-                    showToast('Download failed. Try using Print (Ctrl+P) instead.');
+                    link.remove();
+
+                    downloadBtn.innerHTML = '<i class="fas fa-check"></i> CV Downloaded';
+                    setTimeout(() => {
+                        downloadBtn.innerHTML = originalBtnHTML;
+                    }, 2500);
+
+                } catch (err) {
+                    console.error('Export error:', err);
+                    alert('Gagal menghasilkan gambar CV. Silakan coba lagi.');
+                    downloadBtn.innerHTML = originalBtnHTML;
+                } finally {
+                    downloadBtn.disabled = false;
+                    isExporting = false;
+                }
+            });
+
+            // ============================================================
+            // FITUR UPLOAD ICON SOFTWARE (ganti ikon via klik)
+            // ============================================================
+            const iconUpload = document.getElementById('iconUpload');
+            let currentIconTarget = null;
+
+            // Fungsi ini akan dipanggil setiap kali kita membuat item software baru
+            function attachIconClickHandler(iconElement) {
+                iconElement.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    currentIconTarget = this;
+                    iconUpload.click();
                 });
             }
 
-            var btn = document.getElementById('downloadBtn');
-            if (btn) {
-                btn.addEventListener('click', downloadCVImage);
-            }
-
-            // ---------- Copy Email ----------
-            window.copyEmail = function() {
-                var emailEl = document.querySelector('.email-text');
-                if (!emailEl) return;
-                var email = emailEl.getAttribute('data-email') || emailEl.textContent;
-                if (!email || email.indexOf('Tambahkan') !== -1) {
-                    showToast('Email belum diatur');
+            iconUpload.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+                if (!file.type.startsWith('image/')) {
+                    alert('Harap pilih file gambar (PNG, JPG, SVG, dll).');
+                    iconUpload.value = '';
                     return;
                 }
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(email).then(function() {
-                        showToast('Email copied!');
-                    }).catch(function() {
-                        fallbackCopy(email);
-                    });
-                } else {
-                    fallbackCopy(email);
-                }
-            };
 
-            function fallbackCopy(text) {
-                var ta = document.createElement('textarea');
-                ta.value = text;
-                ta.style.position = 'fixed';
-                ta.style.opacity = '0';
-                document.body.appendChild(ta);
-                ta.select();
-                try {
-                    document.execCommand('copy');
-                    showToast('Email copied!');
-                } catch (e) {
-                    showToast('Gagal copy email');
+                const reader = new FileReader();
+                reader.onload = function(ev) {
+                    if (currentIconTarget) {
+                        currentIconTarget.innerHTML = '';
+                        currentIconTarget.style.background = 'transparent';
+                        const img = document.createElement('img');
+                        img.src = ev.target.result;
+                        img.alt = 'Custom icon';
+                        currentIconTarget.appendChild(img);
+                    }
+                    currentIconTarget = null;
+                };
+                reader.onerror = function() {
+                    alert('Gagal membaca file.');
+                };
+                reader.readAsDataURL(file);
+                iconUpload.value = '';
+            });
+
+            // ============================================================
+            // FITUR BACKGROUND CV (cover)
+            // ============================================================
+            const bgUpload = document.getElementById('bgUpload');
+            const bgUploadBtn = document.getElementById('bgUploadBtn');
+            const bgResetBtn = document.getElementById('bgResetBtn');
+            const presetBtns = document.querySelectorAll('.bg-preset-btn');
+
+            const defaultBg = '#e8e8e8';
+
+            function setBackground(value) {
+                cvPage.style.background = '';
+                cvPage.style.backgroundImage = '';
+                cvPage.style.backgroundSize = '';
+                cvPage.style.backgroundRepeat = '';
+                cvPage.style.backgroundPosition = '';
+
+                if (value.startsWith('#')) {
+                    cvPage.style.background = value;
+                } else if (value.startsWith('linear-gradient') || value.startsWith('radial-gradient')) {
+                    cvPage.style.background = value;
+                } else {
+                    cvPage.style.backgroundImage = 'url(' + value + ')';
+                    cvPage.style.backgroundSize = 'cover';
+                    cvPage.style.backgroundRepeat = 'no-repeat';
+                    cvPage.style.backgroundPosition = 'center';
                 }
-                document.body.removeChild(ta);
+
+                presetBtns.forEach(btn => btn.classList.remove('active'));
+                presetBtns.forEach(btn => {
+                    if (btn.getAttribute('data-bg') === value) {
+                        btn.classList.add('active');
+                    }
+                });
             }
 
-            console.log('%c Afdal Adha Firnansyah — CV Geometris + QR ', 'background:#17177A;color:#F6C400;font-size:14px;font-weight:bold;padding:6px 12px;border-radius:4px;');
+            presetBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    setBackground(this.getAttribute('data-bg'));
+                });
+            });
+
+            bgUploadBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                bgUpload.click();
+            });
+
+            bgUpload.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+                if (!file.type.startsWith('image/')) {
+                    alert('Harap pilih file gambar.');
+                    bgUpload.value = '';
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = function(ev) {
+                    setBackground(ev.target.result);
+                    presetBtns.forEach(btn => btn.classList.remove('active'));
+                };
+                reader.onerror = function() {
+                    alert('Gagal membaca file.');
+                };
+                reader.readAsDataURL(file);
+                bgUpload.value = '';
+            });
+
+            bgResetBtn.addEventListener('click', function() {
+                setBackground(defaultBg);
+                presetBtns.forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-bg') === defaultBg);
+                });
+            });
+
+            presetBtns.forEach(btn => {
+                if (btn.getAttribute('data-bg') === defaultBg) btn.classList.add('active');
+            });
+
+            // ============================================================
+            // DATA SOFTWARE (default) + MANAJEMEN CRUD
+            // ============================================================
+            // Data awal
+            let softwareData = [
+                
+            ];
+
+            let nextId = softwareData.length + 1;
+
+            const grid = document.getElementById('softwareGrid');
+
+            function renderSoftware() {
+                grid.innerHTML = '';
+                softwareData.forEach(item => {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'software-item';
+                    wrapper.dataset.id = item.id;
+
+                    // Tombol hapus
+                    const delBtn = document.createElement('button');
+                    delBtn.className = 'delete-btn';
+                    delBtn.innerHTML = '×';
+                    delBtn.title = 'Hapus software ini';
+                    delBtn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        if (confirm('Hapus software "' + item.label + '"?')) {
+                            softwareData = softwareData.filter(s => s.id !== item.id);
+                            renderSoftware();
+                        }
+                    });
+                    wrapper.appendChild(delBtn);
+
+                    // Icon
+                    const iconDiv = document.createElement('div');
+                    iconDiv.className = 'software-icon';
+                    iconDiv.style.background = item.bgColor || '#1a1a5e';
+                    iconDiv.style.color = item.textColor || '#ffffff';
+                    // Jika icon berupa data URL (gambar custom) atau class Font Awesome
+                    if (item.icon.startsWith('data:image')) {
+                        const img = document.createElement('img');
+                        img.src = item.icon;
+                        img.alt = item.label;
+                        iconDiv.appendChild(img);
+                    } else {
+                        const i = document.createElement('i');
+                        i.className = item.icon;
+                        iconDiv.appendChild(i);
+                    }
+                    // Simpan data icon untuk referensi
+                    iconDiv.dataset.icon = item.icon;
+                    iconDiv.dataset.bg = item.bgColor;
+                    iconDiv.dataset.textColor = item.textColor;
+
+                    // Klik untuk ganti ikon (upload)
+                    attachIconClickHandler(iconDiv);
+
+                    wrapper.appendChild(iconDiv);
+
+                    // Label
+                    const labelDiv = document.createElement('div');
+                    labelDiv.className = 'software-label';
+                    const span1 = document.createElement('span');
+                    span1.textContent = item.label;
+                    const span2 = document.createElement('span');
+                    span2.textContent = item.sub || '';
+                    labelDiv.appendChild(span1);
+                    if (item.sub) labelDiv.appendChild(span2);
+                    wrapper.appendChild(labelDiv);
+
+                    grid.appendChild(wrapper);
+                });
+            }
+
+            renderSoftware();
+
+            // ============================================================
+            // MODAL TAMBAH SOFTWARE
+            // ============================================================
+            const modalOverlay = document.getElementById('modalOverlay');
+            const modalName = document.getElementById('modalName');
+            const modalSub = document.getElementById('modalSub');
+            const modalIconSelect = document.getElementById('modalIconSelect');
+            const modalIconUploadBtn = document.getElementById('modalIconUploadBtn');
+            const modalIconUpload = document.getElementById('modalIconUpload');
+            const modalIconPreview = document.getElementById('modalIconPreview');
+            const modalAdd = document.getElementById('modalAdd');
+            const modalCancel = document.getElementById('modalCancel');
+            const colorPickerRow = document.getElementById('colorPickerRow');
+
+            // Warna preset
+            const colorPresets = ['#F7DF1E', '#264de4', '#e34c26', '#306998', '#E74C3C', '#F89C0E', '#2d5a27', '#2C2C2C', '#00C4CC', '#10a37f', '#1FB8A6', '#000000', '#1a1a5e', '#1E80FF', '#181717', '#E60023', '#d4af37', '#f4c430', '#e8e8e8'];
+            let selectedColor = colorPresets[0];
+            let modalCustomIconData = null; // untuk menyimpan data URL gambar custom
+
+            // Buat tombol warna
+            colorPresets.forEach(col => {
+                const btn = document.createElement('div');
+                btn.className = 'cp-btn';
+                btn.style.background = col;
+                btn.dataset.color = col;
+                if (col === selectedColor) btn.classList.add('active');
+                btn.addEventListener('click', function() {
+                    colorPickerRow.querySelectorAll('.cp-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    selectedColor = this.dataset.color;
+                });
+                colorPickerRow.appendChild(btn);
+            });
+
+            // Upload icon custom di modal
+            modalIconUploadBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                modalIconUpload.click();
+            });
+
+            modalIconUpload.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+                if (!file.type.startsWith('image/')) {
+                    alert('Harap pilih file gambar.');
+                    modalIconUpload.value = '';
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = function(ev) {
+                    modalCustomIconData = ev.target.result;
+                    modalIconPreview.innerHTML = 'Ikon custom terupload <i class="fas fa-check-circle" style="color:green;"></i>';
+                    // Set select ke custom
+                    modalIconSelect.value = 'custom';
+                };
+                reader.onerror = function() {
+                    alert('Gagal membaca file.');
+                };
+                reader.readAsDataURL(file);
+                modalIconUpload.value = '';
+            });
+
+            // Reset preview saat select berubah
+            modalIconSelect.addEventListener('change', function() {
+                if (this.value !== 'custom') {
+                    modalIconPreview.innerHTML = 'Ikon akan ditampilkan di sini';
+                    modalCustomIconData = null;
+                } else {
+                    if (modalCustomIconData) {
+                        modalIconPreview.innerHTML = 'Ikon custom terupload <i class="fas fa-check-circle" style="color:green;"></i>';
+                    } else {
+                        modalIconPreview.innerHTML = 'Silakan upload gambar ikon';
+                    }
+                }
+            });
+
+            // Buka modal
+            document.getElementById('addSoftwareBtn').addEventListener('click', function() {
+                modalOverlay.classList.add('active');
+                modalName.value = '';
+                modalSub.value = '';
+                modalIconSelect.value = 'fab fa-js';
+                modalCustomIconData = null;
+                modalIconPreview.innerHTML = 'Ikon akan ditampilkan di sini';
+                // Reset pilihan warna ke default
+                selectedColor = colorPresets[0];
+                colorPickerRow.querySelectorAll('.cp-btn').forEach(b => b.classList.remove('active'));
+                colorPickerRow.querySelector('.cp-btn').classList.add('active');
+            });
+
+            // Tutup modal
+            function closeModal() {
+                modalOverlay.classList.remove('active');
+            }
+            modalCancel.addEventListener('click', closeModal);
+            modalOverlay.addEventListener('click', function(e) {
+                if (e.target === this) closeModal();
+            });
+
+            // Tambah software
+            modalAdd.addEventListener('click', function() {
+                const name = modalName.value.trim();
+                const sub = modalSub.value.trim();
+                let iconValue = modalIconSelect.value;
+                let bgColor = selectedColor;
+                let textColor = '#ffffff';
+
+                // Tentukan warna teks otomatis (jika background terang, teks gelap)
+                const brightness = (bgColor) => {
+                    const hex = bgColor.replace('#', '');
+                    const r = parseInt(hex.substring(0,2), 16);
+                    const g = parseInt(hex.substring(2,4), 16);
+                    const b = parseInt(hex.substring(4,6), 16);
+                    return (r*299 + g*587 + b*114) / 1000;
+                };
+                textColor = brightness(bgColor) > 150 ? '#222222' : '#ffffff';
+
+                if (!name) {
+                    alert('Nama software harus diisi.');
+                    return;
+                }
+
+                // Jika custom, gunakan data URL
+                if (iconValue === 'custom') {
+                    if (!modalCustomIconData) {
+                        alert('Silakan upload gambar ikon terlebih dahulu.');
+                        return;
+                    }
+                    iconValue = modalCustomIconData;
+                }
+
+                const newItem = {
+                    id: nextId++,
+                    icon: iconValue,
+                    label: name,
+                    sub: sub,
+                    bgColor: bgColor,
+                    textColor: textColor
+                };
+
+                softwareData.push(newItem);
+                renderSoftware();
+                closeModal();
+            });
+
+            console.log('✅ Fitur tambah & hapus software aktif.');
+            console.log('✅ Background cover aktif.');
+            console.log('✅ Upload ikon & QR aktif.');
+
         })();
     </script>
+
 </body>
 </html>

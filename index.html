@@ -529,35 +529,6 @@
             gap: 16px;
             margin-top: 6px;
         }
-        .hero__stats {
-            display: flex;
-            gap: 48px;
-            margin-top: 10px;
-            padding-top: 22px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .hero__stat-item {
-            transition: all var(--transition);
-        }
-        .hero__stat-item:hover {
-            transform: translateY(-2px);
-        }
-        .hero__stat-number {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text-white);
-            line-height: 1;
-        }
-        .hero__stat-number .suffix {
-            color: var(--accent-gold);
-        }
-        .hero__stat-label {
-            font-size: 0.72rem;
-            color: var(--text-muted);
-            margin-top: 4px;
-            letter-spacing: 0.02em;
-        }
 
         .hero__visual {
             position: relative;
@@ -1384,9 +1355,6 @@
             .hero__desc {
                 max-width: 100%;
             }
-            .hero__stats {
-                justify-content: center;
-            }
             .hero__visual {
                 order: -1;
             }
@@ -1475,10 +1443,6 @@
             .hero__title {
                 font-size: clamp(2.6rem, 12vw, 3.8rem);
             }
-            .hero__stats {
-                gap: 28px;
-                flex-wrap: wrap;
-            }
 
             .about__features {
                 grid-template-columns: 1fr;
@@ -1558,12 +1522,6 @@
             }
             .hero__image-wrapper {
                 max-width: 280px;
-            }
-            .hero__stats {
-                gap: 20px;
-            }
-            .hero__stat-number {
-                font-size: 1.6rem;
             }
 
             .about__image img {
@@ -1681,15 +1639,13 @@
                 <div class="hero__content">
                     <div class="hero__badge">
                         <span class="dot"></span>
-                        Meta Prompt Engineer & Full Stack Developer
+                        Meta Prompt Engineer
                     </div>
                     <h1 class="hero__title">
                         <span id="typewriter"></span><span class="cursor"></span>
                     </h1>
                     <p class="hero__desc">
-                        Menggabungkan kecerdasan buatan, desain yang humanis, dan
-                        visi jangka panjang untuk menciptakan solusi yang
-                        <strong>berdampak</strong> dan <strong>berkelanjutan</strong>.
+                        Tentang apa saja yang 
                     </p>
                     <div class="hero__actions">
                         <a href="#contact" class="btn btn--primary">
@@ -1699,20 +1655,6 @@
                         <a href="#portfolio" class="btn btn--outline">
                             View My Work
                         </a>
-                    </div>
-                    <div class="hero__stats">
-                        <div class="hero__stat-item">
-                            <div class="hero__stat-number" data-count="2">0<span class="suffix">+</span></div>
-                            <div class="hero__stat-label">Years Experience</div>
-                        </div>
-                        <div class="hero__stat-item">
-                            <div class="hero__stat-number" data-count="12">0<span class="suffix">+</span></div>
-                            <div class="hero__stat-label">Projects Delivered</div>
-                        </div>
-                        <div class="hero__stat-item">
-                            <div class="hero__stat-number" data-count="100">0<span class="suffix">%</span></div>
-                            <div class="hero__stat-label">Client Satisfaction</div>
-                        </div>
                     </div>
                 </div>
 
@@ -2209,37 +2151,7 @@
             }
             animateParticles();
 
-            // ===== 8. COUNTER ANIMATION =====
-            const statNumbers = document.querySelectorAll('.hero__stat-number');
-            const counterObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const el = entry.target;
-                        const target = parseInt(el.dataset.count);
-                        const suffixEl = el.querySelector('.suffix');
-                        const suffix = suffixEl ? suffixEl.textContent : '';
-                        let current = 0;
-                        const increment = Math.max(1, target / 55);
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (current >= target) {
-                                current = target;
-                                clearInterval(timer);
-                            }
-                            const numPart = Math.floor(current);
-                            if (suffixEl) {
-                                el.innerHTML = numPart + '<span class="suffix">' + suffix + '</span>';
-                            } else {
-                                el.textContent = numPart + suffix;
-                            }
-                        }, 25);
-                        counterObserver.unobserve(el);
-                    }
-                });
-            }, { threshold: 0.4 });
-            statNumbers.forEach(el => counterObserver.observe(el));
-
-            // ===== 9. TESTIMONIAL SLIDER =====
+            // ===== 8. TESTIMONIAL SLIDER =====
             const track = document.getElementById('testimonialTrack');
             const dotsContainer = document.getElementById('testimonialDots');
             const slides = track.querySelectorAll('.testimonial-card');
@@ -2327,7 +2239,7 @@
 
             setTimeout(startAutoPlay, 2500);
 
-            // ===== 10. SCROLL TO TOP =====
+            // ===== 9. SCROLL TO TOP =====
             const scrollBtn = document.getElementById('scrollTop');
             window.addEventListener('scroll', () => {
                 scrollBtn.classList.toggle('visible', window.scrollY > 400);
@@ -2336,7 +2248,7 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
-            // ===== 11. TILT EFFECT ON SERVICE CARDS =====
+            // ===== 10. TILT EFFECT ON SERVICE CARDS =====
             const tiltCards = document.querySelectorAll('[data-tilt]');
             tiltCards.forEach(card => {
                 card.addEventListener('mousemove', (e) => {
@@ -2358,7 +2270,7 @@
                 });
             });
 
-            // ===== 12. FALLBACK IMAGES =====
+            // ===== 11. FALLBACK IMAGES =====
             const heroImg = document.getElementById('heroImage');
             if (heroImg) {
                 heroImg.addEventListener('error', function() {
