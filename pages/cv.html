@@ -8,12 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <!-- Primary: html-to-image (more stable for fonts & icons) -->
-    <script src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
-    <!-- Fallback: html2canvas -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
+/* ============================================================
+   CV — AFDAL ADHA FIRNANSYAH (Foto Bebas Tanpa Box)
+   ============================================================ */
+
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
 :root {
     --bg: #E9E9E9;
     --navy: #17177A;
@@ -25,7 +27,9 @@
     --white: #FFFFFF;
     --red: #E53935;
 }
+
 html { font-size: 16px; }
+
 body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: #d4d4d4;
@@ -38,6 +42,7 @@ body {
     align-items: flex-start;
     padding: 40px 20px;
 }
+
 .cv {
     width: 100%;
     max-width: 780px;
@@ -47,89 +52,83 @@ body {
     overflow: hidden;
     box-shadow: 0 25px 80px rgba(0,0,0,0.15);
 }
+
+/* ---------- HEADER ---------- */
 .cv-header {
     display: flex;
-    align-items: flex-start;
-    gap: 40px;
-    margin-bottom: 30px;
+    align-items: center;
+    gap: 45px;
+    margin-bottom: 35px;
 }
+
+/* Area foto: bebas tanpa box */
 .header-left {
-    flex: 0 0 42%;
+    flex: 0 0 auto;
     position: relative;
     z-index: 2;
 }
+
 .profile-wrapper {
     position: relative;
-    width: 100%;
-    padding-bottom: 125%;
+    width: 240px;
+    /* Tidak ada padding-bottom, tidak ada aspect ratio trap */
 }
-.profile-decor-circle {
-    position: absolute;
-    width: 92%;
-    height: 72%;
-    background: var(--yellow);
-    border-radius: 50%;
-    top: 10%;
-    left: 2%;
-    z-index: 1;
-}
-.profile-decor-dots {
-    position: absolute;
-    inset: -8%;
-    z-index: 0;
-    pointer-events: none;
-}
-.dot {
-    position: absolute;
-    border-radius: 50%;
-    display: block;
-}
-.dot-navy { background: var(--navy); }
-.dot-yellow { background: var(--yellow); }
-.d1  { width: 10px; height: 10px; top: 5%;  left: 8%;  }
-.d2  { width: 8px;  height: 8px;  top: 2%;  left: 25%; }
-.d3  { width: 12px; height: 12px; top: 0%;  left: 55%; }
-.d4  { width: 7px;  height: 7px;  top: 4%;  left: 78%; }
-.d5  { width: 9px;  height: 9px;  top: 15%; left: 94%; }
-.d6  { width: 11px; height: 11px; top: 35%; left: 98%; }
-.d7  { width: 8px;  height: 8px;  top: 58%; left: 96%; }
-.d8  { width: 10px; height: 10px; top: 78%; left: 90%; }
-.d9  { width: 7px;  height: 7px;  top: 92%; left: 72%; }
-.d10 { width: 12px; height: 12px; top: 96%; left: 48%; }
-.d11 { width: 8px;  height: 8px;  top: 92%; left: 22%; }
-.d12 { width: 10px; height: 10px; top: 78%; left: 0%;  }
-.profile-frame-ring {
-    position: absolute;
-    width: 88%;
-    height: 68%;
-    border: 4px solid var(--white);
-    border-radius: 50%;
-    top: 12%;
-    left: 4%;
-    z-index: 2;
-    pointer-events: none;
-}
+
+/* FOTO PROFIL: Tanpa border, tanpa background, tanpa box, menyatu dengan CV */
 .profile-img-box {
-    position: absolute;
-    z-index: 3;
+    position: relative;
     width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    /* Tidak ada border-radius, tidak ada border, tidak ada background */
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
     overflow: visible;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
+
+.profile-img-box:hover {
+    transform: scale(1.02);
+}
+
+/* Hint upload muncul saat hover */
+.upload-hint {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(23, 23, 122, 0.5);
+    color: var(--white);
+    font-size: 0.85rem;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    text-align: center;
+    padding: 10px;
+    line-height: 1.4;
+}
+
+.profile-img-box:hover .upload-hint {
+    opacity: 1;
+}
+
 .profile-img-box img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center bottom;
+    height: auto;
     display: block;
-    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+    /* object-fit: contain agar PNG transparan tidak ter-crop */
+    object-fit: contain;
+    background: transparent;
 }
+
 .profile-fallback {
-    width: 100%;
-    height: 100%;
-    display: none;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
@@ -137,10 +136,12 @@ body {
     font-size: 3.5rem;
     font-weight: 800;
     letter-spacing: 2px;
-    border-radius: 50%;
 }
-.header-right { flex: 1; padding-top: 22px; }
+
+.header-right { flex: 1; padding-top: 10px; }
+
 .main-title { margin-bottom: 10px; }
+
 .title-line {
     display: block;
     font-weight: 900;
@@ -148,10 +149,13 @@ body {
     line-height: 1.05;
     letter-spacing: -0.5px;
 }
+
 .title-navy { color: var(--navy); }
 .title-yellow { color: var(--yellow); text-shadow: 1px 1px 0 rgba(0,0,0,0.08); }
+
 .sub-title { margin-bottom: 14px; }
 .sub-title .title-line { font-size: 2.1rem; font-weight: 800; }
+
 .role-badge {
     display: inline-block;
     font-size: 1.05rem;
@@ -163,8 +167,11 @@ body {
     letter-spacing: 1.5px;
     text-transform: uppercase;
 }
+
+/* ---------- SECTION HEADINGS ---------- */
 .section-title-wrapper { margin-bottom: 18px; position: relative; display: inline-block; }
 .section-title-wrapper.small { margin-bottom: 14px; }
+
 .section-title {
     font-size: 1.55rem;
     font-weight: 800;
@@ -173,11 +180,13 @@ body {
     display: inline-block;
     line-height: 1.3;
 }
+
 .marker-bg {
     position: relative;
     z-index: 1;
     padding: 2px 16px;
 }
+
 .marker-bg::before {
     content: '';
     position: absolute;
@@ -188,19 +197,26 @@ body {
     transform: rotate(-1.5deg) skewX(-2deg);
     opacity: 0.95;
 }
+
+/* ---------- ABOUT ---------- */
 .about-section { margin-bottom: 38px; }
+
 .about-text {
     font-size: 0.92rem;
     color: var(--text-secondary);
     line-height: 1.75;
     text-align: justify;
 }
+
+/* ---------- DIVIDERS ---------- */
 .divider {
     height: 1.5px;
     background: var(--black);
     margin: 38px 0;
     opacity: 0.85;
 }
+
+/* ---------- EDUCATION & CONTACT ---------- */
 .edu-contact { display: flex; gap: 50px; margin-bottom: 0; }
 .edu-col { flex: 1.2; }
 .edu-content { padding-left: 4px; }
@@ -217,6 +233,7 @@ body {
     padding: 4px 14px;
     border-radius: 4px;
 }
+
 .contact-col { flex: 1; padding-top: 52px; }
 .contact-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
 .contact-item { display: flex; align-items: center; gap: 12px; font-size: 0.9rem; color: var(--text-secondary); }
@@ -236,6 +253,8 @@ body {
     transition: opacity 0.2s;
 }
 .email-row:hover .copy-hint { opacity: 1; }
+
+/* ---------- TECH STACK ---------- */
 .skills-section { margin-bottom: 0; }
 .skills-grid {
     display: flex;
@@ -255,6 +274,8 @@ body {
 .skill-item:hover { transform: translateY(-5px) scale(1.05); }
 .skill-item i { font-size: 2.6rem; line-height: 1; }
 .skill-item span { font-size: 0.72rem; font-weight: 600; color: var(--text-secondary); text-align: center; line-height: 1.3; }
+
+/* ---------- EXPERIENCE ---------- */
 .experience-section { margin-bottom: 0; }
 .experience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 .exp-card { padding: 0; }
@@ -263,6 +284,8 @@ body {
 .exp-org { font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 14px; font-style: italic; }
 .exp-label { font-size: 0.8rem; font-weight: 700; color: var(--black); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 3px; margin-top: 10px; }
 .exp-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+/* ---------- SPECIALIZATION ---------- */
 .specialization-section { margin-bottom: 0; }
 .spec-grid { display: flex; flex-wrap: wrap; gap: 10px 12px; padding-top: 4px; }
 .spec-tag {
@@ -276,6 +299,8 @@ body {
     transition: all 0.2s ease;
 }
 .spec-tag:hover { background: var(--yellow); border-color: var(--yellow); color: var(--black); transform: translateY(-2px); }
+
+/* ---------- PROJECTS ---------- */
 .projects-section { margin-bottom: 10px; }
 .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-top: 4px; }
 .project-card { padding: 18px 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
@@ -284,8 +309,12 @@ body {
 .project-tech { font-size: 0.8rem; font-weight: 600; color: var(--muted); margin-bottom: 10px; }
 .project-link { font-size: 0.82rem; font-weight: 700; color: var(--navy); text-decoration: none; border-bottom: 2px solid var(--yellow); padding-bottom: 1px; transition: all 0.2s; display: inline-block; }
 .project-link:hover { color: var(--black); border-bottom-color: var(--navy); }
+
+/* ---------- FOOTER ---------- */
 .cv-footer { text-align: center; padding-top: 30px; margin-top: 10px; }
 .cv-footer p { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+
+/* ---------- FAB ---------- */
 .fab-container { position: fixed; bottom: 28px; right: 28px; z-index: 1000; display: flex; flex-direction: column; gap: 12px; }
 .fab {
     width: 52px;
@@ -303,6 +332,8 @@ body {
 }
 .fab:hover { background: var(--yellow); color: var(--black); transform: scale(1.1) rotate(-4deg); box-shadow: 0 8px 25px rgba(246, 196, 0, 0.4); }
 .fab svg { width: 22px; height: 22px; }
+
+/* ---------- TOAST ---------- */
 .toast {
     position: fixed;
     bottom: 160px;
@@ -321,6 +352,8 @@ body {
     z-index: 1001;
 }
 .toast.show { opacity: 1; transform: translateY(0); }
+
+/* ---------- DOWNLOAD OVERLAY ---------- */
 .download-overlay {
     position: fixed;
     inset: 0;
@@ -346,21 +379,12 @@ body {
 @keyframes spin { to { transform: rotate(360deg); } }
 .download-overlay p { color: var(--white); margin-top: 16px; font-size: 1rem; font-weight: 600; text-align: center; }
 
-/* Print styles */
-@media print {
-    body { background: white; padding: 0; }
-    .cv { box-shadow: none; max-width: 100%; }
-    .no-print { display: none !important; }
-    .fab-container { display: none !important; }
-    .download-overlay { display: none !important; }
-    .toast { display: none !important; }
-}
-
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 860px) {
     body { padding: 20px 15px; }
     .cv { box-shadow: 0 15px 50px rgba(0,0,0,0.12); padding: 35px; }
     .cv-header { flex-direction: column; align-items: center; text-align: center; gap: 28px; }
-    .header-left { flex: 0 0 auto; width: 240px; }
+    .header-left { width: 200px; }
     .header-right { padding-top: 0; }
     .title-line { font-size: 2rem; }
     .sub-title .title-line { font-size: 1.6rem; }
@@ -371,6 +395,7 @@ body {
     .skill-item { width: 64px; }
     .skill-item i { font-size: 2.2rem; }
 }
+
 @media (max-width: 480px) {
     .cv { padding: 22px; }
     .title-line { font-size: 1.55rem; }
@@ -378,7 +403,7 @@ body {
     .role-badge { font-size: 0.9rem; padding: 5px 14px; }
     .section-title { font-size: 1.3rem; }
     .about-text { font-size: 0.88rem; }
-    .header-left { width: 200px; }
+    .header-left { width: 160px; }
     .skills-grid { gap: 16px 18px; }
     .skill-item { width: 56px; }
     .skill-item i { font-size: 1.9rem; }
@@ -410,27 +435,14 @@ body {
         <header class="cv-header">
             <div class="header-left">
                 <div class="profile-wrapper">
-                    <div class="profile-decor-circle"></div>
-                    <div class="profile-decor-dots">
-                        <span class="dot dot-navy d1"></span>
-                        <span class="dot dot-yellow d2"></span>
-                        <span class="dot dot-navy d3"></span>
-                        <span class="dot dot-yellow d4"></span>
-                        <span class="dot dot-navy d5"></span>
-                        <span class="dot dot-yellow d6"></span>
-                        <span class="dot dot-navy d7"></span>
-                        <span class="dot dot-yellow d8"></span>
-                        <span class="dot dot-navy d9"></span>
-                        <span class="dot dot-yellow d10"></span>
-                        <span class="dot dot-navy d11"></span>
-                        <span class="dot dot-yellow d12"></span>
-                    </div>
-                    <div class="profile-frame-ring"></div>
-                    <div class="profile-img-box">
-                        <img id="profileImg" src="../image/1_-removebg-preview.png" alt="Afdal Adha Firnansyah">
-                        <div class="profile-fallback" id="profileFallback"><span>AF</span></div>
+                    <div class="profile-img-box" id="profileImgBox" title="Klik untuk ganti foto">
+                        <img src="assets/profile.png" alt="Afdal Adha Firnansyah" id="profileImg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="profile-fallback" style="display:none;"><span>AF</span></div>
+                        <div class="upload-hint no-print">Klik untuk<br>upload foto</div>
                     </div>
                 </div>
+                <!-- Input file tersembunyi untuk upload gambar -->
+                <input type="file" id="imgUpload" accept="image/png,image/jpeg,image/jpg,image/webp" style="display:none;">
             </div>
 
             <div class="header-right">
@@ -586,32 +598,20 @@ body {
     <div class="toast no-print" id="toast">Email copied!</div>
 
     <script>
+/* ============================================================
+   CV INTERACTIONS — Robust Image Download + Image Upload
+   ============================================================ */
 (function() {
     'use strict';
 
     var overlay = document.getElementById('downloadOverlay');
     var toastEl = document.getElementById('toast');
-    var profileImg = document.getElementById('profileImg');
-    var profileFallback = document.getElementById('profileFallback');
-
-    // Handle profile image error — only show fallback if actually failed
-    if (profileImg) {
-        profileImg.addEventListener('error', function() {
-            profileImg.style.display = 'none';
-            if (profileFallback) profileFallback.style.display = 'flex';
-        });
-        // If image is already broken (cached error)
-        if (profileImg.complete && profileImg.naturalWidth === 0 && profileImg.src && profileImg.src !== window.location.href) {
-            profileImg.style.display = 'none';
-            if (profileFallback) profileFallback.style.display = 'flex';
-        }
-    }
 
     function showToast(msg) {
         if (!toastEl) return;
         toastEl.textContent = msg;
         toastEl.classList.add('show');
-        setTimeout(function() { toastEl.classList.remove('show'); }, 3000);
+        setTimeout(function() { toastEl.classList.remove('show'); }, 2500);
     }
 
     function setOverlay(show) {
@@ -620,89 +620,83 @@ body {
         else overlay.classList.remove('active');
     }
 
-    function waitForResources() {
-        return new Promise(function(resolve) {
-            var checks = 0;
-            var maxChecks = 50; // 5 seconds max
-            
-            function check() {
-                checks++;
-                var fontsReady = document.fonts ? document.fonts.status === 'loaded' : true;
-                var imagesReady = Array.from(document.querySelectorAll('img')).every(function(img) {
-                    return img.complete;
-                });
-                
-                if ((fontsReady && imagesReady) || checks >= maxChecks) {
-                    // Extra delay to ensure rendering is complete
-                    setTimeout(resolve, 800);
-                } else {
-                    setTimeout(check, 100);
+    // ---------- IMAGE UPLOAD ----------
+    var imgBox = document.getElementById('profileImgBox');
+    var imgInput = document.getElementById('imgUpload');
+    var profileImg = document.getElementById('profileImg');
+    var fallbackDiv = imgBox ? imgBox.querySelector('.profile-fallback') : null;
+
+    if (imgBox && imgInput) {
+        imgBox.addEventListener('click', function() {
+            imgInput.click();
+        });
+
+        imgInput.addEventListener('change', function(e) {
+            var file = e.target.files[0];
+            if (!file) return;
+
+            if (!file.type.match('image.*')) {
+                showToast('Pilih file gambar (PNG/JPG/WebP)');
+                return;
+            }
+
+            var reader = new FileReader();
+            reader.onload = function(evt) {
+                if (profileImg) {
+                    profileImg.src = evt.target.result;
+                    profileImg.style.display = 'block';
+                    if (fallbackDiv) fallbackDiv.style.display = 'none';
                 }
-            }
-            check();
+                showToast('Foto berhasil diupload!');
+            };
+            reader.onerror = function() {
+                showToast('Gagal membaca file');
+            };
+            reader.readAsDataURL(file);
         });
     }
 
-    function triggerDownload(dataUrl, filename) {
-        var link = document.createElement('a');
-        link.download = filename;
-        link.href = dataUrl;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
+    // ---------- Wait for fonts & images ----------
+    function waitForResources() {
+        var promises = [];
 
-    /* =========================================================
-       PRIMARY: html-to-image (toPng) — lebih stabil untuk font
-       ========================================================= */
-    function downloadWithHtmlToImage() {
-        var cv = document.getElementById('cvCanvas');
-        if (!cv) throw new Error('CV not found');
-        if (typeof htmlToImage === 'undefined' || !htmlToImage.toPng) {
-            throw new Error('html-to-image not loaded');
+        if (document.fonts && document.fonts.ready) {
+            promises.push(document.fonts.ready);
         }
 
-        setOverlay(true);
-        showToast('Menyiapkan gambar PNG...');
+        var imgs = document.querySelectorAll('img');
+        for (var i = 0; i < imgs.length; i++) {
+            (function(img) {
+                if (img.complete) return;
+                promises.push(new Promise(function(resolve) {
+                    img.onload = resolve;
+                    img.onerror = resolve;
+                    setTimeout(resolve, 3000);
+                }));
+            })(imgs[i]);
+        }
 
-        return waitForResources().then(function() {
-            return htmlToImage.toPng(cv, {
-                quality: 1.0,
-                pixelRatio: 2,
-                backgroundColor: '#E9E9E9',
-                skipFonts: false,
-                fontEmbedCSS: '',
-                cacheBust: true
-            });
-        }).then(function(dataUrl) {
-            triggerDownload(dataUrl, 'CV_Afdal_Adha_Firnansyah.png');
-            setOverlay(false);
-            showToast('CV berhasil di-download!');
-        });
+        return Promise.all(promises);
     }
 
-    /* =========================================================
-       FALLBACK: html2canvas — kalau html-to-image gagal
-       ========================================================= */
-    function downloadWithHtml2Canvas() {
+    // ---------- Download CV as Image ----------
+    function downloadCVImage() {
         var cv = document.getElementById('cvCanvas');
-        if (!cv) throw new Error('CV not found');
+        if (!cv) {
+            showToast('CV element not found');
+            return;
+        }
+
         if (typeof html2canvas !== 'function') {
-            throw new Error('html2canvas not loaded');
+            showToast('Library not loaded. Check internet connection.');
+            return;
         }
 
         setOverlay(true);
-        showToast('Mencoba fallback html2canvas...');
 
-        // Hide broken images before capture
-        var imgs = cv.querySelectorAll('img');
-        imgs.forEach(function(img) {
-            if (!img.complete || img.naturalWidth === 0) {
-                img.style.display = 'none';
-            }
-        });
-
-        return waitForResources().then(function() {
+        waitForResources().then(function() {
+            return new Promise(function(r) { setTimeout(r, 600); });
+        }).then(function() {
             return html2canvas(cv, {
                 scale: 2,
                 useCORS: true,
@@ -710,49 +704,47 @@ body {
                 backgroundColor: '#E9E9E9',
                 logging: false,
                 removeContainer: true,
-                imageTimeout: 0,
-                foreignObjectRendering: false
+                imageTimeout: 15000
             });
         }).then(function(canvas) {
-            triggerDownload(canvas.toDataURL('image/png'), 'CV_Afdal_Adha_Firnansyah.png');
+            var link = document.createElement('a');
+            link.download = 'CV_Afdal_Adha_Firnansyah.png';
+            link.href = canvas.toDataURL('image/png');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
             setOverlay(false);
-            showToast('CV berhasil di-download!');
-        });
-    }
-
-    /* =========================================================
-       MAIN DOWNLOAD HANDLER
-       ========================================================= */
-    function downloadCVImage() {
-        // Try html-to-image first, fallback to html2canvas
-        downloadWithHtmlToImage().catch(function(err) {
-            console.warn('html-to-image failed, trying html2canvas:', err);
-            return downloadWithHtml2Canvas();
-        }).catch(function(err2) {
-            console.error('Both methods failed:', err2);
+            showToast('CV downloaded!');
+        }).catch(function(err) {
+            console.error(err);
             setOverlay(false);
-            showToast('Download gagal. Pastikan koneksi internet stabil.');
+            showToast('Download failed. Try using Print (Ctrl+P) instead.');
         });
     }
 
     var btn = document.getElementById('downloadBtn');
-    if (btn) btn.addEventListener('click', downloadCVImage);
+    if (btn) {
+        btn.addEventListener('click', downloadCVImage);
+    }
 
-    /* =========================================================
-       COPY EMAIL
-       ========================================================= */
+    // ---------- Copy Email ----------
     window.copyEmail = function() {
         var emailEl = document.querySelector('.email-text');
         if (!emailEl) return;
         var email = emailEl.getAttribute('data-email') || emailEl.textContent;
         if (!email || email.indexOf('Tambahkan') !== -1) {
-            showToast('Email belum diatur'); return;
+            showToast('Email belum diatur');
+            return;
         }
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(email).then(function() {
-                showToast('Email disalin!');
-            }).catch(function() { fallbackCopy(email); });
-        } else { fallbackCopy(email); }
+                showToast('Email copied!');
+            }).catch(function() {
+                fallbackCopy(email);
+            });
+        } else {
+            fallbackCopy(email);
+        }
     };
 
     function fallbackCopy(text) {
@@ -762,8 +754,12 @@ body {
         ta.style.opacity = '0';
         document.body.appendChild(ta);
         ta.select();
-        try { document.execCommand('copy'); showToast('Email disalin!'); }
-        catch (e) { showToast('Gagal menyalin email'); }
+        try {
+            document.execCommand('copy');
+            showToast('Email copied!');
+        } catch (e) {
+            showToast('Gagal copy email');
+        }
         document.body.removeChild(ta);
     }
 
