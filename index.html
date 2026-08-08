@@ -897,99 +897,6 @@
         .project-showcase__header .section-desc {
             margin: 0 auto;
         }
-        .project-list {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-        .project-list__item {
-            display: grid;
-            grid-template-columns: 60px 1fr auto;
-            align-items: center;
-            gap: 32px;
-            padding: 32px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            cursor: pointer;
-            transition: all var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-        .project-list__item:first-child {
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-        }
-        .project-list__item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, var(--accent-gold), #f5d76e);
-            transform: scaleY(0);
-            transform-origin: top;
-            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .project-list__item:hover::before {
-            transform: scaleY(1);
-        }
-        .project-list__item:hover {
-            padding-left: 24px;
-            background: rgba(242, 201, 76, 0.02);
-        }
-        .project-list__num {
-            font-family: var(--font-display);
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--accent-gold);
-            opacity: 0.5;
-            transition: all var(--transition);
-        }
-        .project-list__item:hover .project-list__num {
-            opacity: 1;
-            transform: scale(1.1);
-        }
-        .project-list__info {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-        .project-list__title {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-white);
-            transition: all var(--transition);
-        }
-        .project-list__item:hover .project-list__title {
-            color: var(--accent-gold);
-        }
-        .project-list__meta {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            letter-spacing: 0.04em;
-        }
-        .project-list__arrow {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            transition: all var(--transition);
-            transform: rotate(-45deg);
-        }
-        .project-list__item:hover .project-list__arrow {
-            background: var(--accent-gold);
-            border-color: var(--accent-gold);
-            color: var(--text-dark);
-            transform: rotate(0deg);
-            box-shadow: 0 8px 24px rgba(242, 201, 76, 0.25);
-        }
         .project-showcase__cta {
             text-align: center;
             margin-top: 60px;
@@ -1000,44 +907,12 @@
         }
 
         @media (max-width: 768px) {
-            .project-list__item {
-                grid-template-columns: 40px 1fr auto;
-                gap: 16px;
-                padding: 24px 0;
-            }
-            .project-list__title {
-                font-size: 1.15rem;
-            }
-            .project-list__num {
-                font-size: 1.1rem;
-            }
-            .project-list__arrow {
-                width: 40px;
-                height: 40px;
-                font-size: 0.8rem;
-            }
             .project-showcase__cta .btn {
                 width: 100%;
                 justify-content: center;
             }
         }
-
-        @media (max-width: 480px) {
-            .project-list__item {
-                grid-template-columns: 1fr;
-                gap: 8px;
-                padding: 20px 0;
-            }
-            .project-list__item:hover {
-                padding-left: 12px;
-            }
-            .project-list__num {
-                font-size: 0.9rem;
-            }
-            .project-list__arrow {
-                display: none;
-            }
-        }
+        
         /* ============================================
                PORTFOLIO
             ============================================ */
@@ -2031,39 +1906,6 @@
                     Karya-karya pilihan yang mencerminkan dedikasi, inovasi,
                     dan perhatian terhadap setiap detail.
                 </p>
-            </div>
-
-            <div class="project-list">
-                <a href="./pages/project.html" class="project-list__item">
-                    <span class="project-list__num">01</span>
-                    <div class="project-list__info">
-                        <h4 class="project-list__title">PUBLICBOOK</h4>
-                        <span class="project-list__meta">Website Application &mdash; Booking System</span>
-                    </div>
-                    <span class="project-list__arrow">
-                        <i class="fas fa-arrow-right"></i>
-                    </span>
-                </a>
-                <a href="./pages/project.html" class="project-list__item">
-                    <span class="project-list__num">02</span>
-                    <div class="project-list__info">
-                        <h4 class="project-list__title">AI Content Studio</h4>
-                        <span class="project-list__meta">Web Platform &mdash; AI-Powered Collaboration</span>
-                    </div>
-                    <span class="project-list__arrow">
-                        <i class="fas fa-arrow-right"></i>
-                    </span>
-                </a>
-                <a href="./pages/project.html" class="project-list__item">
-                    <span class="project-list__num">03</span>
-                    <div class="project-list__info">
-                        <h4 class="project-list__title">Meta-Prompt Framework</h4>
-                        <span class="project-list__meta">Research &mdash; Adaptive Prompt Architecture</span>
-                    </div>
-                    <span class="project-list__arrow">
-                        <i class="fas fa-arrow-right"></i>
-                    </span>
-                </a>
             </div>
 
             <div class="project-showcase__cta">
