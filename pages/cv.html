@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV — Afdal Adha Firnansyah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <!-- Primary: html-to-image (more stable for fonts & icons) -->
+    <script src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
+    <!-- Fallback: html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+    --bg: #E9E9E9;
+    --navy: #17177A;
+    --navy-light: #24248A;
+    --yellow: #F6C400;
+    --black: #111111;
+    --text-secondary: #333333;
+    --muted: #555555;
+    --white: #FFFFFF;
+    --red: #E53935;
+}
+html { font-size: 16px; }
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #d4d4d4;
+    color: var(--black);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+.cv {
+    width: 100%;
+    max-width: 780px;
+    background: var(--bg);
+    padding: 55px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.15);
+}
+.cv-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+.header-left {
+    flex: 0 0 42%;
+    position: relative;
+    z-index: 2;
+}
+.profile-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 125%;
+}
+.profile-decor-circle {
+    position: absolute;
+    width: 92%;
+    height: 72%;
+    background: var(--yellow);
+    border-radius: 50%;
+    top: 10%;
+    left: 2%;
+    z-index: 1;
+}
+.profile-decor-dots {
+    position: absolute;
+    inset: -8%;
+    z-index: 0;
+    pointer-events: none;
+}
+.dot {
+    position: absolute;
+    border-radius: 50%;
+    display: block;
+}
+.dot-navy { background: var(--navy); }
+.dot-yellow { background: var(--yellow); }
+.d1  { width: 10px; height: 10px; top: 5%;  left: 8%;  }
+.d2  { width: 8px;  height: 8px;  top: 2%;  left: 25%; }
+.d3  { width: 12px; height: 12px; top: 0%;  left: 55%; }
+.d4  { width: 7px;  height: 7px;  top: 4%;  left: 78%; }
+.d5  { width: 9px;  height: 9px;  top: 15%; left: 94%; }
+.d6  { width: 11px; height: 11px; top: 35%; left: 98%; }
+.d7  { width: 8px;  height: 8px;  top: 58%; left: 96%; }
+.d8  { width: 10px; height: 10px; top: 78%; left: 90%; }
+.d9  { width: 7px;  height: 7px;  top: 92%; left: 72%; }
+.d10 { width: 12px; height: 12px; top: 96%; left: 48%; }
+.d11 { width: 8px;  height: 8px;  top: 92%; left: 22%; }
+.d12 { width: 10px; height: 10px; top: 78%; left: 0%;  }
+.profile-frame-ring {
+    position: absolute;
+    width: 88%;
+    height: 68%;
+    border: 4px solid var(--white);
+    border-radius: 50%;
+    top: 12%;
+    left: 4%;
+    z-index: 2;
+    pointer-events: none;
+}
+.profile-img-box {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: visible;
+}
+.profile-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    display: block;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+}
+.profile-fallback {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: var(--white);
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    border-radius: 50%;
+}
+.header-right { flex: 1; padding-top: 22px; }
+.main-title { margin-bottom: 10px; }
+.title-line {
+    display: block;
+    font-weight: 900;
+    font-size: 2.6rem;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+}
+.title-navy { color: var(--navy); }
+.title-yellow { color: var(--yellow); text-shadow: 1px 1px 0 rgba(0,0,0,0.08); }
+.sub-title { margin-bottom: 14px; }
+.sub-title .title-line { font-size: 2.1rem; font-weight: 800; }
+.role-badge {
+    display: inline-block;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+    background: rgba(246, 196, 0, 0.18);
+    padding: 6px 18px;
+    border-radius: 6px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+.section-title-wrapper { margin-bottom: 18px; position: relative; display: inline-block; }
+.section-title-wrapper.small { margin-bottom: 14px; }
+.section-title {
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--black);
+    position: relative;
+    display: inline-block;
+    line-height: 1.3;
+}
+.marker-bg {
+    position: relative;
+    z-index: 1;
+    padding: 2px 16px;
+}
+.marker-bg::before {
+    content: '';
+    position: absolute;
+    inset: -2px -8px;
+    background: var(--yellow);
+    border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%;
+    z-index: -1;
+    transform: rotate(-1.5deg) skewX(-2deg);
+    opacity: 0.95;
+}
+.about-section { margin-bottom: 38px; }
+.about-text {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    text-align: justify;
+}
+.divider {
+    height: 1.5px;
+    background: var(--black);
+    margin: 38px 0;
+    opacity: 0.85;
+}
+.edu-contact { display: flex; gap: 50px; margin-bottom: 0; }
+.edu-col { flex: 1.2; }
+.edu-content { padding-left: 4px; }
+.edu-year { font-size: 0.95rem; font-weight: 700; color: var(--black); margin-bottom: 6px; }
+.edu-school { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; line-height: 1.4; }
+.edu-detail { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 10px; line-height: 1.6; }
+.edu-status {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--navy);
+    background: rgba(23, 23, 122, 0.08);
+    padding: 4px 14px;
+    border-radius: 4px;
+}
+.contact-col { flex: 1; padding-top: 52px; }
+.contact-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.contact-item { display: flex; align-items: center; gap: 12px; font-size: 0.9rem; color: var(--text-secondary); }
+.contact-icon { flex-shrink: 0; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+.contact-icon svg { display: block; }
+.icon-pin { color: var(--red); font-size: 1.1rem; }
+.email-row { cursor: pointer; transition: color 0.2s; }
+.email-row:hover { color: var(--navy); }
+.copy-hint {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: auto;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.email-row:hover .copy-hint { opacity: 1; }
+.skills-section { margin-bottom: 0; }
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 28px 32px;
+    padding-top: 6px;
+}
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 72px;
+    transition: transform 0.25s ease;
+}
+.skill-item:hover { transform: translateY(-5px) scale(1.05); }
+.skill-item i { font-size: 2.6rem; line-height: 1; }
+.skill-item span { font-size: 0.72rem; font-weight: 600; color: var(--text-secondary); text-align: center; line-height: 1.3; }
+.experience-section { margin-bottom: 0; }
+.experience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.exp-card { padding: 0; }
+.exp-date { font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.exp-role { font-size: 1.05rem; font-weight: 800; color: var(--black); margin-bottom: 4px; }
+.exp-org { font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 14px; font-style: italic; }
+.exp-label { font-size: 0.8rem; font-weight: 700; color: var(--black); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 3px; margin-top: 10px; }
+.exp-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+.specialization-section { margin-bottom: 0; }
+.spec-grid { display: flex; flex-wrap: wrap; gap: 10px 12px; padding-top: 4px; }
+.spec-tag {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--navy);
+    background: rgba(23, 23, 122, 0.07);
+    padding: 6px 16px;
+    border-radius: 5px;
+    border: 1.5px solid rgba(23, 23, 122, 0.12);
+    transition: all 0.2s ease;
+}
+.spec-tag:hover { background: var(--yellow); border-color: var(--yellow); color: var(--black); transform: translateY(-2px); }
+.projects-section { margin-bottom: 10px; }
+.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-top: 4px; }
+.project-card { padding: 18px 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+.project-name { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+.project-desc { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 8px; }
+.project-tech { font-size: 0.8rem; font-weight: 600; color: var(--muted); margin-bottom: 10px; }
+.project-link { font-size: 0.82rem; font-weight: 700; color: var(--navy); text-decoration: none; border-bottom: 2px solid var(--yellow); padding-bottom: 1px; transition: all 0.2s; display: inline-block; }
+.project-link:hover { color: var(--black); border-bottom-color: var(--navy); }
+.cv-footer { text-align: center; padding-top: 30px; margin-top: 10px; }
+.cv-footer p { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+.fab-container { position: fixed; bottom: 28px; right: 28px; z-index: 1000; display: flex; flex-direction: column; gap: 12px; }
+.fab {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    background: var(--navy);
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(23, 23, 122, 0.35);
+    transition: all 0.3s ease;
+}
+.fab:hover { background: var(--yellow); color: var(--black); transform: scale(1.1) rotate(-4deg); box-shadow: 0 8px 25px rgba(246, 196, 0, 0.4); }
+.fab svg { width: 22px; height: 22px; }
+.toast {
+    position: fixed;
+    bottom: 160px;
+    right: 28px;
+    background: var(--navy);
+    color: var(--white);
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.35s ease;
+    pointer-events: none;
+    z-index: 1001;
+}
+.toast.show { opacity: 1; transform: translateY(0); }
+.download-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.download-overlay.active { opacity: 1; pointer-events: all; }
+.download-spinner {
+    width: 56px;
+    height: 56px;
+    border: 4px solid var(--yellow);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.download-overlay p { color: var(--white); margin-top: 16px; font-size: 1rem; font-weight: 600; text-align: center; }
+
+/* Print styles */
+@media print {
+    body { background: white; padding: 0; }
+    .cv { box-shadow: none; max-width: 100%; }
+    .no-print { display: none !important; }
+    .fab-container { display: none !important; }
+    .download-overlay { display: none !important; }
+    .toast { display: none !important; }
+}
+
+@media (max-width: 860px) {
+    body { padding: 20px 15px; }
+    .cv { box-shadow: 0 15px 50px rgba(0,0,0,0.12); padding: 35px; }
+    .cv-header { flex-direction: column; align-items: center; text-align: center; gap: 28px; }
+    .header-left { flex: 0 0 auto; width: 240px; }
+    .header-right { padding-top: 0; }
+    .title-line { font-size: 2rem; }
+    .sub-title .title-line { font-size: 1.6rem; }
+    .edu-contact { flex-direction: column; gap: 30px; }
+    .contact-col { padding-top: 0; }
+    .experience-grid, .projects-grid { grid-template-columns: 1fr; gap: 20px; }
+    .skills-grid { gap: 20px 24px; justify-content: center; }
+    .skill-item { width: 64px; }
+    .skill-item i { font-size: 2.2rem; }
+}
+@media (max-width: 480px) {
+    .cv { padding: 22px; }
+    .title-line { font-size: 1.55rem; }
+    .sub-title .title-line { font-size: 1.3rem; }
+    .role-badge { font-size: 0.9rem; padding: 5px 14px; }
+    .section-title { font-size: 1.3rem; }
+    .about-text { font-size: 0.88rem; }
+    .header-left { width: 200px; }
+    .skills-grid { gap: 16px 18px; }
+    .skill-item { width: 56px; }
+    .skill-item i { font-size: 1.9rem; }
+    .skill-item span { font-size: 0.65rem; }
+    .fab-container { bottom: 18px; right: 18px; }
+    .fab { width: 46px; height: 46px; }
+    .toast { bottom: 140px; right: 18px; }
+}
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+    <div class="download-overlay no-print" id="downloadOverlay">
+        <div style="text-align:center;">
+            <div class="download-spinner"></div>
+            <p>Generating image...</p>
+        </div>
+    </div>
+
+    <div class="fab-container no-print">
+        <button class="fab" id="downloadBtn" title="Download as Image">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </button>
+    </div>
+
+    <main class="cv" id="cvCanvas">
+
+        <header class="cv-header">
+            <div class="header-left">
+                <div class="profile-wrapper">
+                    <div class="profile-decor-circle"></div>
+                    <div class="profile-decor-dots">
+                        <span class="dot dot-navy d1"></span>
+                        <span class="dot dot-yellow d2"></span>
+                        <span class="dot dot-navy d3"></span>
+                        <span class="dot dot-yellow d4"></span>
+                        <span class="dot dot-navy d5"></span>
+                        <span class="dot dot-yellow d6"></span>
+                        <span class="dot dot-navy d7"></span>
+                        <span class="dot dot-yellow d8"></span>
+                        <span class="dot dot-navy d9"></span>
+                        <span class="dot dot-yellow d10"></span>
+                        <span class="dot dot-navy d11"></span>
+                        <span class="dot dot-yellow d12"></span>
+                    </div>
+                    <div class="profile-frame-ring"></div>
+                    <div class="profile-img-box">
+                        <img id="profileImg" src="../image/1_-removebg-preview.png" alt="Afdal Adha Firnansyah">
+                        <div class="profile-fallback" id="profileFallback"><span>AF</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <h1 class="main-title">
+                    <span class="title-line title-navy">AFDAL ADHA</span>
+                    <span class="title-line title-navy">FIRNANSYAH</span>
+                </h1>
+                <h2 class="sub-title">
+                    <span class="title-line title-navy">SOFTWARE</span>
+                    <span class="title-line title-yellow">DEVELOPER</span>
+                </h2>
+                <p class="role-badge">RPL STUDENT</p>
+            </div>
+        </header>
+
+        <section class="about-section">
+            <div class="section-title-wrapper">
+                <h2 class="section-title"><span class="marker-bg">About Me!!</span></h2>
+            </div>
+            <p class="about-text">
+                Saya adalah siswa kelas XII SMKN 1 Karang Baru dari Program Studi Pengembangan Perangkat Lunak dan Gim dengan Konsentrasi Keahlian Rekayasa Perangkat Lunak. Saya memiliki ketertarikan pada pengembangan perangkat lunak, pengembangan web, teknologi digital, kecerdasan buatan, dan pengembangan berbagai proyek berbasis teknologi.
+            </p>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="edu-contact">
+            <div class="edu-col">
+                <div class="section-title-wrapper small">
+                    <h2 class="section-title"><span class="marker-bg">Education</span></h2>
+                </div>
+                <div class="edu-content">
+                    <p class="edu-year">2024 — 2026</p>
+                    <p class="edu-school">SMKN 1 Karang Baru</p>
+                    <p class="edu-detail">Program Studi:<br>Pengembangan Perangkat Lunak dan Gim</p>
+                    <p class="edu-detail">Konsentrasi:<br>Rekayasa Perangkat Lunak</p>
+                    <p class="edu-status">Kelas XII</p>
+                </div>
+            </div>
+
+            <div class="contact-col">
+                <ul class="contact-list">
+                    <li class="contact-item">
+                        <span class="contact-icon icon-pin">📍</span>
+                        <span class="contact-text">Indonesia</span>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </span>
+                        <span class="contact-text">[Tambahkan LinkedIn]</span>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E4405F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </span>
+                        <span class="contact-text">[Tambahkan Instagram]</span>
+                    </li>
+                    <li class="contact-item email-row" onclick="copyEmail()">
+                        <span class="contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EA4335" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </span>
+                        <span class="contact-text email-text" data-email="[Tambahkan Email]">[Tambahkan Email]</span>
+                        <span class="copy-hint no-print">Copy</span>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#181717"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </span>
+                        <span class="contact-text">[Tambahkan GitHub]</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="skills-section">
+            <div class="section-title-wrapper small">
+                <h2 class="section-title"><span class="marker-bg">Tech Stack</span></h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+                <div class="skill-item"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+                <div class="skill-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+                <div class="skill-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+                <div class="skill-item"><i class="devicon-github-original colored"></i><span>GitHub</span></div>
+                <div class="skill-item"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
+                <div class="skill-item"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
+                <div class="skill-item"><i class="devicon-blender-original colored"></i><span>Blender</span></div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="experience-section">
+            <div class="section-title-wrapper small">
+                <h2 class="section-title"><span class="marker-bg">Experience</span></h2>
+            </div>
+            <div class="experience-grid">
+                <div class="exp-card">
+                    <p class="exp-date">03 Agustus 2026 — 21 November 2026</p>
+                    <p class="exp-role">Siswa PKL</p>
+                    <p class="exp-org">Nama Instansi / Perusahaan</p>
+                    <p class="exp-label">Tugas:</p>
+                    <p class="exp-desc">[Tambahkan tugas PKL]</p>
+                    <p class="exp-label">Teknologi:</p>
+                    <p class="exp-desc">[Tambahkan teknologi yang digunakan]</p>
+                    <p class="exp-label">Tanggung Jawab:</p>
+                    <p class="exp-desc">[Tambahkan tanggung jawab]</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="specialization-section">
+            <div class="section-title-wrapper small">
+                <h2 class="section-title"><span class="marker-bg">Specialization</span></h2>
+            </div>
+            <div class="spec-grid">
+                <span class="spec-tag">Software Development</span>
+                <span class="spec-tag">Web Development</span>
+                <span class="spec-tag">Artificial Intelligence</span>
+                <span class="spec-tag">Prompt Engineering</span>
+                <span class="spec-tag">Multimodal Prompting</span>
+                <span class="spec-tag">UI/UX</span>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="projects-section">
+            <div class="section-title-wrapper small">
+                <h2 class="section-title"><span class="marker-bg">Projects</span></h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3 class="project-name">[Nama Proyek]</h3>
+                    <p class="project-desc">[Tambahkan deskripsi proyek]</p>
+                    <p class="project-tech">[Teknologi] • [Teknologi]</p>
+                    <a href="#" class="project-link no-print">[Tambahkan Link]</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="cv-footer">
+            <p>© 2026 Afdal Adha Firnansyah — RPL Student</p>
+        </footer>
+
+    </main>
+
+    <div class="toast no-print" id="toast">Email copied!</div>
+
+    <script>
+(function() {
+    'use strict';
+
+    var overlay = document.getElementById('downloadOverlay');
+    var toastEl = document.getElementById('toast');
+    var profileImg = document.getElementById('profileImg');
+    var profileFallback = document.getElementById('profileFallback');
+
+    // Handle profile image error — only show fallback if actually failed
+    if (profileImg) {
+        profileImg.addEventListener('error', function() {
+            profileImg.style.display = 'none';
+            if (profileFallback) profileFallback.style.display = 'flex';
+        });
+        // If image is already broken (cached error)
+        if (profileImg.complete && profileImg.naturalWidth === 0 && profileImg.src && profileImg.src !== window.location.href) {
+            profileImg.style.display = 'none';
+            if (profileFallback) profileFallback.style.display = 'flex';
+        }
+    }
+
+    function showToast(msg) {
+        if (!toastEl) return;
+        toastEl.textContent = msg;
+        toastEl.classList.add('show');
+        setTimeout(function() { toastEl.classList.remove('show'); }, 3000);
+    }
+
+    function setOverlay(show) {
+        if (!overlay) return;
+        if (show) overlay.classList.add('active');
+        else overlay.classList.remove('active');
+    }
+
+    function waitForResources() {
+        return new Promise(function(resolve) {
+            var checks = 0;
+            var maxChecks = 50; // 5 seconds max
+            
+            function check() {
+                checks++;
+                var fontsReady = document.fonts ? document.fonts.status === 'loaded' : true;
+                var imagesReady = Array.from(document.querySelectorAll('img')).every(function(img) {
+                    return img.complete;
+                });
+                
+                if ((fontsReady && imagesReady) || checks >= maxChecks) {
+                    // Extra delay to ensure rendering is complete
+                    setTimeout(resolve, 800);
+                } else {
+                    setTimeout(check, 100);
+                }
+            }
+            check();
+        });
+    }
+
+    function triggerDownload(dataUrl, filename) {
+        var link = document.createElement('a');
+        link.download = filename;
+        link.href = dataUrl;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    /* =========================================================
+       PRIMARY: html-to-image (toPng) — lebih stabil untuk font
+       ========================================================= */
+    function downloadWithHtmlToImage() {
+        var cv = document.getElementById('cvCanvas');
+        if (!cv) throw new Error('CV not found');
+        if (typeof htmlToImage === 'undefined' || !htmlToImage.toPng) {
+            throw new Error('html-to-image not loaded');
+        }
+
+        setOverlay(true);
+        showToast('Menyiapkan gambar PNG...');
+
+        return waitForResources().then(function() {
+            return htmlToImage.toPng(cv, {
+                quality: 1.0,
+                pixelRatio: 2,
+                backgroundColor: '#E9E9E9',
+                skipFonts: false,
+                fontEmbedCSS: '',
+                cacheBust: true
+            });
+        }).then(function(dataUrl) {
+            triggerDownload(dataUrl, 'CV_Afdal_Adha_Firnansyah.png');
+            setOverlay(false);
+            showToast('CV berhasil di-download!');
+        });
+    }
+
+    /* =========================================================
+       FALLBACK: html2canvas — kalau html-to-image gagal
+       ========================================================= */
+    function downloadWithHtml2Canvas() {
+        var cv = document.getElementById('cvCanvas');
+        if (!cv) throw new Error('CV not found');
+        if (typeof html2canvas !== 'function') {
+            throw new Error('html2canvas not loaded');
+        }
+
+        setOverlay(true);
+        showToast('Mencoba fallback html2canvas...');
+
+        // Hide broken images before capture
+        var imgs = cv.querySelectorAll('img');
+        imgs.forEach(function(img) {
+            if (!img.complete || img.naturalWidth === 0) {
+                img.style.display = 'none';
+            }
+        });
+
+        return waitForResources().then(function() {
+            return html2canvas(cv, {
+                scale: 2,
+                useCORS: true,
+                allowTaint: true,
+                backgroundColor: '#E9E9E9',
+                logging: false,
+                removeContainer: true,
+                imageTimeout: 0,
+                foreignObjectRendering: false
+            });
+        }).then(function(canvas) {
+            triggerDownload(canvas.toDataURL('image/png'), 'CV_Afdal_Adha_Firnansyah.png');
+            setOverlay(false);
+            showToast('CV berhasil di-download!');
+        });
+    }
+
+    /* =========================================================
+       MAIN DOWNLOAD HANDLER
+       ========================================================= */
+    function downloadCVImage() {
+        // Try html-to-image first, fallback to html2canvas
+        downloadWithHtmlToImage().catch(function(err) {
+            console.warn('html-to-image failed, trying html2canvas:', err);
+            return downloadWithHtml2Canvas();
+        }).catch(function(err2) {
+            console.error('Both methods failed:', err2);
+            setOverlay(false);
+            showToast('Download gagal. Pastikan koneksi internet stabil.');
+        });
+    }
+
+    var btn = document.getElementById('downloadBtn');
+    if (btn) btn.addEventListener('click', downloadCVImage);
+
+    /* =========================================================
+       COPY EMAIL
+       ========================================================= */
+    window.copyEmail = function() {
+        var emailEl = document.querySelector('.email-text');
+        if (!emailEl) return;
+        var email = emailEl.getAttribute('data-email') || emailEl.textContent;
+        if (!email || email.indexOf('Tambahkan') !== -1) {
+            showToast('Email belum diatur'); return;
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).then(function() {
+                showToast('Email disalin!');
+            }).catch(function() { fallbackCopy(email); });
+        } else { fallbackCopy(email); }
+    };
+
+    function fallbackCopy(text) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); showToast('Email disalin!'); }
+        catch (e) { showToast('Gagal menyalin email'); }
+        document.body.removeChild(ta);
+    }
+
+    console.log('%c Afdal Adha Firnansyah — CV ', 'background:#17177A;color:#F6C400;font-size:14px;font-weight:bold;padding:6px 12px;border-radius:4px;');
+})();
+    </script>
+</body>
+</html>
