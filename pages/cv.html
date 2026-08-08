@@ -1,419 +1,1045 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV — Afdal Adha Firnansyah</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Font Profesional: Space Grotesk (heading) + Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">
+    </script>
     <style>
-/* ============================================================
-   CV — AFDAL ADHA FIRNANSYAH (Foto Bebas Tanpa Box)
-   ============================================================ */
+        /* ============================================================
+           CV MODERN PROFESIONAL — Latar Geometris Elegan
+           ============================================================ */
 
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-:root {
-    --bg: #E9E9E9;
-    --navy: #17177A;
-    --navy-light: #24248A;
-    --yellow: #F6C400;
-    --black: #111111;
-    --text-secondary: #333333;
-    --muted: #555555;
-    --white: #FFFFFF;
-    --red: #E53935;
-}
+        :root {
+            --bg: #E9E9E9;
+            --navy: #17177A;
+            --navy-light: #24248A;
+            --yellow: #F6C400;
+            --black: #111111;
+            --text-secondary: #333333;
+            --muted: #555555;
+            --white: #FFFFFF;
+            --red: #E53935;
+            --font-heading: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
 
-html { font-size: 16px; }
+        html {
+            font-size: 16px;
+        }
 
-body {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: #d4d4d4;
-    color: var(--black);
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 40px 20px;
-}
+        body {
+            font-family: var(--font-body);
+            background: #d4d4d4;
+            color: var(--black);
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 20px;
+        }
 
-.cv {
-    width: 100%;
-    max-width: 780px;
-    background: var(--bg);
-    padding: 55px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 25px 80px rgba(0,0,0,0.15);
-}
+        .cv {
+            width: 100%;
+            max-width: 780px;
+            background: var(--bg);
+            padding: 55px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+            isolation: isolate;
+        }
 
-/* ---------- HEADER ---------- */
-.cv-header {
-    display: flex;
-    align-items: center;
-    gap: 45px;
-    margin-bottom: 35px;
-}
+        /* ===== DEKORASI GEOMETRIS ===== */
+        .geo-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
 
-/* Area foto: bebas tanpa box */
-.header-left {
-    flex: 0 0 auto;
-    position: relative;
-    z-index: 2;
-}
+        .geo-shape {
+            position: absolute;
+            opacity: 0.15;
+            border-radius: 50%;
+            background: var(--navy);
+        }
 
-.profile-wrapper {
-    position: relative;
-    width: 240px;
-    /* Tidak ada padding-bottom, tidak ada aspect ratio trap */
-}
+        .geo-shape--circle-1 {
+            width: 320px;
+            height: 320px;
+            top: -80px;
+            right: -80px;
+            background: radial-gradient(circle, var(--navy-light), transparent 70%);
+            opacity: 0.10;
+        }
 
-/* FOTO PROFIL: Tanpa border, tanpa background, tanpa box, menyatu dengan CV */
-.profile-img-box {
-    position: relative;
-    width: 100%;
-    /* Tidak ada border-radius, tidak ada border, tidak ada background */
-    border-radius: 0;
-    border: none;
-    background: transparent;
-    box-shadow: none;
-    overflow: visible;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
+        .geo-shape--circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -40px;
+            left: -60px;
+            background: radial-gradient(circle, var(--yellow), transparent 70%);
+            opacity: 0.08;
+        }
 
-.profile-img-box:hover {
-    transform: scale(1.02);
-}
+        .geo-shape--triangle {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            opacity: 0.06;
+        }
 
-/* Hint upload muncul saat hover */
-.upload-hint {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(23, 23, 122, 0.5);
-    color: var(--white);
-    font-size: 0.85rem;
-    font-weight: 700;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    text-align: center;
-    padding: 10px;
-    line-height: 1.4;
-}
+        .geo-shape--triangle-1 {
+            border-width: 0 120px 200px 0;
+            border-color: transparent var(--navy) transparent transparent;
+            top: 20%;
+            right: -20px;
+            transform: rotate(10deg);
+        }
 
-.profile-img-box:hover .upload-hint {
-    opacity: 1;
-}
+        .geo-shape--triangle-2 {
+            border-width: 0 0 180px 140px;
+            border-color: transparent transparent var(--yellow) transparent;
+            bottom: 10%;
+            left: -30px;
+            transform: rotate(-5deg);
+        }
 
-.profile-img-box img {
-    width: 100%;
-    height: auto;
-    display: block;
-    /* object-fit: contain agar PNG transparan tidak ter-crop */
-    object-fit: contain;
-    background: transparent;
-}
+        .geo-shape--line {
+            position: absolute;
+            background: var(--navy);
+            opacity: 0.04;
+            transform-origin: center;
+        }
 
-.profile-fallback {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-    color: var(--white);
-    font-size: 3.5rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
+        .geo-shape--line-1 {
+            width: 300px;
+            height: 2px;
+            top: 25%;
+            left: -80px;
+            transform: rotate(25deg);
+            background: linear-gradient(90deg, transparent, var(--navy), transparent);
+        }
 
-.header-right { flex: 1; padding-top: 10px; }
+        .geo-shape--line-2 {
+            width: 400px;
+            height: 1.5px;
+            bottom: 30%;
+            right: -120px;
+            transform: rotate(-15deg);
+            background: linear-gradient(90deg, transparent, var(--yellow), transparent);
+            opacity: 0.06;
+        }
 
-.main-title { margin-bottom: 10px; }
+        .geo-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 20% 80%, rgba(23, 23, 122, 0.02) 1px, transparent 1px),
+                radial-gradient(circle at 80% 20%, rgba(246, 196, 0, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px, 80px 80px;
+            pointer-events: none;
+            z-index: 0;
+        }
 
-.title-line {
-    display: block;
-    font-weight: 900;
-    font-size: 2.6rem;
-    line-height: 1.05;
-    letter-spacing: -0.5px;
-}
+        /* Konten utama di atas lapisan geometris */
+        .cv>*:not(.geo-bg):not(.geo-grid) {
+            position: relative;
+            z-index: 1;
+        }
 
-.title-navy { color: var(--navy); }
-.title-yellow { color: var(--yellow); text-shadow: 1px 1px 0 rgba(0,0,0,0.08); }
+        /* ---------- HEADER ---------- */
+        .cv-header {
+            display: flex;
+            align-items: center;
+            gap: 45px;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 2;
+        }
 
-.sub-title { margin-bottom: 14px; }
-.sub-title .title-line { font-size: 2.1rem; font-weight: 800; }
+        .header-left {
+            flex: 0 0 auto;
+            position: relative;
+            z-index: 2;
+        }
 
-.role-badge {
-    display: inline-block;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--navy);
-    background: rgba(246, 196, 0, 0.18);
-    padding: 6px 18px;
-    border-radius: 6px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
+        .profile-wrapper {
+            position: relative;
+            width: 240px;
+        }
 
-/* ---------- SECTION HEADINGS ---------- */
-.section-title-wrapper { margin-bottom: 18px; position: relative; display: inline-block; }
-.section-title-wrapper.small { margin-bottom: 14px; }
+        /* ===== JENDELA SISTEM MENGAMBANG ===== */
+        .profile-img-box {
+            position: relative;
+            width: 100%;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+                0 0 40px rgba(23, 23, 122, 0.06);
+            overflow: visible;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.4s ease;
+            padding: 12px 12px 16px 12px;
+            transform: translateY(-6px);
+        }
 
-.section-title {
-    font-size: 1.55rem;
-    font-weight: 800;
-    color: var(--black);
-    position: relative;
-    display: inline-block;
-    line-height: 1.3;
-}
+        .profile-img-box:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.20),
+                0 0 0 1px rgba(255, 255, 255, 0.10) inset,
+                0 0 60px rgba(23, 23, 122, 0.10);
+        }
 
-.marker-bg {
-    position: relative;
-    z-index: 1;
-    padding: 2px 16px;
-}
+        .window-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 0 10px 0;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            user-select: none;
+        }
+        .window-bar .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .window-bar .dot-red {
+            background: #ff5f57;
+        }
+        .window-bar .dot-yellow {
+            background: #ffbd2e;
+        }
+        .window-bar .dot-green {
+            background: #28c840;
+        }
+        .window-bar .window-title {
+            margin-left: 6px;
+            font-weight: 500;
+            opacity: 0.5;
+        }
 
-.marker-bg::before {
-    content: '';
-    position: absolute;
-    inset: -2px -8px;
-    background: var(--yellow);
-    border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%;
-    z-index: -1;
-    transform: rotate(-1.5deg) skewX(-2deg);
-    opacity: 0.95;
-}
+        .profile-img-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            background: transparent;
+            border-radius: 8px;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.06));
+        }
 
-/* ---------- ABOUT ---------- */
-.about-section { margin-bottom: 38px; }
+        .profile-img-box:hover img {
+            transform: scale(1.02);
+            filter: drop-shadow(0 8px 20px rgba(23, 23, 122, 0.12));
+        }
 
-.about-text {
-    font-size: 0.92rem;
-    color: var(--text-secondary);
-    line-height: 1.75;
-    text-align: justify;
-}
+        .upload-hint {
+            position: absolute;
+            inset: 12px 12px 16px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(23, 23, 122, 0.25);
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 700;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            text-align: center;
+            padding: 10px;
+            line-height: 1.4;
+            z-index: 4;
+            backdrop-filter: blur(4px);
+            border-radius: 8px;
+        }
+        .profile-img-box:hover .upload-hint {
+            opacity: 1;
+        }
 
-/* ---------- DIVIDERS ---------- */
-.divider {
-    height: 1.5px;
-    background: var(--black);
-    margin: 38px 0;
-    opacity: 0.85;
-}
+        .profile-fallback {
+            width: 100%;
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            border-radius: 8px;
+        }
 
-/* ---------- EDUCATION & CONTACT ---------- */
-.edu-contact { display: flex; gap: 50px; margin-bottom: 0; }
-.edu-col { flex: 1.2; }
-.edu-content { padding-left: 4px; }
-.edu-year { font-size: 0.95rem; font-weight: 700; color: var(--black); margin-bottom: 6px; }
-.edu-school { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; line-height: 1.4; }
-.edu-detail { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 10px; line-height: 1.6; }
-.edu-status {
-    display: inline-block;
-    margin-top: 6px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--navy);
-    background: rgba(23, 23, 122, 0.08);
-    padding: 4px 14px;
-    border-radius: 4px;
-}
+        .header-right {
+            flex: 1;
+            padding-top: 10px;
+        }
 
-.contact-col { flex: 1; padding-top: 52px; }
-.contact-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.contact-item { display: flex; align-items: center; gap: 12px; font-size: 0.9rem; color: var(--text-secondary); }
-.contact-icon { flex-shrink: 0; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
-.contact-icon svg { display: block; }
-.icon-pin { color: var(--red); font-size: 1.1rem; }
-.email-row { cursor: pointer; transition: color 0.2s; }
-.email-row:hover { color: var(--navy); }
-.copy-hint {
-    font-size: 0.65rem;
-    font-weight: 600;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-left: auto;
-    opacity: 0;
-    transition: opacity 0.2s;
-}
-.email-row:hover .copy-hint { opacity: 1; }
+        .main-title {
+            margin-bottom: 10px;
+        }
 
-/* ---------- TECH STACK ---------- */
-.skills-section { margin-bottom: 0; }
-.skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 28px 32px;
-    padding-top: 6px;
-}
-.skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    width: 72px;
-    transition: transform 0.25s ease;
-}
-.skill-item:hover { transform: translateY(-5px) scale(1.05); }
-.skill-item i { font-size: 2.6rem; line-height: 1; }
-.skill-item span { font-size: 0.72rem; font-weight: 600; color: var(--text-secondary); text-align: center; line-height: 1.3; }
+        /* ===== NAMA SERAGAM Space Grotesk ===== */
+        .title-line {
+            display: block;
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 2.6rem;
+            line-height: 1.05;
+            letter-spacing: -0.5px;
+        }
 
-/* ---------- EXPERIENCE ---------- */
-.experience-section { margin-bottom: 0; }
-.experience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-.exp-card { padding: 0; }
-.exp-date { font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-.exp-role { font-size: 1.05rem; font-weight: 800; color: var(--black); margin-bottom: 4px; }
-.exp-org { font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 14px; font-style: italic; }
-.exp-label { font-size: 0.8rem; font-weight: 700; color: var(--black); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 3px; margin-top: 10px; }
-.exp-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+        .title-navy {
+            color: var(--navy);
+        }
+        .title-yellow {
+            color: var(--yellow);
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.08);
+        }
 
-/* ---------- SPECIALIZATION ---------- */
-.specialization-section { margin-bottom: 0; }
-.spec-grid { display: flex; flex-wrap: wrap; gap: 10px 12px; padding-top: 4px; }
-.spec-tag {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--navy);
-    background: rgba(23, 23, 122, 0.07);
-    padding: 6px 16px;
-    border-radius: 5px;
-    border: 1.5px solid rgba(23, 23, 122, 0.12);
-    transition: all 0.2s ease;
-}
-.spec-tag:hover { background: var(--yellow); border-color: var(--yellow); color: var(--black); transform: translateY(-2px); }
+        .sub-title {
+            margin-bottom: 14px;
+        }
+        .sub-title .title-line {
+            font-size: 2.1rem;
+            font-weight: 800;
+        }
 
-/* ---------- PROJECTS ---------- */
-.projects-section { margin-bottom: 10px; }
-.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-top: 4px; }
-.project-card { padding: 18px 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
-.project-name { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
-.project-desc { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 8px; }
-.project-tech { font-size: 0.8rem; font-weight: 600; color: var(--muted); margin-bottom: 10px; }
-.project-link { font-size: 0.82rem; font-weight: 700; color: var(--navy); text-decoration: none; border-bottom: 2px solid var(--yellow); padding-bottom: 1px; transition: all 0.2s; display: inline-block; }
-.project-link:hover { color: var(--black); border-bottom-color: var(--navy); }
+        .role-badge {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(246, 196, 0, 0.18);
+            padding: 6px 18px;
+            border-radius: 6px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
 
-/* ---------- FOOTER ---------- */
-.cv-footer { text-align: center; padding-top: 30px; margin-top: 10px; }
-.cv-footer p { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+        /* ---------- SECTION HEADINGS ---------- */
+        .section-title-wrapper {
+            margin-bottom: 18px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title-wrapper.small {
+            margin-bottom: 14px;
+        }
 
-/* ---------- FAB ---------- */
-.fab-container { position: fixed; bottom: 28px; right: 28px; z-index: 1000; display: flex; flex-direction: column; gap: 12px; }
-.fab {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    border: none;
-    background: var(--navy);
-    color: var(--white);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 6px 20px rgba(23, 23, 122, 0.35);
-    transition: all 0.3s ease;
-}
-.fab:hover { background: var(--yellow); color: var(--black); transform: scale(1.1) rotate(-4deg); box-shadow: 0 8px 25px rgba(246, 196, 0, 0.4); }
-.fab svg { width: 22px; height: 22px; }
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: var(--black);
+            position: relative;
+            display: inline-block;
+            line-height: 1.3;
+        }
 
-/* ---------- TOAST ---------- */
-.toast {
-    position: fixed;
-    bottom: 160px;
-    right: 28px;
-    background: var(--navy);
-    color: var(--white);
-    padding: 12px 22px;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.35s ease;
-    pointer-events: none;
-    z-index: 1001;
-}
-.toast.show { opacity: 1; transform: translateY(0); }
+        .marker-bg {
+            position: relative;
+            z-index: 1;
+            padding: 2px 16px;
+        }
 
-/* ---------- DOWNLOAD OVERLAY ---------- */
-.download-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-.download-overlay.active { opacity: 1; pointer-events: all; }
-.download-spinner {
-    width: 56px;
-    height: 56px;
-    border: 4px solid var(--yellow);
-    border-top-color: transparent;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    margin: 0 auto;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-.download-overlay p { color: var(--white); margin-top: 16px; font-size: 1rem; font-weight: 600; text-align: center; }
+        .marker-bg::before {
+            content: '';
+            position: absolute;
+            inset: -2px -8px;
+            background: var(--yellow);
+            border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%;
+            z-index: -1;
+            transform: rotate(-1.5deg) skewX(-2deg);
+            opacity: 0.95;
+        }
 
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 860px) {
-    body { padding: 20px 15px; }
-    .cv { box-shadow: 0 15px 50px rgba(0,0,0,0.12); padding: 35px; }
-    .cv-header { flex-direction: column; align-items: center; text-align: center; gap: 28px; }
-    .header-left { width: 200px; }
-    .header-right { padding-top: 0; }
-    .title-line { font-size: 2rem; }
-    .sub-title .title-line { font-size: 1.6rem; }
-    .edu-contact { flex-direction: column; gap: 30px; }
-    .contact-col { padding-top: 0; }
-    .experience-grid, .projects-grid { grid-template-columns: 1fr; gap: 20px; }
-    .skills-grid { gap: 20px 24px; justify-content: center; }
-    .skill-item { width: 64px; }
-    .skill-item i { font-size: 2.2rem; }
-}
+        /* ---------- ABOUT ---------- */
+        .about-section {
+            margin-bottom: 38px;
+        }
 
-@media (max-width: 480px) {
-    .cv { padding: 22px; }
-    .title-line { font-size: 1.55rem; }
-    .sub-title .title-line { font-size: 1.3rem; }
-    .role-badge { font-size: 0.9rem; padding: 5px 14px; }
-    .section-title { font-size: 1.3rem; }
-    .about-text { font-size: 0.88rem; }
-    .header-left { width: 160px; }
-    .skills-grid { gap: 16px 18px; }
-    .skill-item { width: 56px; }
-    .skill-item i { font-size: 1.9rem; }
-    .skill-item span { font-size: 0.65rem; }
-    .fab-container { bottom: 18px; right: 18px; }
-    .fab { width: 46px; height: 46px; }
-    .toast { bottom: 140px; right: 18px; }
-}
+        .about-text {
+            font-size: 0.92rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            text-align: justify;
+        }
+
+        /* ---------- DIVIDERS ---------- */
+        .divider {
+            height: 1.5px;
+            background: var(--black);
+            margin: 38px 0;
+            opacity: 0.85;
+        }
+
+        /* ---------- EDUCATION & CONTACT ---------- */
+        .edu-contact {
+            display: flex;
+            gap: 50px;
+            margin-bottom: 0;
+        }
+        .edu-col {
+            flex: 1.2;
+        }
+        .edu-content {
+            padding-left: 4px;
+        }
+        .edu-year {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 6px;
+        }
+        .edu-school {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .edu-detail {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .edu-status {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--navy);
+            background: rgba(23, 23, 122, 0.08);
+            padding: 4px 14px;
+            border-radius: 4px;
+        }
+
+        .contact-col {
+            flex: 1;
+            padding-top: 52px;
+        }
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .contact-icon {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+        .contact-icon svg {
+            display: block;
+        }
+        .icon-pin {
+            color: var(--red);
+            font-size: 1.1rem;
+        }
+        .email-row {
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .email-row:hover {
+            color: var(--navy);
+        }
+        .copy-hint {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-left: auto;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .email-row:hover .copy-hint {
+            opacity: 1;
+        }
+
+        /* ---------- TECH STACK ---------- */
+        .skills-section {
+            margin-bottom: 0;
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 28px 32px;
+            padding-top: 6px;
+        }
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            width: 72px;
+            transition: transform 0.25s ease;
+        }
+        .skill-item:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+        .skill-item i {
+            font-size: 2.6rem;
+            line-height: 1;
+        }
+        .skill-item span {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        /* ---------- EXPERIENCE ---------- */
+        .experience-section {
+            margin-bottom: 0;
+        }
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .exp-card {
+            padding: 0;
+        }
+        .exp-date {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+        .exp-role {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 4px;
+        }
+        .exp-org {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+            font-style: italic;
+        }
+        .exp-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--black);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 3px;
+            margin-top: 10px;
+        }
+        .exp-desc {
+            font-size: 0.88rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* ---------- SPECIALIZATION ---------- */
+        .specialization-section {
+            margin-bottom: 0;
+        }
+        .spec-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 12px;
+            padding-top: 4px;
+        }
+        .spec-tag {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--navy);
+            background: rgba(23, 23, 122, 0.07);
+            padding: 6px 16px;
+            border-radius: 5px;
+            border: 1.5px solid rgba(23, 23, 122, 0.12);
+            transition: all 0.2s ease;
+        }
+        .spec-tag:hover {
+            background: var(--yellow);
+            border-color: var(--yellow);
+            color: var(--black);
+            transform: translateY(-2px);
+        }
+
+        /* ---------- PROJECTS ---------- */
+        .projects-section {
+            margin-bottom: 10px;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            padding-top: 4px;
+            align-items: start;
+        }
+        .project-card {
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        .project-name {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .project-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        .project-tech {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+        .project-link {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--navy);
+            text-decoration: none;
+            border-bottom: 2px solid var(--yellow);
+            padding-bottom: 1px;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+        .project-link:hover {
+            color: var(--black);
+            border-bottom-color: var(--navy);
+        }
+
+        /* ===== QR CODE FRAME ===== */
+        .qr-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 0 16px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .qr-frame {
+            position: relative;
+            width: 100%;
+            max-width: 180px;
+            aspect-ratio: 1/1;
+            border: 4px solid var(--navy);
+            border-radius: 12px;
+            background: var(--white);
+            box-shadow: 0 8px 30px rgba(23, 23, 122, 0.10),
+                0 0 0 1px rgba(23, 23, 122, 0.06) inset;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .qr-frame:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 40px rgba(23, 23, 122, 0.18),
+                0 0 0 2px var(--yellow) inset;
+        }
+
+        .qr-frame .qr-placeholder {
+            width: 80%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(23, 23, 122, 0.04);
+            border-radius: 8px;
+            border: 2px dashed rgba(23, 23, 122, 0.20);
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            gap: 6px;
+            transition: background 0.3s ease;
+        }
+
+        .qr-frame .qr-placeholder svg {
+            width: 48px;
+            height: 48px;
+            opacity: 0.6;
+        }
+
+        .qr-frame .qr-placeholder span {
+            opacity: 0.7;
+        }
+
+        .qr-frame:hover .qr-placeholder {
+            background: rgba(246, 196, 0, 0.10);
+            border-color: var(--yellow);
+        }
+
+        /* QR code image inside frame (hidden by default, shown when user adds img) */
+        .qr-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            border-radius: 8px;
+            padding: 8px;
+            background: var(--white);
+        }
+
+        .qr-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .qr-upload-hint {
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: var(--muted);
+            opacity: 0.6;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            text-decoration: underline dotted;
+        }
+        .qr-upload-hint:hover {
+            opacity: 1;
+            color: var(--navy);
+        }
+
+        /* ---------- FOOTER ---------- */
+        .cv-footer {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 10px;
+        }
+        .cv-footer p {
+            font-size: 0.78rem;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        /* ---------- FAB ---------- */
+        .fab-container {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .fab {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: none;
+            background: var(--navy);
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(23, 23, 122, 0.35);
+            transition: all 0.3s ease;
+        }
+        .fab:hover {
+            background: var(--yellow);
+            color: var(--black);
+            transform: scale(1.1) rotate(-4deg);
+            box-shadow: 0 8px 25px rgba(246, 196, 0, 0.4);
+        }
+        .fab svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        /* ---------- TOAST ---------- */
+        .toast {
+            position: fixed;
+            bottom: 160px;
+            right: 28px;
+            background: var(--navy);
+            color: var(--white);
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.35s ease;
+            pointer-events: none;
+            z-index: 1001;
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ---------- DOWNLOAD OVERLAY ---------- */
+        .download-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .download-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .download-spinner {
+            width: 56px;
+            height: 56px;
+            border: 4px solid var(--yellow);
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .download-overlay p {
+            color: var(--white);
+            margin-top: 16px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 860px) {
+            body {
+                padding: 20px 15px;
+            }
+            .cv {
+                padding: 35px;
+            }
+            .cv-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 28px;
+            }
+            .header-left {
+                width: 200px;
+            }
+            .header-right {
+                padding-top: 0;
+            }
+            .title-line {
+                font-size: 2rem;
+            }
+            .sub-title .title-line {
+                font-size: 1.6rem;
+            }
+            .edu-contact {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .contact-col {
+                padding-top: 0;
+            }
+            .experience-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .skills-grid {
+                gap: 20px 24px;
+                justify-content: center;
+            }
+            .skill-item {
+                width: 64px;
+            }
+            .skill-item i {
+                font-size: 2.2rem;
+            }
+            .profile-img-box {
+                padding: 10px 10px 14px 10px;
+            }
+            .geo-shape--circle-1 {
+                width: 200px;
+                height: 200px;
+                top: -40px;
+                right: -40px;
+            }
+            .geo-shape--circle-2 {
+                width: 150px;
+                height: 150px;
+            }
+            .geo-shape--triangle-1 {
+                border-width: 0 80px 140px 0;
+            }
+            .geo-shape--triangle-2 {
+                border-width: 0 0 120px 100px;
+            }
+            .qr-frame {
+                max-width: 160px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cv {
+                padding: 22px;
+            }
+            .title-line {
+                font-size: 1.55rem;
+            }
+            .sub-title .title-line {
+                font-size: 1.3rem;
+            }
+            .role-badge {
+                font-size: 0.9rem;
+                padding: 5px 14px;
+            }
+            .section-title {
+                font-size: 1.3rem;
+            }
+            .about-text {
+                font-size: 0.88rem;
+            }
+            .header-left {
+                width: 160px;
+            }
+            .skills-grid {
+                gap: 16px 18px;
+            }
+            .skill-item {
+                width: 56px;
+            }
+            .skill-item i {
+                font-size: 1.9rem;
+            }
+            .skill-item span {
+                font-size: 0.65rem;
+            }
+            .fab-container {
+                bottom: 18px;
+                right: 18px;
+            }
+            .fab {
+                width: 46px;
+                height: 46px;
+            }
+            .toast {
+                bottom: 140px;
+                right: 18px;
+            }
+            .profile-img-box {
+                padding: 8px 8px 12px 8px;
+            }
+            .window-bar {
+                font-size: 0.6rem;
+                padding-bottom: 6px;
+            }
+            .window-bar .dot {
+                width: 8px;
+                height: 8px;
+            }
+            .geo-shape--circle-1 {
+                width: 140px;
+                height: 140px;
+                top: -20px;
+                right: -20px;
+            }
+            .geo-shape--circle-2 {
+                width: 100px;
+                height: 100px;
+                bottom: -20px;
+                left: -30px;
+            }
+            .geo-shape--triangle-1 {
+                border-width: 0 50px 90px 0;
+                top: 30%;
+                right: -10px;
+            }
+            .geo-shape--triangle-2 {
+                border-width: 0 0 80px 70px;
+                bottom: 15%;
+                left: -20px;
+            }
+            .geo-shape--line-1,
+            .geo-shape--line-2 {
+                display: none;
+            }
+            .qr-frame {
+                max-width: 140px;
+            }
+            .qr-frame .qr-placeholder svg {
+                width: 36px;
+                height: 36px;
+            }
+        }
     </style>
-<base target="_blank">
+    <base target="_blank" />
 </head>
 <body>
 
@@ -432,17 +1058,36 @@ body {
 
     <main class="cv" id="cvCanvas">
 
+        <!-- Dekorasi geometris -->
+        <div class="geo-bg">
+            <div class="geo-shape geo-shape--circle-1"></div>
+            <div class="geo-shape geo-shape--circle-2"></div>
+            <div class="geo-shape geo-shape--triangle-1"></div>
+            <div class="geo-shape geo-shape--triangle-2"></div>
+            <div class="geo-shape geo-shape--line-1"></div>
+            <div class="geo-shape geo-shape--line-2"></div>
+        </div>
+        <div class="geo-grid"></div>
+
         <header class="cv-header">
             <div class="header-left">
                 <div class="profile-wrapper">
                     <div class="profile-img-box" id="profileImgBox" title="Klik untuk ganti foto">
-                        <img src="assets/profile.png" alt="Afdal Adha Firnansyah" id="profileImg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <!-- Window Bar ala sistem -->
+                        <div class="window-bar">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                            <span class="window-title">Profile</span>
+                        </div>
+
+                        <img src="assets/profile.png" alt="Afdal Adha Firnansyah" id="profileImg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="profile-fallback" style="display:none;"><span>AF</span></div>
-                        <div class="upload-hint no-print">Klik untuk<br>upload foto</div>
+                        <div class="upload-hint no-print">Klik untuk<br />upload foto</div>
                     </div>
                 </div>
-                <!-- Input file tersembunyi untuk upload gambar -->
-                <input type="file" id="imgUpload" accept="image/png,image/jpeg,image/jpg,image/webp" style="display:none;">
+                <!-- Input file tersembunyi -->
+                <input type="file" id="imgUpload" accept="image/png,image/jpeg,image/jpg,image/webp" style="display:none;" />
             </div>
 
             <div class="header-right">
@@ -477,8 +1122,8 @@ body {
                 <div class="edu-content">
                     <p class="edu-year">2024 — 2026</p>
                     <p class="edu-school">SMKN 1 Karang Baru</p>
-                    <p class="edu-detail">Program Studi:<br>Pengembangan Perangkat Lunak dan Gim</p>
-                    <p class="edu-detail">Konsentrasi:<br>Rekayasa Perangkat Lunak</p>
+                    <p class="edu-detail">Program Studi:<br />Pengembangan Perangkat Lunak dan Gim</p>
+                    <p class="edu-detail">Konsentrasi:<br />Rekayasa Perangkat Lunak</p>
                     <p class="edu-status">Kelas XII</p>
                 </div>
             </div>
@@ -580,12 +1225,40 @@ body {
                 <h2 class="section-title"><span class="marker-bg">Projects</span></h2>
             </div>
             <div class="projects-grid">
+
+                <!-- Project Card kiri -->
                 <div class="project-card">
                     <h3 class="project-name">[Nama Proyek]</h3>
                     <p class="project-desc">[Tambahkan deskripsi proyek]</p>
                     <p class="project-tech">[Teknologi] • [Teknologi]</p>
                     <a href="#" class="project-link no-print">[Tambahkan Link]</a>
                 </div>
+
+                <!-- QR Code Frame kanan -->
+                <div class="project-card qr-card">
+                    <div class="qr-frame" id="qrFrame" title="Klik untuk upload QR Code">
+                        <!-- Placeholder SVG + teks -->
+                        <div class="qr-placeholder" id="qrPlaceholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="7" height="7" rx="1" />
+                                <rect x="15" y="2" width="7" height="7" rx="1" />
+                                <rect x="2" y="15" width="7" height="7" rx="1" />
+                                <rect x="15" y="15" width="7" height="7" rx="1" />
+                                <line x1="9" y1="5.5" x2="15" y2="5.5" />
+                                <line x1="5.5" y1="9" x2="5.5" y2="15" />
+                                <line x1="18.5" y1="9" x2="18.5" y2="15" />
+                                <line x1="9" y1="18.5" x2="15" y2="18.5" />
+                            </svg>
+                            <span>QR Code</span>
+                        </div>
+                        <!-- QR image akan ditampilkan di sini (hidden by default) -->
+                        <img id="qrImage" src="" alt="QR Code" style="display:none;" />
+                    </div>
+                    <p class="qr-label">Scan Me</p>
+                    <!-- Input file tersembunyi untuk QR -->
+                    <input type="file" id="qrUpload" accept="image/png,image/jpeg,image/jpg,image/webp" style="display:none;" />
+                </div>
+
             </div>
         </section>
 
@@ -598,173 +1271,220 @@ body {
     <div class="toast no-print" id="toast">Email copied!</div>
 
     <script>
-/* ============================================================
-   CV INTERACTIONS — Robust Image Download + Image Upload
-   ============================================================ */
-(function() {
-    'use strict';
+        /* ============================================================
+           CV INTERACTIONS — Window-style + Nama Seragam + Geometris + QR
+           ============================================================ */
+        (function() {
+            'use strict';
 
-    var overlay = document.getElementById('downloadOverlay');
-    var toastEl = document.getElementById('toast');
+            var overlay = document.getElementById('downloadOverlay');
+            var toastEl = document.getElementById('toast');
 
-    function showToast(msg) {
-        if (!toastEl) return;
-        toastEl.textContent = msg;
-        toastEl.classList.add('show');
-        setTimeout(function() { toastEl.classList.remove('show'); }, 2500);
-    }
-
-    function setOverlay(show) {
-        if (!overlay) return;
-        if (show) overlay.classList.add('active');
-        else overlay.classList.remove('active');
-    }
-
-    // ---------- IMAGE UPLOAD ----------
-    var imgBox = document.getElementById('profileImgBox');
-    var imgInput = document.getElementById('imgUpload');
-    var profileImg = document.getElementById('profileImg');
-    var fallbackDiv = imgBox ? imgBox.querySelector('.profile-fallback') : null;
-
-    if (imgBox && imgInput) {
-        imgBox.addEventListener('click', function() {
-            imgInput.click();
-        });
-
-        imgInput.addEventListener('change', function(e) {
-            var file = e.target.files[0];
-            if (!file) return;
-
-            if (!file.type.match('image.*')) {
-                showToast('Pilih file gambar (PNG/JPG/WebP)');
-                return;
+            function showToast(msg) {
+                if (!toastEl) return;
+                toastEl.textContent = msg;
+                toastEl.classList.add('show');
+                setTimeout(function() { toastEl.classList.remove('show'); }, 2500);
             }
 
-            var reader = new FileReader();
-            reader.onload = function(evt) {
-                if (profileImg) {
-                    profileImg.src = evt.target.result;
-                    profileImg.style.display = 'block';
-                    if (fallbackDiv) fallbackDiv.style.display = 'none';
+            function setOverlay(show) {
+                if (!overlay) return;
+                if (show) overlay.classList.add('active');
+                else overlay.classList.remove('active');
+            }
+
+            // ---------- IMAGE UPLOAD (Profile) ----------
+            var imgBox = document.getElementById('profileImgBox');
+            var imgInput = document.getElementById('imgUpload');
+            var profileImg = document.getElementById('profileImg');
+            var fallbackDiv = imgBox ? imgBox.querySelector('.profile-fallback') : null;
+
+            if (imgBox && imgInput) {
+                imgBox.addEventListener('click', function() {
+                    imgInput.click();
+                });
+
+                imgInput.addEventListener('change', function(e) {
+                    var file = e.target.files[0];
+                    if (!file) return;
+
+                    if (!file.type.match('image.*')) {
+                        showToast('Pilih file gambar (PNG/JPG/WebP)');
+                        return;
+                    }
+
+                    var reader = new FileReader();
+                    reader.onload = function(evt) {
+                        if (profileImg) {
+                            profileImg.src = evt.target.result;
+                            profileImg.style.display = 'block';
+                            if (fallbackDiv) fallbackDiv.style.display = 'none';
+                        }
+                        showToast('Foto berhasil diupload!');
+                    };
+                    reader.onerror = function() {
+                        showToast('Gagal membaca file');
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+
+            // ---------- QR CODE UPLOAD ----------
+            var qrFrame = document.getElementById('qrFrame');
+            var qrUpload = document.getElementById('qrUpload');
+            var qrImage = document.getElementById('qrImage');
+            var qrPlaceholder = document.getElementById('qrPlaceholder');
+
+            if (qrFrame && qrUpload) {
+                // Klik frame → trigger upload
+                qrFrame.addEventListener('click', function(e) {
+                    // Jangan trigger jika klik pada gambar (biarkan user bisa klik gambar juga)
+                    qrUpload.click();
+                });
+
+                // Klik hint juga trigger
+                var hint = document.getElementById('qrUploadHint');
+                if (hint) {
+                    hint.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        qrUpload.click();
+                    });
                 }
-                showToast('Foto berhasil diupload!');
+
+                qrUpload.addEventListener('change', function(e) {
+                    var file = e.target.files[0];
+                    if (!file) return;
+
+                    if (!file.type.match('image.*')) {
+                        showToast('Pilih file gambar (PNG/JPG/WebP)');
+                        return;
+                    }
+
+                    var reader = new FileReader();
+                    reader.onload = function(evt) {
+                        if (qrImage) {
+                            qrImage.src = evt.target.result;
+                            qrImage.style.display = 'block';
+                            if (qrPlaceholder) qrPlaceholder.style.display = 'none';
+                            showToast('QR Code berhasil diupload!');
+                        }
+                    };
+                    reader.onerror = function() {
+                        showToast('Gagal membaca file QR');
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+
+            // ---------- Wait for fonts & images ----------
+            function waitForResources() {
+                var promises = [];
+
+                if (document.fonts && document.fonts.ready) {
+                    promises.push(document.fonts.ready);
+                }
+
+                var imgs = document.querySelectorAll('img');
+                for (var i = 0; i < imgs.length; i++) {
+                    (function(img) {
+                        if (img.complete) return;
+                        promises.push(new Promise(function(resolve) {
+                            img.onload = resolve;
+                            img.onerror = resolve;
+                            setTimeout(resolve, 3000);
+                        }));
+                    })(imgs[i]);
+                }
+
+                return Promise.all(promises);
+            }
+
+            // ---------- Download CV as Image ----------
+            function downloadCVImage() {
+                var cv = document.getElementById('cvCanvas');
+                if (!cv) {
+                    showToast('CV element not found');
+                    return;
+                }
+
+                if (typeof html2canvas !== 'function') {
+                    showToast('Library not loaded. Check internet connection.');
+                    return;
+                }
+
+                setOverlay(true);
+
+                waitForResources().then(function() {
+                    return new Promise(function(r) { setTimeout(r, 600); });
+                }).then(function() {
+                    return html2canvas(cv, {
+                        scale: 2,
+                        useCORS: true,
+                        allowTaint: true,
+                        backgroundColor: '#E9E9E9',
+                        logging: false,
+                        removeContainer: true,
+                        imageTimeout: 15000
+                    });
+                }).then(function(canvas) {
+                    var link = document.createElement('a');
+                    link.download = 'CV_Afdal_Adha_Firnansyah.png';
+                    link.href = canvas.toDataURL('image/png');
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    setOverlay(false);
+                    showToast('CV downloaded!');
+                }).catch(function(err) {
+                    console.error(err);
+                    setOverlay(false);
+                    showToast('Download failed. Try using Print (Ctrl+P) instead.');
+                });
+            }
+
+            var btn = document.getElementById('downloadBtn');
+            if (btn) {
+                btn.addEventListener('click', downloadCVImage);
+            }
+
+            // ---------- Copy Email ----------
+            window.copyEmail = function() {
+                var emailEl = document.querySelector('.email-text');
+                if (!emailEl) return;
+                var email = emailEl.getAttribute('data-email') || emailEl.textContent;
+                if (!email || email.indexOf('Tambahkan') !== -1) {
+                    showToast('Email belum diatur');
+                    return;
+                }
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(email).then(function() {
+                        showToast('Email copied!');
+                    }).catch(function() {
+                        fallbackCopy(email);
+                    });
+                } else {
+                    fallbackCopy(email);
+                }
             };
-            reader.onerror = function() {
-                showToast('Gagal membaca file');
-            };
-            reader.readAsDataURL(file);
-        });
-    }
 
-    // ---------- Wait for fonts & images ----------
-    function waitForResources() {
-        var promises = [];
+            function fallbackCopy(text) {
+                var ta = document.createElement('textarea');
+                ta.value = text;
+                ta.style.position = 'fixed';
+                ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.select();
+                try {
+                    document.execCommand('copy');
+                    showToast('Email copied!');
+                } catch (e) {
+                    showToast('Gagal copy email');
+                }
+                document.body.removeChild(ta);
+            }
 
-        if (document.fonts && document.fonts.ready) {
-            promises.push(document.fonts.ready);
-        }
-
-        var imgs = document.querySelectorAll('img');
-        for (var i = 0; i < imgs.length; i++) {
-            (function(img) {
-                if (img.complete) return;
-                promises.push(new Promise(function(resolve) {
-                    img.onload = resolve;
-                    img.onerror = resolve;
-                    setTimeout(resolve, 3000);
-                }));
-            })(imgs[i]);
-        }
-
-        return Promise.all(promises);
-    }
-
-    // ---------- Download CV as Image ----------
-    function downloadCVImage() {
-        var cv = document.getElementById('cvCanvas');
-        if (!cv) {
-            showToast('CV element not found');
-            return;
-        }
-
-        if (typeof html2canvas !== 'function') {
-            showToast('Library not loaded. Check internet connection.');
-            return;
-        }
-
-        setOverlay(true);
-
-        waitForResources().then(function() {
-            return new Promise(function(r) { setTimeout(r, 600); });
-        }).then(function() {
-            return html2canvas(cv, {
-                scale: 2,
-                useCORS: true,
-                allowTaint: true,
-                backgroundColor: '#E9E9E9',
-                logging: false,
-                removeContainer: true,
-                imageTimeout: 15000
-            });
-        }).then(function(canvas) {
-            var link = document.createElement('a');
-            link.download = 'CV_Afdal_Adha_Firnansyah.png';
-            link.href = canvas.toDataURL('image/png');
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            setOverlay(false);
-            showToast('CV downloaded!');
-        }).catch(function(err) {
-            console.error(err);
-            setOverlay(false);
-            showToast('Download failed. Try using Print (Ctrl+P) instead.');
-        });
-    }
-
-    var btn = document.getElementById('downloadBtn');
-    if (btn) {
-        btn.addEventListener('click', downloadCVImage);
-    }
-
-    // ---------- Copy Email ----------
-    window.copyEmail = function() {
-        var emailEl = document.querySelector('.email-text');
-        if (!emailEl) return;
-        var email = emailEl.getAttribute('data-email') || emailEl.textContent;
-        if (!email || email.indexOf('Tambahkan') !== -1) {
-            showToast('Email belum diatur');
-            return;
-        }
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(email).then(function() {
-                showToast('Email copied!');
-            }).catch(function() {
-                fallbackCopy(email);
-            });
-        } else {
-            fallbackCopy(email);
-        }
-    };
-
-    function fallbackCopy(text) {
-        var ta = document.createElement('textarea');
-        ta.value = text;
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        try {
-            document.execCommand('copy');
-            showToast('Email copied!');
-        } catch (e) {
-            showToast('Gagal copy email');
-        }
-        document.body.removeChild(ta);
-    }
-
-    console.log('%c Afdal Adha Firnansyah — CV ', 'background:#17177A;color:#F6C400;font-size:14px;font-weight:bold;padding:6px 12px;border-radius:4px;');
-})();
+            console.log('%c Afdal Adha Firnansyah — CV Geometris + QR ', 'background:#17177A;color:#F6C400;font-size:14px;font-weight:bold;padding:6px 12px;border-radius:4px;');
+        })();
     </script>
 </body>
 </html>
