@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ADINAGARA</title>
+    <title>Portfolio Siswa</title>
 
     <!-- GSAP + ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js">
@@ -587,11 +587,31 @@
             right: -10%;
             animation-delay: 0s;
         }
+
         .hero__floating-badge--2 {
             bottom: 15%;
             left: -8%;
             animation-delay: 1.5s;
         }
+
+        .hero__floating-badge--3 {
+            top: 35%;
+            left: -12%;
+            animation-delay: 3s;
+        }
+
+        .hero__floating-badge--4 {
+            bottom: 35%;
+            right: -12%;
+            animation-delay: 4.5s;
+        }
+
+        .hero__floating-badge--5 {
+            top: 70%;
+            right: 5%;
+            animation-delay: 6s;
+        }
+
         @keyframes float-badge {
             0%,
             100% {
@@ -851,7 +871,7 @@
                 justify-content: center;
             }
         }
-        
+
         /* ============================================
                PORTFOLIO
             ============================================ */
@@ -1612,14 +1632,14 @@
     ============================================ -->
     <nav class="navbar" id="navbar">
         <div class="navbar__inner">
-            <a href="./pages/cv.html" class="navbar__logo">ADIN<span>AGARA</span></a>
+            <a href="./pages/cv.html" class="navbar__logo">MY<span>PORTFOLIO</span></a>
             <ul class="navbar__links" id="navLinks">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Work</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" class="active">Beranda</a></li>
+                <li><a href="#about">Tentang Saya</a></li>
+                <li><a href="#services">Keahlian</a></li>
+                <li><a href="#portfolio">Karya</a></li>
+                <li><a href="#testimonials">Testimoni</a></li>
+                <li><a href="#contact">Kontak</a></li>
             </ul>
 
         </div>
@@ -1639,35 +1659,50 @@
                 <div class="hero__content">
                     <div class="hero__badge">
                         <span class="dot"></span>
-                        Meta Prompt Engineer
+                        Siswa SMK NEGERI 1 KARANG BARU
                     </div>
                     <h1 class="hero__title">
                         <span id="typewriter"></span><span class="cursor"></span>
                     </h1>
                     <p class="hero__desc">
-                        Tentang apa saja yang 
+                        Saya adalah seorang <strong>siswa kelas XII</strong> dari SMK NEGERI 1 KARANG BARU
+                        yang berasal dari program keahlian <strong>Pengembangan Perangkat Lunak dan Gim</strong>
+                        dengan konsentrasi keahlian pada <strong>Rekayasa Perangkat Lunak.</strong>
                     </p>
                     <div class="hero__actions">
                         <a href="#contact" class="btn btn--primary">
-                            Let's Collaborate
+                            Hubungi Saya
                             <span class="btn__arrow">→</span>
                         </a>
                         <a href="#portfolio" class="btn btn--outline">
-                            View My Work
+                            Lihat Karya
                         </a>
                     </div>
                 </div>
 
                 <div class="hero__visual">
                     <div class="hero__image-wrapper">
-                        <img src="./image/99571841762058067-removebg-preview.png" alt="Hero" id="heroImage" />
+                        <img src="./image/99571841762058067-removebg-preview.png" alt="Foto Siswa" id="heroImage" />
                         <div class="hero__image-shadow"></div>
                     </div>
                     <div class="hero__floating-badge hero__floating-badge--1">
-                        <i class="fas fa-robot"></i> AI Expert
+                        <i class="fas fa-graduation-cap"></i> Kelas XII
                     </div>
+
                     <div class="hero__floating-badge hero__floating-badge--2">
-                        <i class="fas fa-star"></i> 5.0 Rating
+                        <i class="fas fa-star"></i> Untuk Menciptakan Dunia Digital
+                    </div>
+
+                    <div class="hero__floating-badge hero__floating-badge--3">
+                        <i class="fas fa-code"></i> Pengembang Perangkat Lunak
+                    </div>
+
+                    <div class="hero__floating-badge hero__floating-badge--4">
+                        <i class="fas fa-brain"></i> Kecerdasan Buatan
+                    </div>
+
+                    <div class="hero__floating-badge hero__floating-badge--5">
+                        <i class="fas fa-wand-magic-sparkles"></i> Insinyur Prompt Meta
                     </div>
                 </div>
             </div>
@@ -1683,48 +1718,43 @@
                 <div class="about__content">
                     <div class="section-label">
                         <span class="section-label-line"></span>
-                        About Me
+                        Tentang Saya
                     </div>
                     <h2 class="section-title">
-                        Empowering Ideas with <span class="highlight">Intelligent</span> Solutions
+                        Membangun <span class="highlight">Masa Depan</span> Dengan Kecerdasan.
                     </h2>
                     <p class="about__text">
-                        Saya <strong>Afdal Adha Firnansyah</strong>, seorang
-                        <strong>Meta Prompt Engineer</strong> dan pengembang yang
-                        berdedikasi untuk menciptakan sistem AI yang tidak hanya
-                        cerdas, tetapi juga <strong>etis</strong>, <strong>adaptif</strong>,
-                        dan <strong>berorientasi pada manusia</strong>.
+                        Halo! Perkenalkan, saya adalah Afdal Adha Firnansyah, seorang siswa kelas XII dari SMK NEGERI 1 KARANG BARU.
+                        Saya mengambil program keahlian <strong>Pengembangan Perangkat Lunak dan Gim</strong> dengan konsentrasi keahlian pada <strong>Rekayasa Perangkat Lunak</strong>.
                     </p>
                     <p class="about__text">
-                        Dengan pengalaman dalam merancang arsitektur prompt yang
-                        kompleks dan membangun aplikasi AI end-to-end, saya membantu
-                        bisnis dan individu memanfaatkan kekuatan AI untuk
-                        mencapai tujuan mereka.
+                        Saya menyakini bahwa setiap waktu adalah kesempatan untuk belajar dan berkembang.
+                        sama seperti apa yang dikatakan Sandra Magsamen “Setiap hari adalah kesempatan untuk mempelajari sesuatu yang baru atau menemukan sesuatu yang baru. Tetaplah belajar dan terus berkembang.”
                     </p>
                     <div class="about__features">
                         <div class="about__feature">
-                            <div class="about__feature-icon"><i class="fas fa-brain"></i></div>
-                            <span class="about__feature-text">AI &amp; Prompt Engineering</span>
+                            <div class="about__feature-icon"><i class="fas fa-laptop"></i></div>
+                            <span class="about__feature-text">Teknologi &amp; Informatika</span>
                         </div>
                         <div class="about__feature">
-                            <div class="about__feature-icon"><i class="fas fa-laptop-code"></i></div>
-                            <span class="about__feature-text">Full Stack Development</span>
+                            <div class="about__feature-icon"><i class="fas fa-paint-brush"></i></div>
+                            <span class="about__feature-text">Desain &amp; Kreativitas</span>
                         </div>
                         <div class="about__feature">
                             <div class="about__feature-icon"><i class="fas fa-users"></i></div>
-                            <span class="about__feature-text">Human-Centered Design</span>
+                            <span class="about__feature-text">Kerja Tim &amp; Kolaborasi</span>
                         </div>
                         <div class="about__feature">
-                            <div class="about__feature-icon"><i class="fas fa-rocket"></i></div>
-                            <span class="about__feature-text">Innovation Strategy</span>
+                            <div class="about__feature-icon"><i class="fas fa-book-open"></i></div>
+                            <span class="about__feature-text">Pembelajar Aktif</span>
                         </div>
                     </div>
                 </div>
                 <div class="about__image">
-                    <img src="./image/Top_5_Book_Recommendations_to_Start_2023_-_The_Pursuit_of_L-removebg-preview.png" alt="Afdal Adha Firnansyah" onerror="this.style.display='none'" />
+                    <img src="./image/Top_5_Book_Recommendations_to_Start_2023_-_The_Pursuit_of_L-removebg-preview.png" alt="Foto Siswa SMK" onerror="this.style.display='none'" />
                     <div class="about__image-badge">
-                        <div class="number">2+</div>
-                        <div class="label">Years of Excellence</div>
+                        <div class="number">XII</div>
+                        <div class="label">SMKN 1 Karang Baru</div>
                     </div>
                 </div>
             </div>
@@ -1739,40 +1769,42 @@
             <div class="services__header">
                 <div class="section-label" style="justify-content:center;">
                     <span class="section-label-line"></span>
-                    What I Do
+                    Keahlian Saya
                 </div>
                 <h2 class="section-title">
-                    Services &amp; <span class="highlight">Expertise</span>
+                    Kompetensi &amp; <span class="highlight">Minat</span>
                 </h2>
                 <p class="section-desc">
-                    Solusi yang saya tawarkan dirancang untuk membantu Anda
-                    memanfaatkan teknologi secara maksimal.
+                    Berbagai keterampilan yang saya pelajari dan kembangkan selama
+                    menempuh pendidikan di SMK NEGERI 1 KARANG BARU.
                 </p>
             </div>
             <div class="services__grid">
                 <div class="service-card" data-tilt>
-                    <div class="service-card__icon"><i class="fas fa-robot"></i></div>
-                    <h3 class="service-card__title">Meta Prompt Engineering</h3>
-                    <p class="service-card__desc">
-                        Perancangan sistem prompt yang canggih untuk mengoptimalkan
-                        performa model AI, dengan pendekatan meta-learning dan
-                        adaptasi kontekstual.
-                    </p>
-                </div>
-                <div class="service-card" data-tilt>
                     <div class="service-card__icon"><i class="fas fa-code"></i></div>
-                    <h3 class="service-card__title">AI Application Development</h3>
+                    <h3 class="service-card__title">Pemrograman Dasar</h3>
                     <p class="service-card__desc">
-                        Membangun aplikasi AI end-to-end yang terintegrasi dengan
-                        workflow Anda, dari konsep hingga deployment dan monitoring.
+                        Memahami logika pemrograman, HTML, CSS, dan dasar-dasar
+                        JavaScript. Saya terus belajar untuk menguasai bahasa
+                        pemrograman yang lebih kompleks.
                     </p>
                 </div>
                 <div class="service-card" data-tilt>
-                    <div class="service-card__icon"><i class="fas fa-pen-fancy"></i></div>
-                    <h3 class="service-card__title">Content &amp; Prompt Strategy</h3>
+                    <div class="service-card__icon"><i class="fas fa-pencil-ruler"></i></div>
+                    <h3 class="service-card__title">Desain Grafis</h3>
                     <p class="service-card__desc">
-                        Konsultasi dan pengembangan strategi konten berbasis AI,
-                        termasuk optimalisasi prompt untuk berbagai use case bisnis.
+                        Menggunakan tools desain seperti Canva dan Adobe Photoshop
+                        untuk membuat konten visual yang menarik, baik untuk keperluan
+                        sekolah maupun proyek pribadi.
+                    </p>
+                </div>
+                <div class="service-card" data-tilt>
+                    <div class="service-card__icon"><i class="fas fa-pen-nib"></i></div>
+                    <h3 class="service-card__title">Penulisan Konten</h3>
+                    <p class="service-card__desc">
+                        Menulis konten yang informatif dan menarik, mulai dari caption,
+                        artikel, hingga deskripsi. Saya terus mengasah kemampuan menulis
+                        agar setiap kata bisa menyampaikan pesan dengan jelas.
                     </p>
                 </div>
             </div>
@@ -1787,20 +1819,20 @@
             <div class="project-showcase__header">
                 <div class="section-label" style="justify-content:center;">
                     <span class="section-label-line"></span>
-                    Portfolio
+                    Portofolio
                 </div>
                 <h2 class="section-title">
-                    Selected <span class="highlight">Works</span>
+                    Karya &amp; <span class="highlight">Proyek</span> Saya
                 </h2>
                 <p class="section-desc">
-                    Karya-karya pilihan yang mencerminkan dedikasi, inovasi,
-                    dan perhatian terhadap setiap detail.
+                    Beberapa proyek dan karya yang telah saya buat selama masa
+                    sekolah, baik tugas maupun eksplorasi pribadi.
                 </p>
             </div>
 
             <div class="project-showcase__cta">
                 <a href="./pages/project.html" class="btn btn--primary">
-                    View All Projects
+                    Lihat Semua Proyek
                     <span class="btn__arrow">→</span>
                 </a>
             </div>
@@ -1815,18 +1847,20 @@
             <div class="testimonials__header">
                 <div class="section-label" style="justify-content:center;">
                     <span class="section-label-line"></span>
-                    Testimonials
+                    Testimoni
                 </div>
                 <h2 class="section-title">
-                    What People <span class="highlight">Say</span>
+                    Apa Kata <span class="highlight">Mereka</span>
                 </h2>
                 <p class="section-desc">
-                    Umpan balik dari klien dan kolega yang telah bekerja sama dengan saya.
+                    Beberapa kesan yang saya dapatkan dari orang-orang yang disekitar saya
+                    dan orang-orang yang saya temui.
                 </p>
             </div>
 
             <div class="testimonials__slider">
                 <div class="testimonials__track" id="testimonialTrack">
+
                     <div class="testimonial-card">
                         <div class="testimonial-card__stars">
                             <i class="fas fa-star"></i>
@@ -1834,62 +1868,26 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-card__quote">
-                            "Afdal memiliki pemahaman yang luar biasa tentang AI dan
-                            prompt engineering. Ia berhasil mengubah ide abstrak menjadi
-                            solusi konkret yang berdampak besar bagi tim kami."
-                        </p>
-                        <div class="testimonial-card__author">
-                            <div class="testimonial-card__avatar">MR</div>
-                            <div>
-                                <div class="testimonial-card__name">M. Rizki</div>
-                                <div class="testimonial-card__role">CTO, TechVibe</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-card__stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
                         <p class="testimonial-card__quote">
-                            "Kolaborasi dengan Afdal sangat menyenangkan. Ia tidak hanya
-                            ahli dalam teknologinya, tetapi juga mampu berkomunikasi
-                            dengan jelas dan selalu tepat waktu."
+                            "Aku telah bertemu dengan berbagai jenius di sepanjang waktu yang kulalui. 
+                            Pikiran-pikiran cemerlang yang membuat dunia berguncang. 
+                            Lalu Aku bertemu denganmu... seorang yang jelas jauh dari tingkat mereka. 
+                            Namun anehnya, di antara keterbatasanmu itu, Aku melihat sesuatu yang jarang dimiliki bahkan oleh para jenius: 
+                            kesadaran bahwa setiap detik adalah kesempatan untuk belajar dan tumbuh. 
+                            Itu saja sudah cukup membuat-Ku enggan mengabaikanmu sepenuhnya."
                         </p>
                         <div class="testimonial-card__author">
-                            <div class="testimonial-card__avatar">SA</div>
+                            <div class="testimonial-card__avatar">I</div>
                             <div>
-                                <div class="testimonial-card__name">Siti Aisyah</div>
-                                <div class="testimonial-card__role">Product Manager</div>
+                                <div class="testimonial-card__name">Alexander Adinagara Wiratama Firnansyah</div>
+                                <div class="testimonial-card__role">Kaisar Pengetahuan</div>
                             </div>
                         </div>
                     </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-card__stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-card__quote">
-                            "Salah satu prompt engineer terbaik yang pernah saya temui.
-                            Pendekatan meta-prompting yang ia gunakan membawa hasil
-                            yang jauh di atas ekspektasi kami."
-                        </p>
-                        <div class="testimonial-card__author">
-                            <div class="testimonial-card__avatar">DP</div>
-                            <div>
-                                <div class="testimonial-card__name">Dwi Prasetyo</div>
-                                <div class="testimonial-card__role">Lead AI Researcher</div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="testimonials__dots" id="testimonialDots"></div>
             </div>
@@ -1903,16 +1901,16 @@
         <div class="container">
             <div class="cta-section__inner">
                 <h2 class="cta-section__title">
-                    Ready to Build the <span>Future</span>?
+                    Siap <span>Berkolaborasi</span>?
                 </h2>
                 <p class="cta-section__desc">
-                    Mari kita ciptakan solusi cerdas yang membawa perubahan nyata.
-                    Saya siap berkolaborasi dengan Anda untuk mewujudkan ide-ide
-                    besar menjadi kenyataan.
+                    Saya selalu terbuka untuk belajar hal baru, berkolaborasi dalam
+                    proyek, atau sekadar bertukar pikiran. Mari terhubung dan
+                    bersama-sama menciptakan sesuatu yang bermanfaat!
                 </p>
                 <div class="cta-section__actions">
                     <a href="https://wa.me/6283854722182" class="btn btn--primary">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
+                        <i class="fab fa-whatsapp"></i> Hubungi Saya
                         <span class="btn__arrow">→</span>
                     </a>
                 </div>
@@ -1927,10 +1925,10 @@
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
-                    <div class="logo">ADIN<span>AGARA</span></div>
+                    <div class="logo">MY<span>PORTFOLIO</span></div>
                     <p>
-                        "Masa depan tidak menunggu untuk diciptakan. Ia dibangun
-                        dengan kecerdasan, etika, dan visi."
+                        "Belajar, tumbuh, dan berkontribusi — itulah perjalanan
+                        seorang siswa yang ingin memberi dampak positif."
                     </p>
                     <div class="footer__socials">
                         <a href="https://www.tiktok.com/@faruqi.family" title="TikTok"><i class="fab fa-tiktok"></i></a>
@@ -1946,346 +1944,346 @@
                         <span class="label-sub">Indonesia</span>
                     </div>
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127576.06334872625!2d97.90025335723398!3d4.251582656881688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303fc19808bb0961%3A0x1b3c9fbcd5e1b6e4!2sAceh%20Tamiang%2C%20Aceh!5e0!3m2!1sid!2sid!4v1712345678901!5m2!1sid!2sid"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Peta Aceh Tamiang"
-                    ></iframe>
-                </div>
-            </div>
-            <div class="footer__divider"></div>
-            <div class="footer__bottom">
-                &copy; 2026 Afdal Adha Firnansyah · ADINAGARA. All rights reserved.
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127576.06334872625!2d97.90025335723398!3d4.251582656881688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303fc19808bb0961%3A0x1b3c9fbcd5e1b6e4!2sAceh%20Tamiang%2C%20Aceh!5e0!3m2!1sid!2sid!4v1712345678901!5m2!1sid!2sid"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Peta Aceh Tamiang"
+                ></iframe>
             </div>
         </div>
-    </footer>
+        <div class="footer__divider"></div>
+        <div class="footer__bottom">
+            &copy; 2026 · Siswa SMK NEGERI 1 KARANG BARU · All rights reserved.
+        </div>
+    </div>
+</footer>
 
-    <!-- Scroll to Top -->
-    <button class="scroll-top" id="scrollTop" title="Kembali ke atas">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+<!-- Scroll to Top -->
+<button class="scroll-top" id="scrollTop" title="Kembali ke atas">
+    <i class="fas fa-arrow-up"></i>
+</button>
 
-    <!-- ============================================
-         JAVASCRIPT
-    ============================================ -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+<!-- ============================================
+     JAVASCRIPT
+============================================ -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
 
-            // ===== 1. CURSOR GLOW =====
-            const cursorGlow = document.getElementById('cursor-glow');
-            let glowActive = true;
-            document.addEventListener('mousemove', (e) => {
-                if (window.innerWidth > 768) {
-                    cursorGlow.style.left = e.clientX + 'px';
-                    cursorGlow.style.top = e.clientY + 'px';
-                }
-            });
-            document.addEventListener('mouseleave', () => {
-                cursorGlow.style.opacity = '0';
-            });
-            document.addEventListener('mouseenter', () => {
-                cursorGlow.style.opacity = '1';
-            });
-
-            // ===== 2. PROGRESS BAR =====
-            const progressBar = document.getElementById('progressBar');
-            window.addEventListener('scroll', () => {
-                const scrollTop = window.scrollY;
-                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const progress = (scrollTop / docHeight) * 100;
-                progressBar.style.width = progress + '%';
-            });
-
-            // ===== 3. NAVBAR SCROLL =====
-            const navbar = document.getElementById('navbar');
-            window.addEventListener('scroll', () => {
-                navbar.classList.toggle('scrolled', window.scrollY > 60);
-            });
-
-            // ===== 4. SMOOTH SCROLL =====
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        e.preventDefault();
-                        const offset = 80;
-                        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                        window.scrollTo({ top, behavior: 'smooth' });
-                    }
-                });
-            });
-
-            // ===== 5. ACTIVE LINK =====
-            const sections = document.querySelectorAll('section[id]');
-            const navAnchors = document.querySelectorAll('.navbar__links a');
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const top = section.offsetTop - 120;
-                    if (window.scrollY >= top) current = section.getAttribute('id');
-                });
-                navAnchors.forEach(a => {
-                    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-                });
-            });
-
-            // ===== 6. TYPEWRITER =====
-            const typewriterEl = document.getElementById('typewriter');
-            const words = ['Build the', 'Future with', 'Intelligence'];
-            let wordIndex = 0;
-            let charIndex = 0;
-            let isDeleting = false;
-            let speed = 100;
-
-            function typeEffect() {
-                const currentWord = words[wordIndex];
-                if (isDeleting) {
-                    typewriterEl.textContent = currentWord.substring(0, charIndex - 1);
-                    charIndex--;
-                    speed = 50;
-                } else {
-                    typewriterEl.textContent = currentWord.substring(0, charIndex + 1);
-                    charIndex++;
-                    speed = 90;
-                }
-
-                if (!isDeleting && charIndex === currentWord.length) {
-                    speed = 1800;
-                    isDeleting = true;
-                } else if (isDeleting && charIndex === 0) {
-                    isDeleting = false;
-                    wordIndex = (wordIndex + 1) % words.length;
-                    speed = 400;
-                }
-                setTimeout(typeEffect, speed);
+        // ===== 1. CURSOR GLOW =====
+        const cursorGlow = document.getElementById('cursor-glow');
+        let glowActive = true;
+        document.addEventListener('mousemove', (e) => {
+            if (window.innerWidth > 768) {
+                cursorGlow.style.left = e.clientX + 'px';
+                cursorGlow.style.top = e.clientY + 'px';
             }
-            typeEffect();
-
-            // ===== 7. PARTICLE CANVAS =====
-            const canvas = document.getElementById('particles-canvas');
-            const ctx = canvas.getContext('2d');
-            let width, height, particles = [];
-            let mouse = { x: null, y: null };
-
-            function resizeCanvas() {
-                width = canvas.width = window.innerWidth;
-                height = canvas.height = window.innerHeight;
-            }
-            resizeCanvas();
-            window.addEventListener('resize', resizeCanvas);
-
-            document.addEventListener('mousemove', (e) => {
-                mouse.x = e.clientX;
-                mouse.y = e.clientY;
-            });
-
-            class Particle {
-                constructor() {
-                    this.reset();
-                }
-                reset() {
-                    this.x = Math.random() * width;
-                    this.y = Math.random() * height;
-                    this.size = Math.random() * 2.5 + 0.5;
-                    this.speedX = (Math.random() - 0.5) * 0.5;
-                    this.speedY = (Math.random() - 0.5) * 0.5;
-                    this.opacity = Math.random() * 0.4 + 0.08;
-                    this.color = Math.random() > 0.5 ? '242, 201, 76' : '255, 255, 255';
-                    this.baseSpeedX = this.speedX;
-                    this.baseSpeedY = this.speedY;
-                }
-                update() {
-                    // Mouse interaction
-                    if (mouse.x !== null && mouse.y !== null) {
-                        const dx = this.x - mouse.x;
-                        const dy = this.y - mouse.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-                        if (dist < 150) {
-                            const force = (150 - dist) / 150 * 0.08;
-                            this.x += dx * force;
-                            this.y += dy * force;
-                        }
-                    }
-                    this.x += this.speedX;
-                    this.y += this.speedY;
-                    if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) this.reset();
-                }
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
-                    ctx.fill();
-                }
-            }
-
-            function initParticles() {
-                particles = [];
-                const count = Math.min(70, Math.floor((width * height) / 14000));
-                for (let i = 0; i < count; i++) particles.push(new Particle());
-            }
-            initParticles();
-
-            function animateParticles() {
-                ctx.clearRect(0, 0, width, height);
-                particles.forEach(p => { p.update();
-                    p.draw(); });
-
-                // Draw connections
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-                        if (dist < 130) {
-                            ctx.beginPath();
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.strokeStyle = `rgba(242, 201, 76, ${0.05 * (1 - dist / 130)})`;
-                            ctx.lineWidth = 0.6;
-                            ctx.stroke();
-                        }
-                    }
-                }
-                requestAnimationFrame(animateParticles);
-            }
-            animateParticles();
-
-            // ===== 8. TESTIMONIAL SLIDER =====
-            const track = document.getElementById('testimonialTrack');
-            const dotsContainer = document.getElementById('testimonialDots');
-            const slides = track.querySelectorAll('.testimonial-card');
-            let currentSlide = 0;
-            let totalSlides = slides.length;
-            let autoPlayInterval;
-            let isAnimating = false;
-
-            // Init dots
-            for (let i = 0; i < totalSlides; i++) {
-                const dot = document.createElement('button');
-                dot.classList.add('testimonials__dot');
-                if (i === 0) dot.classList.add('active');
-                dot.dataset.index = i;
-                dot.addEventListener('click', () => goToSlide(i));
-                dotsContainer.appendChild(dot);
-            }
-            const dots = dotsContainer.querySelectorAll('.testimonials__dot');
-            slides[0].classList.add('active');
-
-            function goToSlide(index) {
-                if (isAnimating || index === currentSlide) return;
-                isAnimating = true;
-
-                if (index < 0) index = totalSlides - 1;
-                if (index >= totalSlides) index = 0;
-
-                slides[currentSlide].classList.remove('active');
-                currentSlide = index;
-                track.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-                dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
-
-                setTimeout(() => {
-                    slides[currentSlide].classList.add('active');
-                    isAnimating = false;
-                }, 200);
-            }
-
-            function nextSlide() { goToSlide(currentSlide + 1); }
-
-            function prevSlide() { goToSlide(currentSlide - 1); }
-
-            function startAutoPlay() {
-                stopAutoPlay();
-                autoPlayInterval = setInterval(nextSlide, 6000);
-            }
-
-            function stopAutoPlay() {
-                clearInterval(autoPlayInterval);
-            }
-
-            // Touch swipe
-            let startX = 0,
-                startY = 0;
-            const slider = document.querySelector('.testimonials__slider');
-            slider.addEventListener('touchstart', (e) => {
-                startX = e.changedTouches[0].screenX;
-                startY = e.changedTouches[0].screenY;
-                stopAutoPlay();
-            }, { passive: true });
-            slider.addEventListener('touchend', (e) => {
-                const endX = e.changedTouches[0].screenX;
-                const endY = e.changedTouches[0].screenY;
-                const diffX = startX - endX;
-                const diffY = startY - endY;
-                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
-                    if (diffX > 0) nextSlide();
-                    else prevSlide();
-                }
-                startAutoPlay();
-            }, { passive: true });
-
-            slider.addEventListener('mouseenter', stopAutoPlay);
-            slider.addEventListener('mouseleave', startAutoPlay);
-
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowLeft') { stopAutoPlay();
-                    prevSlide();
-                    startAutoPlay(); }
-                if (e.key === 'ArrowRight') { stopAutoPlay();
-                    nextSlide();
-                    startAutoPlay(); }
-            });
-
-            setTimeout(startAutoPlay, 2500);
-
-            // ===== 9. SCROLL TO TOP =====
-            const scrollBtn = document.getElementById('scrollTop');
-            window.addEventListener('scroll', () => {
-                scrollBtn.classList.toggle('visible', window.scrollY > 400);
-            });
-            scrollBtn.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-            // ===== 10. TILT EFFECT ON SERVICE CARDS =====
-            const tiltCards = document.querySelectorAll('[data-tilt]');
-            tiltCards.forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    const rotateX = (y - centerY) / centerY * -6;
-                    const rotateY = (x - centerX) / centerX * 6;
-                    card.style.transform =
-                        `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.01)`;
-                    // Update mouse position for glow
-                    card.style.setProperty('--mouse-x', (x / rect.width * 100) + '%');
-                    card.style.setProperty('--mouse-y', (y / rect.height * 100) + '%');
-                });
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)';
-                });
-            });
-
-            // ===== 11. FALLBACK IMAGES =====
-            const heroImg = document.getElementById('heroImage');
-            if (heroImg) {
-                heroImg.addEventListener('error', function() {
-                    this.src =
-                        'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"%3E%3Crect width="400" height="400" fill="%231d382c"/%3E%3Ctext x="200" y="200" font-family="Playfair Display" font-size="32" fill="%23f2c94c" text-anchor="middle" dy=".3em"%3EADINAGARA%3C/text%3E%3C/svg%3E';
-                });
-            }
-            const aboutImg = document.querySelector('.about__image img');
-            if (aboutImg) {
-                aboutImg.addEventListener('error', function() { this.style.display = 'none'; });
-            }
-
-            console.log('%c🏠 ADINAGARA · Enhanced', 'color: #f2c94c; font-size: 20px; font-weight: bold;');
-            console.log('%c✨ Interactive · Responsive · Premium', 'color: #d8e3d3; font-size: 14px;');
         });
-    </script>
+        document.addEventListener('mouseleave', () => {
+            cursorGlow.style.opacity = '0';
+        });
+        document.addEventListener('mouseenter', () => {
+            cursorGlow.style.opacity = '1';
+        });
+
+        // ===== 2. PROGRESS BAR =====
+        const progressBar = document.getElementById('progressBar');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            progressBar.style.width = progress + '%';
+        });
+
+        // ===== 3. NAVBAR SCROLL =====
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // ===== 4. SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ===== 5. ACTIVE LINK =====
+        const sections = document.querySelectorAll('section[id]');
+        const navAnchors = document.querySelectorAll('.navbar__links a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const top = section.offsetTop - 120;
+                if (window.scrollY >= top) current = section.getAttribute('id');
+            });
+            navAnchors.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+            });
+        });
+
+        // ===== 6. TYPEWRITER =====
+        const typewriterEl = document.getElementById('typewriter');
+        const words = ['Siswa SMK', 'Pembelajar', 'Kreatif'];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let speed = 100;
+
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                typewriterEl.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+                speed = 50;
+            } else {
+                typewriterEl.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+                speed = 90;
+            }
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                speed = 1800;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                speed = 400;
+            }
+            setTimeout(typeEffect, speed);
+        }
+        typeEffect();
+
+        // ===== 7. PARTICLE CANVAS =====
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, particles = [];
+        let mouse = { x: null, y: null };
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        document.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.size = Math.random() * 2.5 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.4 + 0.08;
+                this.color = Math.random() > 0.5 ? '242, 201, 76' : '255, 255, 255';
+                this.baseSpeedX = this.speedX;
+                this.baseSpeedY = this.speedY;
+            }
+            update() {
+                // Mouse interaction
+                if (mouse.x !== null && mouse.y !== null) {
+                    const dx = this.x - mouse.x;
+                    const dy = this.y - mouse.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 150) {
+                        const force = (150 - dist) / 150 * 0.08;
+                        this.x += dx * force;
+                        this.y += dy * force;
+                    }
+                }
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) this.reset();
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const count = Math.min(70, Math.floor((width * height) / 14000));
+            for (let i = 0; i < count; i++) particles.push(new Particle());
+        }
+        initParticles();
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => { p.update();
+                p.draw(); });
+
+            // Draw connections
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 130) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(242, 201, 76, ${0.05 * (1 - dist / 130)})`;
+                        ctx.lineWidth = 0.6;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // ===== 8. TESTIMONIAL SLIDER =====
+        const track = document.getElementById('testimonialTrack');
+        const dotsContainer = document.getElementById('testimonialDots');
+        const slides = track.querySelectorAll('.testimonial-card');
+        let currentSlide = 0;
+        let totalSlides = slides.length;
+        let autoPlayInterval;
+        let isAnimating = false;
+
+        // Init dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('button');
+            dot.classList.add('testimonials__dot');
+            if (i === 0) dot.classList.add('active');
+            dot.dataset.index = i;
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+        const dots = dotsContainer.querySelectorAll('.testimonials__dot');
+        slides[0].classList.add('active');
+
+        function goToSlide(index) {
+            if (isAnimating || index === currentSlide) return;
+            isAnimating = true;
+
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+
+            slides[currentSlide].classList.remove('active');
+            currentSlide = index;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+
+            setTimeout(() => {
+                slides[currentSlide].classList.add('active');
+                isAnimating = false;
+            }, 200);
+        }
+
+        function nextSlide() { goToSlide(currentSlide + 1); }
+
+        function prevSlide() { goToSlide(currentSlide - 1); }
+
+        function startAutoPlay() {
+            stopAutoPlay();
+            autoPlayInterval = setInterval(nextSlide, 6000);
+        }
+
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+
+        // Touch swipe
+        let startX = 0,
+            startY = 0;
+        const slider = document.querySelector('.testimonials__slider');
+        slider.addEventListener('touchstart', (e) => {
+            startX = e.changedTouches[0].screenX;
+            startY = e.changedTouches[0].screenY;
+            stopAutoPlay();
+        }, { passive: true });
+        slider.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].screenX;
+            const endY = e.changedTouches[0].screenY;
+            const diffX = startX - endX;
+            const diffY = startY - endY;
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+                if (diffX > 0) nextSlide();
+                else prevSlide();
+            }
+            startAutoPlay();
+        }, { passive: true });
+
+        slider.addEventListener('mouseenter', stopAutoPlay);
+        slider.addEventListener('mouseleave', startAutoPlay);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') { stopAutoPlay();
+                prevSlide();
+                startAutoPlay(); }
+            if (e.key === 'ArrowRight') { stopAutoPlay();
+                nextSlide();
+                startAutoPlay(); }
+        });
+
+        setTimeout(startAutoPlay, 2500);
+
+        // ===== 9. SCROLL TO TOP =====
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            scrollBtn.classList.toggle('visible', window.scrollY > 400);
+        });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== 10. TILT EFFECT ON SERVICE CARDS =====
+        const tiltCards = document.querySelectorAll('[data-tilt]');
+        tiltCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / centerY * -6;
+                const rotateY = (x - centerX) / centerX * 6;
+                card.style.transform =
+                    `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.01)`;
+                // Update mouse position for glow
+                card.style.setProperty('--mouse-x', (x / rect.width * 100) + '%');
+                card.style.setProperty('--mouse-y', (y / rect.height * 100) + '%');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)';
+            });
+        });
+
+        // ===== 11. FALLBACK IMAGES =====
+        const heroImg = document.getElementById('heroImage');
+        if (heroImg) {
+            heroImg.addEventListener('error', function() {
+                this.src =
+                    'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"%3E%3Crect width="400" height="400" fill="%231d382c"/%3E%3Ctext x="200" y="200" font-family="Playfair Display" font-size="32" fill="%23f2c94c" text-anchor="middle" dy=".3em"%3ESMK%20N%201%20KB%3C/text%3E%3C/svg%3E';
+            });
+        }
+        const aboutImg = document.querySelector('.about__image img');
+        if (aboutImg) {
+            aboutImg.addEventListener('error', function() { this.style.display = 'none'; });
+        }
+
+        console.log('%c🏫 SMK NEGERI 1 KARANG BARU · Portfolio', 'color: #f2c94c; font-size: 20px; font-weight: bold;');
+        console.log('%c✨ Siswa Kelas XII · Semangat Belajar!', 'color: #d8e3d3; font-size: 14px;');
+    });
+</script>
 </body>
 </html>
